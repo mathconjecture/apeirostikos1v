@@ -1,0 +1,141 @@
+\input{preamble/preamble.tex}
+\input{preamble/definitions.tex}
+
+\thispagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+    \minibox[frame]{\large \bfseries Θέματα Απειροστικός Ι}
+\end{center}
+
+
+\begin{enumerate}
+    \item 
+        \begin{enumerate}[i)]
+            \item Έστω $A$, $B$ δύο μη κενά και άνω φραγμένα υποσύνολα των 
+                πραγματικών αριθμών.  Να αποδείξετε ότι 
+                \[
+                    \sup (A \cup B) = \max \{ \sup A, \sup B \} 
+                \] 
+            \item Να αποδείξετε ότι 
+                \[
+                    \sum_{n=2}^{N-2} \frac{1}{(n+1)(n+2)} = \frac{1}{3} - \frac{1}{N}, 
+                    \quad N \in \mathbb{N}, \; N \geq 4
+                \] 
+        \end{enumerate}
+
+    \item 
+        \begin{enumerate}[i)]
+            \item Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ και 
+                $ {(b_{n})}_{n \in \mathbb{N}} $ δυο συγκλίνουσες ακολουθίες 
+                πραγματικών αριθμών, τέτοιες ώστε $ a_{n} < b_{n}, \; \forall n 
+                \in \mathbb{N} $. Να δείξετε με τη χρήση του 
+                ορισμού της σύγκλισης ακολουθίας ότι $ \lim_{n \to \infty} a_{n} 
+                \leq \lim_{n \to \infty} b_{n}$.
+
+            \item Να δώσετε παράδειγμα συγκλινουσών ακολουθιών 
+                $ {(a_{n})}_{n \in \mathbb{N}} $ και
+                $ {(b_{n})}_{n \in \mathbb{N}} $ για τις οποίες ισχύουν οι 
+                ανισώσεις 
+                \[
+                    a_{n} < b_{n}, \; \forall n \in \mathbb{N} \quad \text{και} \quad 
+                    \lim_{n \to \infty} a_{n} = \lim_{n \to \infty} b_{n}
+                \] 
+        \end{enumerate}
+
+    \item 
+        \begin{enumerate}[i)]
+            \item Να υπολογιστούν τα όρια των ακολουθιών:
+                \begin{enumerate*}[i), ]
+                    \item $ \lim_{n \to \infty} \sqrt[n]{\frac{1}{2^{n}} + 
+                        \frac{1}{3^{n}}} $
+                    \item $ \lim_{n \to \infty} \frac{n^{3}}{3^{n}} $
+                \end{enumerate*}
+
+            \item Να εξεταστούν οι παρακάτω σειρές ως προς τη σύγκλιση.
+                \begin{enumerate*}[i), ]
+                    \item $ \sum_{n=1}^{\infty} \frac{5^{n}-n}{6^{n} +n} $
+                    \item $ \sum_{n=1}^{\infty} \frac{\cos{(n^{2})}}{n^{2}}$
+                \end{enumerate*}
+        \end{enumerate}
+
+    \item Να υπολογιστούν τα όρια, αν υπάρχουν.
+        \begin{enumerate*}[i), ]
+            \item $ \lim_{x \to 0} \frac{e^{2018x} - 1}{x^{2018}} $
+            \item $ \lim_{x \to \infty} (\cos{x} + \sin{x} ) $
+        \end{enumerate*}
+
+
+    \item Δίνεται η συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο:
+        \[
+            f(x) = 
+            \begin{cases} 
+                e^{x-1}+1, & x \leq 1 \\ 
+                x^{2}+1, & x >1 
+            \end{cases}  
+        \] 
+        Να εξετάσετε αν η $f$ είναι μονότονη και να βρείτε την $ f^{-1} $, αν 
+        υπάρχει.
+\end{enumerate}
+
+
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}[i)]
+        \item Έστω $ A = \mathbb{Q} \cup (0,3) \subseteq \mathbb{R} $. Να 
+            αποδειχθεί ότι $ \sup A = 3 $ και $ \inf A = 0 $
+        \item Να βρεθεί φυσικός αριθμός $N \in \mathbb{N} $ τέτοιος ώστε 
+            \[
+                \sum_{n=1}^{N} \frac{1}{2^{n}} > \frac{2018}{2019} 
+            \] 
+    \end{enumerate}
+   
+ 
+\item Να υπολογιστούν τα όρια των ακολουθιών 
+    \begin{enumerate}[i)]
+        \begin{enumerate*}[i)]
+            \item $ \lim_{n \to \infty} \sqrt[n]{\frac{1}{3^{n}}+ \frac{1}{4^{n}}} + 
+                \frac{1}{5^{n}} $
+            \item $ \lim_{n \to \infty} \frac{n^{4}+5n-6}{2^{n}} $
+        \end{enumerate*}
+    \end{enumerate}
+    
+    \item Να εξετάσετε τις σειρές ως προς τη σύγκλιση    
+        \begin{enumerate*}[i)]
+            \item $ \sum_{n=1}^{\infty} \frac{2^{2n}+1}{4^{n}} $
+            \item $ \sum_{n=2}^{\infty} \frac{n^{3}+8}{n^{5}-6} $
+        \end{enumerate*}
+
+    \item
+        \begin{enumerate}[i)]
+            \item Αν μια ακολουθία έχει δυο υπακολουθίες που συγκλίνουν σε διαφορετικά 
+                όρια μπορεί η ίδια να συγκλίνει;
+            \item Αν μια ακολουθία έχει δυο υπακολουθίες που συγκλίνουν 
+                στο ίδιο όριο είναι αλήθεια ότι η ίδια συγκλίνει;
+            \item Αν για μια ακολουθία ισχύει $ a_{n} = a_{n+3} $ και η 
+                $ {(a_{n})}_{n \in \mathbb{N}} $ συγκλίνει, να αποδείξετε ότι 
+                είναι σταθερή.
+        \end{enumerate}
+
+    \item 
+        \begin{enumerate}[i)]
+            \item Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ συνεχής με 
+                $ \lim_{x \to \infty} f(x) = \infty$ και $ \lim_{x \to - \infty} f(x) 
+                = - \infty $. Να αποδείξετε ότι η $f$ είναι επί.
+
+            \item Έστω ότι $ f \colon \mathbb{R} \to \mathbb{R} $ με $ f(\frac{1}{n}) 
+                = (-1)^{n} $. Να δείξετε ότι η $f$ δεν είναι συνεχής στο 0.
+        \end{enumerate}
+
+    \item Να εξετάσετε ως προς την παραγωγισιμότητα τη συνάρτηση
+        \[
+            f(x) = 
+            \begin{cases} 
+                x^{2}, & x \in \mathbb{Q} \\ 
+                x^{4}, & x \not \in \mathbb{Q} 
+            \end{cases} 
+         \] 
+\end{enumerate}
+\end{document}

@@ -1,0 +1,926 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+
+
+
+\section{Ορισμός}
+
+
+\mydfn{Έστω $ {(a_{n})}_{n \in \mathbb{N}}$ ακολουθία. Τότε ορίζουμε την ακολουϑία 
+\begin{align*}
+    S_{1} &= a_{1} \\
+    S_{2} &= a_{1}+ a_{2} \\
+    \vdots \\
+    S_{N} &= a_{1}+ a_{2}+ \cdots + a_{N} \\
+    \vdots 
+\end{align*}
+
+Η ακολουθία $ {(S_{N})}_{N \in \mathbb{N}} $ της οποίας οι όροι δίνονται από την 
+σχέση \[ S_{N} = \sum_{n=1}^{N} a_{n}, \; \forall N \in \mathbb{N} \] ονομάζεται 
+\textcolor{Col2}{σειρά} και συμβολίζεται
+$
+    \sum_{n=1}^{\infty} a_{n} 
+$}
+
+\begin{rem}
+Οι όροι της ακολουθίας $ {(S_{N})}_{N \in \mathbb{N}} $ ονομάζονται 
+\textcolor{Col2}{μερικά αθροίσματα} της σειράς.
+\end{rem}
+
+\section{Παραδείγματα}
+
+\begin{enumerate}
+    \item $ \sum_{n=1}^{\infty} \frac{1}{n} $, είναι η ακολουθία 
+        $ {(S_{n})}_{n \in \mathbb{N}} $, όπου $ S_{1}=1, \; S_{2}=1+ \frac{1}{2}, \; 
+        S_{3}= 1 + \frac{1}{2} + \frac{1}{3}, \ldots  $
+
+    \item $ \sum_{n=1}^{\infty} n  $, είναι η ακολουθία ${(S_{n})}_{n \in \mathbb{N}}$,
+        όπου $ S_{1}=1, \; S_{2}=1+2, \; S_{3}=1+2+3, \ldots $ η οποία προφανώς 
+        απειρίζεται θετικά
+
+    \item $ \sum_{n=1}^{\infty} 1  $, είναι η ακολουθία ${(S_{n})}_{n \in \mathbb{N}}$,
+        όπου $ S_{1}=1, \; S_{2}=1+1, \; S_{3}=1+1+1, \ldots $ η οποία προφανώς 
+        απειρίζεται θετικά.
+
+    \item $ \sum_{n=1}^{\infty} {(-1)}^{n}  $, είναι η ακολουθία 
+        $ {(S_{n})}_{n \in \mathbb{N}} $, όπου $ S_{1}=-1, \; S_{2}=0, \; S_{3}=-1, 
+        \ldots $, η οποία προφανώς δεν συγκλίνει, γιατί έχει δύο διαφορετικές, σταθερές 
+        συγκλίνουσες υπακολουθίες.
+\end{enumerate}
+
+\begin{rems}
+\item {}
+    \begin{myitemize}
+    \item Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n}  $, λέγεται 
+        \textcolor{Col2}{αρμονική σειρά} και αποκλίνει. (απειρίζεται θετικά)
+    \item Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{\rho}}  $, λέγεται 
+        \textcolor{Col2}{γενικευμένη αρμονική σειρά} και συγκλίνει αν και μόνον αν 
+        $ \rho > 1 $.
+    \end{myitemize}
+\end{rems}
+
+\section{Σύγκλιση Σειρών}
+
+Έστω $ \sum_{n=1}^{\infty} a_{n}  $ σειρά και έστω $ {(S_{n})}_{n \in \mathbb{N}} $ 
+η ακολουθία των μερικών αθροισμάτων της. 
+
+Λέμε ότι η σειρά \textcolor{Col2}{συγκλίνει} στον πραγματικό αριθμό 
+$ S \in \mathbb{R} $, ο οποίος 
+τότε καλείται \textcolor{Col2}{άθροισμα} της σειράς, αν η ακολουθία των 
+μερικών αθροισμάτων της συγκλίνει στον $ S $. Δηλαδή
+\[
+    \sum_{n=1}^{\infty} a_{n} = S \Leftrightarrow \lim_{n \to \infty} S_{n} = S  
+\] 
+
+\section{Τηλεσκοπικές Σειρές}
+
+\begin{dfn}
+    Οι σειρές $ \sum_{n=1}^{\infty} a_{n} $ των οποίων 
+    οι όροι γράφονται στη μορφή 
+    $ a_{n} = b_{n} - b_{n+1}, \; \forall n \in \mathbb{N} $ όπου για την ακολουθία
+    $ {(b_{n})}_{n \in \mathbb{N}}$, μπορεί να υπολογιστεί το όριο της, λέγονται 
+    τηλεσκοπικές.
+\end{dfn}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Να υπολογιστεί το άθροισμα της σειράς $ \sum_{n=1}^{\infty} 
+            \frac{1}{n(n+1)} $.
+            \begin{proof}
+            \item 
+                Έχουμε
+                \[
+                    a_{n} = \frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1} = 
+                    \frac{1}{n} - \frac{1}{n+1} 
+                \]
+                επομένως η σειρά γράφεται
+                \[
+                    \sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 
+                    \sum_{n=1}^{\infty} \left(\frac{1}{n} - \frac{1}{n+1}\right) 
+                \] 
+                Υπολογίζουμε την ακολουθία των μερικών αθροισμάτων και έχουμε
+                \begin{align*}
+                    S_{1} &= 1- \frac{1}{2} \\
+                    S_{2} &= 1- \frac{1}{2} + \frac{1}{2} - \frac{1}{3} = 
+                    1 - \frac{1}{3}  \\
+                    S_{3} &=  1- \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + 
+                    \frac{1}{3} - \frac{1}{4} = 1 - \frac{1}{4}  \\
+                    \vdots \\
+                    S_{n} &= 1 - \frac{1}{n+1} \\
+                    \vdots
+                \end{align*}
+            Επομένως $ \lim_{n \to \infty} S_{n} = 
+            \lim_{n \to \infty} \left(1 - \frac{1}{n+1}\right) = 1 - 0 = 1 $
+        \end{proof}
+
+        \item Να υπολογιστεί το άθροισμα της σειράς $ \sum_{n=1}^{\infty} 
+            \ln{\left(\frac{n}{n+1}\right)} $
+            \begin{proof}
+            \item {}
+                Έχουμε
+                \[
+                    a_{n} = \ln{\left(\frac{n}{n+1}\right)} = \ln{n} - \ln{(n+1)}  
+                \]
+                επομένως η σειρά γράφεται
+                \[
+                    \sum_{n=1}^{\infty} \ln{\left(\frac{n}{n+1} \right)} = 
+                    \sum_{n=1}^{\infty} [ \ln{n} - \ln{(n+1)} ]
+                \] 
+                Υπολογίζουμε την ακολουθία των μερικών αθροισμάτων και έχουμε
+                \begin{align*}
+                    S_{1} &= \ln{1} - \ln{2} = - \ln{2}  \\
+                    S_{2} &= \ln{1} - \ln{2} + \ln{2} - \ln{3} = - \ln{3}  \\
+                    S_{3} &= \ln{1} - \ln{2} + \ln{2} - \ln{3} + \ln{3} - \ln{4} = - 
+                    \ln{4}\\
+                    \vdots \\
+                    S_{n} &= - \ln{(n+1)} \\
+                    \vdots
+                \end{align*}
+                επομένως $ \lim_{n \to \infty} S_{n} = 
+                \lim_{n \to \infty} (- \ln{(n+1)}) = - \infty $ οπότε η σειρά αποκλίνει.
+            \end{proof}
+    \end{enumerate}
+\end{examples}
+
+
+
+
+\myprop{\label{prop:diff}
+    \begin{enumerate}[i)]
+        \item $ \sum_{n=1}^{\infty} a_{n}  $ συγκλίνει 
+            $ \Leftrightarrow \sum_{n= n_{0}}^{\infty} a_{n}, \; \; \forall n_{0} 
+            \in \mathbb{N}  $ συγκλίνει.
+        \item\label{prop:diff2} $ \sum_{n=1}^{\infty} a_{n}  $ συγκλίνει 
+            $ \Rightarrow \sum_{n=1}^{\infty} a_{n} - \sum_{n= n_{0}}^{\infty} a_{n}  
+            = \sum_{n=1}^{n_{0}-1} a_{n} $
+    \end{enumerate}
+}
+
+\begin{proof}
+\item {}
+    \begin{enumerate}
+        \item Θέτουμε $ S_{N} = \sum_{n=1}^{N} a_{n}, \; 
+            \forall N \in \mathbb{N} $ και $ T_{N} = \sum_{n= n_{0}}^{N}, \; N= n_{0}, 
+            n_{0}+1, \ldots $. Τότε για $ n \geq n_{0} $ έχουμε:
+            \[
+                S_{N}-T_{N} = a_{1}+ a_{2}+ a_{3}+ \cdots + a_{n_0-1} 
+            \] 
+            Δηλαδή οι ακολουθίες $ (S_{N})_{N \in \mathbb{N}} $ και 
+            $ (T_{N})_{n \in \mathbb{N}} $ διαφέρουν κατά σταθερά. Σύμφωνα 
+            με τις ιδιότητες των ορίων, αν συγκλίνει η μία τότε συγκλίνει και η άλλη.
+
+        \item Ας υποθέσουμε ότι η σειρά $ \sum_{n=1}^{\infty} $ συγκλίνει, 
+            δηλαδή ότι η ακολουθία $ (S_{N})_{N \in \mathbb{N}} $ συγκλίνει. 
+
+            Τότε σύμφωνα με το πρώτο ερώτημα και η $ (T_{N})_{N \in \mathbb{N}} $
+            συγκλίνει και μάλιστα $ \lim_{N \to \infty} S_{N} = \lim_{N \to \infty} 
+            T_{N} + a_{1}+ a_{2} + \cdots + a_{n_{0}-1} 
+            \Rightarrow \sum_{n=1}^{\infty} a_{n}- \sum_{n= n_{0}}^{\infty} a_{n} = 
+            \sum_{n=1}^{n_{0}-1} a_{n}    $
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    Να υπολογιστεί το άθροισμα της σειράς $ \sum_{n=3}^{\infty} \frac{1}{n(n+1)} $.
+\end{example}
+\begin{proof}
+    \[
+        \sum_{n=3}^{\infty} \frac{1}{n(n+1)} = \sum_{n=1}^{\infty} 
+        \frac{1}{n(n+1)} - \sum_{n=1}^{2} \frac{1}{n(n+1)} = 1 - \frac{1}{2} - 
+        \frac{1}{6} = \frac{2}{6} = \frac{1}{3}
+    \] 
+\end{proof}
+
+
+\section{Γεωμετρική Σειρά}
+
+Η σειρά $ \sum_{n=0}^{\infty} x^{n} $ λέγεται Γεωμετρική και ο αριθμός $x$ λέγεται 
+λόγος της.
+
+\myprop{Η σειρά $ \sum_{n=0}^{\infty} x^{n} $ συγκλίνει $ \Leftrightarrow \abs{x} < 1 $
+και ισχύει ότι $ \sum_{n=0}^{\infty} x^{n} = \frac{1}{1-x} $}
+
+\begin{proof}
+\item {}
+    Ισχύει ότι $ S_{N} = \sum_{n=0}^{N} x^{n} =  1 + x + x^{2} + \cdots x^{N} = 
+    \frac{1- x^{n+1}}{1-x} $.
+
+    Όμως $ \lim_{n \to \infty} x^{n} = 0 \Leftrightarrow \abs{x} < 1 $, οπότε 
+    $ \lim_{n \to \infty} S_{N} = \frac{1}{1-x} $.
+\end{proof}
+
+\begin{cor}
+    Η σειρά $ \sum_{n= n_{0}}^{\infty} x^{n} $ συγκλίνει $ \Leftrightarrow \abs{x} <1 $
+    και ισχύει ότι $ \sum_{n= n_{0}}^{\infty} x^{n} = \frac{x^{n_{0}}}{1-x} $.
+\end{cor}
+\begin{proof}
+\item {}
+    Αν $ \abs{x} < 1 $ τότε η σειρά $ \sum_{n=0}^{\infty} x^{n} $ συγκλίνει ως 
+    γεωμετρική και ισχύει $ \sum_{n=0}^{\infty} x^{n} = \frac{1}{1-x} $. 
+
+    Οπότε έχουμε
+    \begin{align*}
+        \sum_{n=0}^{\infty} x^{n} - \sum_{n= n_{0}}^{\infty} x^{n} = 
+        \sum_{n= 1}^{n_{0} -1} x^{n} = 1 + x + x^{2} + \cdots + x^{n_{0}-1} 
+        \Rightarrow \\
+        \sum_{n= n_{0}}^{\infty} x^{n} = \sum_{n=0}^{\infty} x^{n} - (1 + x + x^{2} + 
+        \cdots + x^{n_{0}-1}) = \frac{1}{1-x} - \frac{1- x^{n_{0}}}{1-x} = 
+        \frac{x^{n_{0}}}{1-x}  
+    \end{align*} 
+\end{proof}
+
+\begin{examples}
+\item Η σειρά $ \sum_{n=0}^{\infty} \frac{1}{2^{n}} = \sum_{n=0}^{\infty} 
+    {\left(\frac{1}{2} \right)}^{n} $ είναι Γεωμετρική με λόγο $ x = \frac{1}{2} $ 
+    και επειδή 
+    $ \abs{x} = \abs{\frac{1}{2}} = \frac{1}{2} < 1  $, ισχύει ότι η σειρά συγκλίνει.
+    Έχουμε
+    \[
+        \sum_{n=0}^{\infty} {\left(\frac{1}{2} \right)}^{n} = 
+        \frac{1}{1 - \frac{1}{2}} = 1
+    \] 
+
+\item Η σειρά $ \sum_{n=0}^{\infty} \frac{9^{n}}{10^{n+1}} = 
+    \sum_{n=0}^{\infty} \frac{9^{n}}{10 \cdot 10^{n}} = 
+    \frac{1}{10} \sum_{n=0}^{\infty} {\left(\frac{9}{10} \right)}^{n} $ είναι
+    Γεωμετρική με λόγο $ x = \frac{9}{10} $ και επειδή $ \abs{x} = 
+    \abs{\frac{9}{10}} = \frac{9}{10} < 1$, ισχύει ότι η σειρά συγκλίνει.
+    Έχουμε 
+    \[
+        \sum_{n=0}^{\infty}  \frac{9^{n}}{10^{n+1}} = 
+        \frac{1}{10} \sum_{n=0}^{\infty} {\left(\frac{9}{10} \right)}^{n} = 
+        \frac{1}{10} \cdot \frac{1}{1 - \frac{9}{10}} = \frac{1}{10} \cdot 10 = 1
+    \]
+\end{examples}
+
+\myprop{Έστω $ \sum_{n=1}^{\infty} a_{n} = a $ και $ \sum_{n=1}^{\infty} b_{n} = b $ 
+    συγκλίνουσες σειρές. Τότε:
+    \begin{enumerate}[i)]
+        \item $ \sum_{n=1}^{\infty} (a_{n}+b_{n}) = a+b $
+        \item $ \sum_{n=1}^{\infty} (k\cdot a_{n}) = k\cdot a $ 
+\end{enumerate}}
+
+\begin{example}
+    \begin{enumerate}
+        \item Να βρεθεί το άθροισμα της σειράς $ \sum_{n=5}^{\infty} 
+            \frac{2^{2n}+5^{n}}{3^{3n}} $
+            \begin{proof}
+            \item {} 
+                Έχουμε
+                \begin{align*}
+                    \sum_{n=5}^{\infty} \frac{2^{2n}+5^{n}}{3^{3n}} = 
+                    \sum_{n=5}^{\infty} \left( \frac{2^{2n}}{3^{3n}} + 
+                    \frac{5^{n}}{3^{3n}}\right) = \sum_{n=5}^{\infty} 
+                    \left[{\left(\frac{4}{27} \right)}^{n} +
+                    {\left(\frac{5}{27} \right)}^{n}\right]
+                \end{align*}
+                Όμως
+                \begin{align*}
+                    \sum_{n=5}^{\infty} {\left(\frac{4}{27} \right)}^{n} 
+                    &= \frac{4^{5}}{27^{5}} \cdot 
+                    \frac{1}{1- \frac{4}{27}} = \frac{4^{5}}{27^{5}} \cdot 
+                    \frac{1}{27-4} = \frac{4^{5}}{27^{4}\cdot 23} 
+                    \intertext{και}
+                    \sum_{n=5}^{\infty} \left(\frac{5}{27} \right)^{n} 
+                    &= \frac{5^{5}}{27^{5}} \cdot \frac{1}{1 - \frac{5}{27}} = 
+                    \frac{5^{5}}{27^{4}} \cdot \frac{1}{27-5} = 
+                    \frac{5^{5}}{27^{4}\cdot 22} 
+                \end{align*}
+                Επειδή και οι δύο σειρές συγκλίνουν τότε από την προηγούμενη 
+                πρόταση έχουμε ότι 
+                \[
+                    \sum_{n=5}^{\infty} \frac{2^{2n}+5^{n}}{3^{3n}} =  
+                    \frac{4^{5}}{27^{4}\cdot 23} + \frac{5^{5}}{27^{4}\cdot 22} 
+                \] 
+            \end{proof}
+
+        \item Να υπολογιστεί το άθροισμα της σειράς $ \sum_{n=1}^{\infty} 
+            \frac{3^{n-1}-1}{6^{n-1}} $.
+            \begin{proof}
+            \item {}
+                Έχουμε 
+                \[ 
+                    \sum_{n=1}^{\infty} \frac{3^{n-1}-1}{6^{n-1}} = \sum_{n=1}^{\infty} 
+                    \left(\frac{3^{n-1}}{6^{n-1}} - \frac{1}{6^{n-1}}\right) = 
+                    \sum_{n=1}^{\infty} \left[\left(\frac{3}{6} \right)^{n-1} -
+                    \left( \frac{1}{6}\right) ^{n-1}\right] = \sum_{n=1}^{\infty} 
+                    \left[\left(\frac{1}{2} \right)^{n-1} - \left(\frac{1}{3} 
+                    \right)^{n-1}\right]
+                \]
+                Όμως 
+                \begin{align*}
+                    \sum_{n=1}^{\infty} \left(\frac{1}{2} \right)^{n-1} 
+                    &= \frac{1}{1- \frac{1}{2}} = 2
+                    \intertext{και}
+                    \sum_{n=1}^{\infty} \left(\frac{1}{6} \right)^{n-1} 
+                    &= \frac{1}{1- \frac{1}{6}} = \frac{6}{5} 
+                \end{align*} 
+                Επειδή και οι δύο σειρές συγκλίνουν τότε από την προηγούμενη 
+                πρόταση έχουμε ότι 
+                \[
+                    \sum_{n=1}^{\infty} \frac{3^{n_1}-1}{6^{n-1}} =  
+                    \sum_{n=1}^{\infty} \left[\left(\frac{1}{2} \right)^{n_1} - 
+                    \left(\frac{1}{6} \right)^{n-1}\right] = 2 - \frac{6}{5} = 
+                    \frac{4}{5} 
+                \] 
+            \end{proof}
+    \end{enumerate}
+\end{example}
+
+\begin{rem}
+    Έστω ότι $ \sum_{n=1}^{\infty} a_{n} = a $ και $ \sum_{n=1}^{\infty} b_{n} = b $, 
+    με $ b_{n} \neq 0, \; \forall n \in \mathbb{N} $ και $ b \neq 0 $. Τότε η σειρά 
+    $ \sum_{n=1}^{\infty} \frac{a_{n}}{b_{n}} $ μπορεί 
+    \begin{enumerate}[i)]
+        \item Να αποκλίνει 
+        \item Να συγκλίνει, και μάλιστα $ \sum_{n=1}^{\infty} \frac{a_{n}}{b_{n}} \neq 
+            \frac{a}{b} $
+    \end{enumerate}
+    \begin{proof}[Παράδειγματα]
+    \item {}
+        \begin{enumerate}[i)]
+            \item Έστω η σειρά $ \sum_{n=1}^{\infty} 
+                \underbrace{\frac{1}{n(n+1)}}_{a_{n}} = 1 $ και 
+                $ \sum_{n=1}^{\infty} \underbrace{\frac{1}{(n+1)(n+2)}}_{b_{n}} = 
+                \frac{1}{2} $. Τότε η σειρά 
+                \[
+                    \sum_{n=1}^{\infty} \frac{a_{n}}{b_{n}} = \sum_{n=1}^{\infty} 
+                    \frac{\frac{1}{n(n+1)}}{\frac{1}{(n+1)(n+2)}} = 
+                    \sum_{n=1}^{\infty} \frac{n+2}{n} 
+                \]
+                αποκλίνει γιατί $ \lim_{n \to \infty} \frac{n+2}{n} = 1 \neq 0 $
+
+            \item Έστω οι σειρές 
+
+                \begin{minipage}{0.75\textwidth}
+                    \begin{myitemize}
+                    \item 
+                        $ \sum_{n=1}^{\infty} \underbrace{\frac{1}{2^{2n-1}}}_{a_{n}} 
+                        = 2 \sum_{n=1}^{\infty} \frac{1}{4^{n}} = 
+                        2 \cdot \sum_{n=1}^{\infty} 
+                        \left(\frac{1}{4} \right)^{n} = 2 \cdot \frac{1}{4} \cdot  
+                        \frac{1}{1 - \frac{1}{4}} = \frac{1}{2} \cdot \frac{4}{3} = 
+                        \frac{2}{3} = a$ \hfill \tikzmark{a}
+
+                    \item $ \sum_{n=1}^{\infty} \underbrace{\frac{3}{2^{n-1}}}_{b_{n}} 
+                        = 3 \sum_{n=1}^{\infty} \frac{1}{2^{n-1}} = 
+                        3 \cdot \sum_{n=1}^{\infty} 
+                        \left(\frac{1}{2} \right)^{n-1} = 3 \cdot \frac{1}{1 - 
+                        \frac{1}{2}} = 3 \cdot 2 = 6 = b$ \hfill \tikzmark{b}
+                    \end{myitemize}
+                \end{minipage}
+
+                \mybrace{a}{b}[$ \frac{a}{b} = \frac{\frac{2}{3}}{6} = \frac{1}{9} $]
+
+                Όμως 
+                \[
+                    \sum_{n=1}^{\infty} \frac{a_{n}}{b_{n}} = \sum_{n=1}^{\infty} 
+                    \frac{\frac{1}{2^{2n-1}}}{\frac{3}{2^{n-1}}} = 
+                    \frac{1}{3} \sum_{n=1}^{\infty} \frac{2^{n-1}}{2^{2n-1}} = 
+                    \frac{1}{3} \sum_{n=1}^{\infty} \frac{2^{n}}{2^{2n}} = 
+                    \frac{1}{3} \sum_{n=1}^{\infty} \frac{1}{2^{n}} = \frac{1}{3} \cdot 
+                    \frac{\frac{1}{2}}{1 - \frac{1}{2}} = \frac{1}{3} \neq \frac{1}{9} 
+                    = \frac{a}{b}
+                \] 
+        \end{enumerate}
+
+    \end{proof}
+\end{rem}
+
+\myprop{Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε 
+    $ \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} :
+\quad \abs{\sum_{n= n_{0}}^{\infty} a_{n}} < \varepsilon $}
+
+\begin{proof}
+\item {}
+    Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε υπάρχει 
+    $ S \in \mathbb{R} $ τέτοιος ώστε $ \lim_{n \to \infty} 
+    {(S_{n})}_{n \in \mathbb{N}} = S \in \mathbb{R} $. Δηλαδή 
+    \[
+        \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} \; : \; 
+        \forall N \geq n_{0} \quad \abs{S_{N}-S} < \varepsilon 
+    \] 
+    Από την πρόταση~\ref{prop:diff}~\ref{prop:diff2} έχουμε ότι αφού 
+    $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνουσα ισχύει
+    \begin{gather*}
+        \sum_{n=1}^{\infty} a_{n} - \sum_{n= n_{0}+1}^{\infty} a_{n} = 
+        \sum_{n= 1}^{n_{0}} a_{n} \Rightarrow \\ 
+        \sum_{n= n_{0}+1}^{\infty} a_{n} = \sum_{n=1}^{\infty} a_{n} - 
+        \sum_{n=1}^{n_{0}} a_{n} = S - S_{n} \Rightarrow \\
+        \abs{\sum_{n= n_{0}}^{\infty} a_{n}} = \abs{S - S_{n}} < \varepsilon
+    \end{gather*} 
+\end{proof}
+
+\myprop{Η αρμονική σειρά $ \sum_{n=1}^{\infty} \frac{1}{n} $ δεν συγκλίνει.}
+
+\begin{proof}(Με άτοπο)
+\item {}
+    Έστω ότι η σειρά συγκλίνει στο $ S \in \mathbb{R} $. Τότε 
+    $ \sum_{n=1}^{\infty} \frac{1}{n} 
+    = S \in \mathbb{R} \Leftrightarrow \lim_{n \to \infty} {(S_{n})}_{n \in \mathbb{N}} 
+    = S $, δηλαδή 
+    \[
+        \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} \; : \; \forall n 
+        \geq n_{0} \quad \abs{S_{n}-S} 
+        < \varepsilon 
+    \]
+    Οπότε για $ \varepsilon = \frac{1}{4}, \; \exists n_{0} \in \mathbb{N} \; : \; 
+    \forall n \geq n_{0} \quad \abs{S_{n}-S} < \frac{1}{4} $, και 
+    $ \abs{S_{2 n_{0}}-S} < \frac{1}{4}  $ επειδή και κάθε  υπακολουθία της 
+    $ {(S_{n})}_{n \in \mathbb{N}} $ θα συγκλίνει στο ίδιο όριο.
+    Επομένως
+    \[
+        \abs{S_{2 n_{0} }- S_{n_{0}}} = \abs{S_{2 n_{0} } -S + S - S_{n_{0}}} \leq 
+        \abs{S_{2 n_{0}}-S} + \abs{S_{n_{0}}-S} < \frac{1}{4} + \frac{1}{4} = 
+        \frac{1}{2}
+    \] 
+    Από την άλλη μεριά
+    \begin{align*}
+        \abs{S_{2 n_{0}} - S_{n_{0}}} 
+        &= \abs{\left(1+ \frac{1}{2} + \cdots + 
+                \frac{1}{2 n_{0}}\right) - \left(1 +
+        \frac{1}{2} + \cdots + \frac{1}{n_{0}}\right)} = \frac{1}{n_{0}+1} + \cdots + 
+        \frac{1}{2 n_{0}} \geq \underbrace{\frac{1}{2 n_{0}} + \cdots + 
+        \frac{1}{2 n_{0}}}_{n_{0} \; \text{φορές}} = \\ 
+        &= n_{0}\cdot \frac{1}{2 n_{0}} = \frac{1}{2} \quad \text{άτοπο, άρα 
+        η σειρά δεν συγκλίνει.}
+    \end{align*}
+\end{proof}
+
+\mythm{Έστω $ \sum_{n=1}^{\infty} a_{n} $ σειρά θετικών όρων, δηλαδή $ a_{n} \geq 0, 
+    \; \forall n \in \mathbb{N} $. Τότε η $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
+αν και μόνον αν είναι άνω φραγμένη.}
+
+\begin{proof}
+\item {}
+    \begin{description}
+        \item [($ \Rightarrow $)]
+            Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε η ακολουθία 
+            $ {(S_{n})}_{n \in \mathbb{N}} $ συγκλίνει, επομένως από γνωστή πρόταση θα 
+            είναι και φραγμένη, επομένως και άνω φραγμένη. Άρα και η σειρά 
+            $ \sum_{n=1}^{\infty} a_{n} $ είναι άνω φραγμένη.
+        \item [($ \Leftarrow $)]
+            Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ είναι άνω φραγμένη, δηλαδή 
+            η ακολουθία $ {(S_{n})}_{n \in \mathbb{N}} $ είναι άνω φραγμένη, δηλαδή 
+            \[
+                S_{n} \leq M, \; \forall n \in \mathbb{N}
+            \] 
+            Θα δείξουμε ότι η ακολουθία $ {(S_{n})}_{n \in \mathbb{N}} $ είναι και 
+            αύξουσα, οπότε από γνωστή πρόταση, θα συγκλίνει. Πράγματι
+            έστω $ n_{0} \in \mathbb{N} $. Τότε
+            \[
+                a_{n_{0}+1} \geq 0 \Rightarrow S_{n_{0}+1} - S_{n_{0}} \geq 0 
+                \Rightarrow S_{n_{0}+1} \geq S_{n_{0}}
+            \] 
+    \end{description}
+\end{proof}
+
+\begin{cor}
+    Μια σειρά θετικών όρων ή συγκλίνει, ή αποκλίνει στο $ + \infty $.  
+\end{cor}
+
+\begin{rem}
+    Μια σειρά στην οποία δεν γνωρίζουμε τα πρόσημα των όρων της, μπορεί:
+    \begin{enumerate}[i)]
+        \item να συγκλίνει
+        \item να αποκλίνει στο $ + \infty $ ή στο $ - \infty $
+        \item τίποτε από τα παραπάνω.
+    \end{enumerate}
+\end{rem}
+
+
+
+\section{Κριτήρια Σύγκλισης}
+
+\subsection{Κριτήριο Σύγκρισης}
+Έστω ότι $ 0 \leq a_{n} \leq b_{n}, \; \forall n \geq n_{0} $.
+\begin{enumerate}[i)]
+    \item $ \sum_{n=1}^{\infty} b_{n} $ συγκλίνει $ \Rightarrow \sum_{n=1}^{\infty} 
+        a_{n}$ συγκλίνει.
+    \item $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει $ \Rightarrow \sum_{n=1}^{\infty} 
+        b_{n} $ αποκλίνει.
+\end{enumerate}
+\begin{proof}
+\item {}
+    \begin{enumerate}[i)]
+        \item Έστω ότι η σειρά $ \sum_{n=1}^{\infty} b_{n} $ συγκλίνει. Τότε είναι 
+            άνω φραγμένη, δηλαδή 
+            \[
+                \exists M>0 : \sum_{n=1}^{N} b_{N} \leq M, \; \forall N \in \mathbb{N}
+                \Rightarrow \sum_{n=1}^{N} a_{N} \leq M, \; \forall N \in \mathbb{N}
+            \]
+            δηλαδή η $ \sum_{n=1}^{\infty} a_{n} $ είναι άνω φραγμένη. Είναι όμως και 
+            σειρά θετικών όρων, οπότε από το προηγούμενο θεώρημα, συγκλίνει.
+
+        \item Έστω $ M >0 $. Αφού η $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει στο $ 
+            + \infty, \; \exists N_{0} \in \mathbb{N} \; : \; \sum_{n=1}^{N} a_{n} 
+            \geq M, \; \forall N \in \mathbb{N} $. 
+            Όμως τότε $ \sum_{n=1}^{N} b_{n} \geq M, \; \forall n \in \mathbb{N} $, 
+            δηλαδή και η σειρά $ \sum_{n=1}^{\infty} b_{n} $ αποκλίνει στο $ 
+            + \infty$.
+    \end{enumerate}
+\end{proof}
+
+\myprop{Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{2}} $ συγκλίνει.}
+
+\begin{proof}
+\item {}
+    Θέτουμε $ a_{n} = \frac{1}{(n+1)^{2}}, \; \forall n \in \mathbb{N} $ και 
+    $ b_{n} = \frac{1}{n(n+1)}, \; \forall n \in \mathbb{N} $. Ισχύει, προφανώς ότι
+    $ 0 \leq a_{n} \leq b_{n}, \; \forall n \in \mathbb{N} $. Επιπλέον έχουμε αποδείξει
+    ότι $ \sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 1 $, συγκλίνει, οπότε από κριτήριο 
+    σύγκρισης και η σειρά 
+    $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Όμως ισχύει ότι
+    \[
+        \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} \frac{1}{(n+1)^{2}} = 
+        \sum_{n=2}^{\infty} \frac{1}{n^{2}} 
+    \] 
+    δηλαδή η σειρά $ \sum_{n=2}^{\infty} \frac{1}{n^{2}} $ συγκλίνει και από γνωστή 
+    πρόταση και η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{2}} $ συγκλίνει.
+\end{proof}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n(n+1)} $ συγκλίνει. Πράγματι
+            \[
+                a_{n}= \frac{1}{n(n+1)} = \frac{1}{n^{2}+n} \leq \frac{1}{n^{2}} = 
+                b_{n}, \; \forall n \in \mathbb{N}
+            \] 
+            και η $ \sum_{n=1}^{\infty} b_{n} = \sum_{n=1}^{\infty} \frac{1}{n^{2}} $ 
+            συγκλίνει, οπότε από το κριτήριο 
+            σύγκρισης και η $ \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} 
+            \frac{1}{n(n+1)} $ συγκλίνει. 
+
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{n^{2}+n+1}{n^{3}} $ αποκλίνει. 
+            \[
+                a_{n} = \frac{n^{2}+n+1}{n^{3}} \geq \frac{n^{2}}{n^{3}} = \frac{1}{n} 
+                = b_{n}, \; \forall n \in \mathbb{N} 
+            \] 
+            και η $ \sum_{n=1}^{\infty} b_{n} = \frac{1}{n} $ αποκλίνει, οπότε από 
+            το κριτήριο σύγκρισης και η $ \sum_{n=1}^{\infty} a_{n} = 
+            \sum_{n=1}^{\infty} \frac{n^{2}+n+1}{n^{3}} $ αποκλίνει.
+    \end{enumerate}
+\end{examples}
+
+\subsection{Κριτήριο Ορίου}
+\mythm{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ και $ {(b_{n})}_{n \in \mathbb{N}} $ δύο 
+    ακολουθίες θετικών αριθμών, τέτοιες ώστε $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}}
+    \in \mathbb{R} $, τότε: 
+    \begin{enumerate}[i)]
+        \item $ \sum_{n=1}^{\infty} b_{n} $ συγκλίνει $ \Rightarrow 
+            \sum_{n=1}^{\infty} a_{n} $ συγκλίνει.
+        \item $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει (στο $+ \infty$) $ \Rightarrow 
+            \sum_{n=1}^{\infty} b_{n} $ αποκλίνει (στο $+ \infty$).
+\end{enumerate}}
+
+\begin{proof}
+\item {}
+    Έστω η ακολουθία $ {\left(\frac{a_{n}}{b_{n}}\right)}_{n \in \mathbb{N}} $ 
+    συγκλίνει.  Τότε θα είναι και φραγμένη, επομένως
+    \[
+        \exists M>0 \; : \; \frac{a_{n}}{b_{n}} \leq M, \; \forall n \in \mathbb{N} 
+    \] 
+    Οπότε $ 0 \leq a_{n} \leq b_{n}, \; \forall n \in \mathbb{N} $.
+    \begin{enumerate}[i)]
+        \item Η σειρά $ \sum_{n=1}^{\infty} b_{n} $ συγκλίνει, άρα και η σειρά 
+            $ \sum_{n=1}^{\infty} M\cdot b_{n} $ συγκλίνει, οπότε από το κριτήριο 
+            σύγκρισης συγκλίνει και η $ \sum_{n=1}^{\infty} a_{n} $.
+        \item Η σειρά $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει στο $ + \infty $, 
+            οπότε από το κριτήριο σύγκρισης η σειρά 
+            $ \sum_{n=1}^{\infty} M \cdot b_{n} $ αποκλίνει
+            στο $ + \infty $. Τελικά και η σειρά $ \sum_{n=1}^{\infty} b_{n} $ 
+            αποκλίνει στο $ + \infty $.
+    \end{enumerate}
+\end{proof}
+
+\begin{cor}
+    Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ και $ {(b_{n})}_{n \in \mathbb{N}} $ δύο 
+    ακολουθίες θετικών αριθμών, τέτοιες ώστε $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}} 
+    \in \mathbb{R} \setminus \{ 0 \}$. Τότε η σειρά $ \sum_{n=1}^{\infty} b_{n} $ 
+    συγκλίνει αν και μόνον αν η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει.
+\end{cor}
+\begin{proof}
+    Επειδή $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}} \neq 0 \Rightarrow \exists 
+    \lim_{n \to \infty} \frac{b_{n}}{a_{n}}$, οπότε από την προηγούμενη πρόταση 
+    έχουμε το ζητούμενο.
+\end{proof}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{n^{5}+8n}{n^{6}+6} $ αποκλίνει.
+            \begin{proof}
+            \item {}
+                \begin{minipage}{0.3\textwidth}
+                    \begin{myitemize}
+                    \item $ a_{n} = \frac{n^{5}+8n}{n^{6}+6}, \; 
+                        \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+                    \item $ b_{n} = \frac{1}{n}, \; \forall n \in \mathbb{N} $
+                        \hfill \tikzmark{b}
+                    \end{myitemize}    
+                \end{minipage}
+
+                \mybrace{a}{b}[$ \frac{a_{n}}{b_{n}} = 
+                \frac{\frac{n^{5}+8n}{n^{6}+6}}{\frac{1}{n}} = 
+                \frac{n^{6}+8n^{2}}{n^{6}+6} \to 1 $]
+                και επειδή η $ \sum_{n=1}^{\infty} b_{n} = 
+                \sum_{n=1}^{\infty} \frac{1}{n} $
+                αποκλίνει, τότε και η $ \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} 
+                \frac{n^{5}+8n}{n^{6}+6}$ αποκλίνει.
+            \end{proof}
+
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{\sqrt[3]{n^{4}+1}} $ συγκλίνει.
+            \begin{proof}
+            \item {} 
+                \begin{minipage}{0.3\textwidth}
+                    \begin{myitemize}
+                    \item $ a_{n} = \frac{1}{\sqrt[3]{n^{4}+1}}, \; 
+                        \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+                    \item $ b_{n} = \frac{1}{n^{\frac{4}{3}}}, \; 
+                        \forall n \in \mathbb{N} $ \hfill \tikzmark{b}
+                    \end{myitemize}    
+                \end{minipage}
+
+                \mybrace{a}{b}[$ \frac{a_{n}}{b_{n}} =
+                \frac{\frac{1}{\sqrt[3]{n^{4}+1}}}{\frac{1}{\sqrt[3]{n^{4}}}} = 
+                \sqrt[3]{\frac{n^{4}}{n^{4}+1}} \to 1$]
+                και επειδή η $ \sum_{n=1}^{\infty} b_{n} = \sum_{n=1}^{\infty} 
+                \frac{1}{n^{\frac{4}{3}}} $ συγκλίνει, τότε και η 
+                $ \sum_{n=1}^{\infty} a_{n} = \sum_{n=1}^{\infty} 
+                \frac{1}{\sqrt[3]{n^{4}+1}}$ συγκλίνει.
+            \end{proof}
+    \end{enumerate}
+\end{examples}
+
+    \myprop{$ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
+        $ \Rightarrow \lim_{n \to \infty} a_{n} = 0 $.}
+
+\begin{proof}
+\item {}
+    Θέτουμε $ S_{N} = \sum_{n=1}^{N} a_{n}, \; \forall N \in \mathbb{N} $. Γνωρίζουμε 
+    ότι η $ {(S_{n})}_{n \in \mathbb{N}} $ συγκλίνει, άρα έστω 
+    $ \lim_{n \to \infty} S_{N} = S$.
+    Τότε $ a_{N} = S_{N}-S_{N-1} \xrightarrow{N \to \infty} S-S = 0 $.
+\end{proof}
+
+\begin{cor}[Αντιθετοαντίστροφο]
+    $ \lim_{n \to \infty} a_{n} \neq 0 $, ή $ \not \exists \lim_{n \to \infty} a_{n} 
+    \Rightarrow \sum_{n=1}^{\infty} a_{n} $ αποκλίνει.
+\end{cor}
+
+\begin{examples}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} n^{2} $ δεν συγκλίνει, γιατί 
+            $ \lim_{n \to \infty} n^{2} = \infty \neq 0$
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{n+1}{n} $ δεν συγκλίνει, γιατί 
+            $ \lim_{n \to \infty} \frac{n+1}{n} = 1 \neq 0 $
+        \item Η σειρά $ \sum_{n=1}^{\infty} (1 + \frac{1}{n} )^{n} $ δεν συγκλίνει, 
+            γιατί $ \lim_{n \to \infty} (1+ \frac{1}{n} )^{n} = e \neq 0 $
+        \item Η σειρά $ \sum_{n=1}^{\infty} \sin{\left(\frac{n \pi}{2}\right)} $ 
+            δεν συγκλίνει, γιατί 
+
+            \begin{minipage}{0.55\textwidth}
+                \begin{myitemize}
+                \item $ a_{2n} = \sin{(n \pi)} = 0, \; \forall n \in \mathbb{N} 
+                    \Rightarrow a_{2n} \xrightarrow{n \to \infty} 0$ \hfill \tikzmark{a}
+                \item $ a_{4n+1} = \sin{\left(2n \pi + \frac{\pi}{2}\right)}, \; 
+                    \forall n \in \mathbb{N} \Rightarrow a_{4n+1} 
+                    \xrightarrow{n \to  \infty} 1 $ \hfill \tikzmark{b}
+                \end{myitemize}
+            \end{minipage}
+
+            \mybrace{a}{b}[$ {(a_{n})}_{n \in \mathbb{N}} $ δεν συγκλίνει]
+            επομένως η $ \sum_{n=1}^{\infty} \sin{\left(\frac{n \pi}{2}\right) } $ 
+            αποκλίνει.
+    \end{enumerate}
+\end{examples}
+
+\section{Απόλυτη Σύγκλιση}
+
+    \myprop{$ \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει 
+    $ \Rightarrow \sum_{n=1}^{\infty} a_{n} $ συγκλίνει }
+
+\begin{proof}
+    $ \abs{a_{n}} $ συγκλίνει $ \Rightarrow \sum_{n=1}^{\infty} 2 \abs{a_{n}} $ 
+    συγκλίνει. Ισχύουν
+    \[
+        0 \leq a_{n} + \abs{a_{n}} \leq 2 \abs{a_{n}}, \; \forall n \in \mathbb{N} 
+    \] 
+    οπότε από το κριτήριο σύγκρισης, έπεται ότι $ \sum_{n=1}^{\infty} (a_{n}+ 
+    \abs{a_{n}}) $ συγκλίνει. Τότε
+    \[
+        S_{N} = \sum_{n=1}^{N} a_{n} = \sum_{n=1}^{N} (a_{n}+ \abs{a_{n}}) - 
+        \sum_{n=1}^{\infty} \abs{a_{n}}   
+    \] 
+    Από άλγεβρα των ορίων η $ {(S_{n})}_{n \in \mathbb{N}} $ συγκλίνει και άρα 
+    έχουμε το ζητούμενο.
+\end{proof}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} (-1)^{n} \frac{1}{n^{2}} $ συγκλίνει, 
+            γιατί 
+            \[ 
+                \sum_{n=1}^{\infty} \abs{a_{n}} = \sum_{n=1}^{\infty} \abs{(-1)^{n}
+                \frac{1}{n^{2}}} = \sum_{n=1}^{\infty} \abs{(-1)^{n}} 
+                \cdot \abs{\frac{1}{n^{2}} } =  
+                \sum_{n=1}^{\infty} \abs{-1}^{n} \cdot 
+                \frac{1}{n^{2}} = \sum_{n=1}^{\infty} \frac{1}{n^{2}} 
+            \]
+            η οποία συγκλίνει.
+    \end{enumerate}
+\end{examples}
+
+\section{Κριτήριο Συμπύκνωσης του Cauchy}
+
+\myprop{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ φθίνουσα ακολουθία θετικών όρων με 
+    $ \lim_{n \to \infty} a_{n} =0 $. Τότε
+    \[
+        \sum_{n=1}^{\infty} a_{n} \; \text{συγκλίνει} \; 
+        \Leftrightarrow \sum_{n=1}^{\infty} 2^{n} a_{n} \; \text{συγκλίνει}
+\]}
+
+\begin{proof}
+    Χωρίς Απόδειξη
+\end{proof}
+
+\begin{cor}
+    Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{\rho}} $ συγκλίνει $ \Leftrightarrow 
+    \rho > 1$.
+\end{cor}
+\begin{proof}
+\item {}
+    Θέτουμε $ a_{n}= \frac{1}{n^{\rho}}, \; \forall n \in \mathbb{N} $. Η 
+    ακολουϑία είναι φθίνουσα και θετική (από γνωστό λήμμα). Οπότε σύμφωνα 
+    με την προηγούμενη πρόταση έχουμε
+    \[
+        \sum_{n=1}^{\infty} 2^{n} a_{2^{n}} = \sum_{n=1}^{\infty} 2 ^{n} 
+        \frac{1}{(2^{n})^{\rho}} = \sum_{n=1}^{\infty} \left(\frac{1}{2^{\rho -1}} 
+        \right)^{n}
+    \] 
+    \begin{myitemize}
+    \item Αν $ \rho >1 \Rightarrow \rho -1 >0 \Rightarrow 2^{\rho -1} > 2^{0} 
+        \Rightarrow 2^{\rho -1} > 1 \Rightarrow \frac{1}{2^{\rho -1}} < 1 $, οπότε
+        η σειρά $ \sum_{n=1}^{\infty} \left(\frac{1}{2^{\rho -1}} \right)^{n} $ 
+        συγκλίνει ως γεωμετρική με λόγο $ \frac{1}{2^{\rho -1}} < 1 $
+    \item Αν $ \rho \leq 1 \Rightarrow \rho -1 \leq 0 \Rightarrow 2^{\rho -1} \leq 
+        2^{0} \Rightarrow 2^{\rho -1} \leq 1 \Rightarrow \frac{1}{2^{\rho -1}} \geq 1 $
+        Από αυτό το γεγονός έχουμε ότι η ακολουθία 
+        $ \lim_{n \to \infty} \left(\frac{1}{2^{\rho -1}}\right)^{n} $ 
+        δεν συγκλίνει στο 0, οπότε η αρχική σειρά δεν συγκλίνει. Και επειδή είναι 
+        σειρά θετικών όρων, έχουμε ότι αποκλίνει στο $ + \infty $.
+    \end{myitemize}
+\end{proof}
+
+\section{Κριτήριο Λόγου}
+
+\myprop{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία αριθμών ώστε να υπάρχει το $ 
+    \lim_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_{n}}} $. Τότε 
+    \begin{enumerate}[i)]
+        \item $ \lim_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_{n}}} <1 \Rightarrow 
+            \sum_{n=1}^{\infty} a_{n}$ συγκλίνει 
+        \item $ \lim_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_{n}}} >1 \Rightarrow 
+            \sum_{n=1}^{\infty} a_{n}$ αποκλίνει
+\end{enumerate}}
+
+\begin{proof}
+    Χωρίς Απόδειξη
+\end{proof}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n!} $ συγκλίνει.
+            \[
+                \abs{\frac{a_{n+1}}{a_{n}}} = \frac{\frac{1}{(n+1)!}}{\frac{1}{n!}} = 
+                \frac{n!}{(n+1)!} = \frac{1 \cdot 2 \cdots n }{1 \cdot 2 
+                \cdots n \cdot(n+1)} = \frac{1}{n+1} \xrightarrow{n \to \infty } 0 < 1 
+            \]
+            επομένως από Κριτήριο Λόγου η σειρά $ \sum_{n=1}^{\infty} a_{n} = 
+            \sum_{n=1}^{\infty} \frac{1}{n!}$ συγκλίνει.
+
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{9^{n}}{(-2)^{n}\cdot n} $ αποκλίνει.
+            \[
+                \abs{\frac{a_{n+1}}{a_{n}}} = \frac{\abs{\frac{9^{n+1}}{(-2)^{n+1}\cdot
+                (n+1)}}}{\abs{\frac{9^{n}}{(-2)^{n}\cdot n}}} = 
+                \frac{\frac{9^{n+1}}{2^{n+1}\cdot (n+1)}}{\frac{9^{n}}{2^{n}\cdot n}} 
+                = \frac{9^{n}\cdot 9}{9^{n}} \cdot \frac{2^{n}}{2^{n}\cdot 2}\cdot 
+                \frac{n}{n+1} = \frac{9}{2} \cdot \frac{n}{n+1} \xrightarrow{n \to 
+                \infty} \frac{9}{2} \cdot 1 = \frac{9}{2}> 1
+            \] 
+            επομένως από Κριτήριο Λόγου η σειρά 
+            $ \sum_{n=1}^{\infty} \frac{9^{n}}{(-2)^{n}\cdot n} $ αποκλίνει
+
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{n!}{10^{n}} $ συγκλίνει.
+            \[
+                \abs{\frac{a_{n+1}}{a_{n}}} = 
+                \frac{\frac{(n+1)!}{10^{n+1}}}{\frac{n!}{10^{n}}} =
+                \frac{10^{n}}{10^{n+1}} \cdot \frac{(n+1)!}{n!} = 
+                \frac{10^{n}}{10^{n} \cdot 10}
+                \cdot \frac{1\cdot 2 \cdots n \cdot (n+1)}{1\cdot 2 \cdots n}  
+                \frac{1}{10} \cdot (n+1) \xrightarrow{n \to \infty} + \infty > 1
+            \] 
+            επομένως από Κριτήριο Λόγου η σειρά 
+            $ \sum_{n=1}^{\infty} \frac{n!}{10^{n}} $ αποκλίνει.
+
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{2n-1}{(\sqrt{3}) ^{n}} $ συγκλίνει.
+            \[
+                \abs{\frac{a_{n+1}}{a_{n}}} = \frac{\frac{2(n+1)-1}{(\sqrt{3}
+                )^{n+1}}}{\frac{2n-1}{(\sqrt{3} )^{n}}} = \frac{2n+2-1}{2n-1} \cdot 
+                \frac{(\sqrt{3} )^{n}}{(\sqrt{3} )^{n}\cdot \sqrt{3}} = 
+                \frac{1}{(\sqrt{3})} \cdot \frac{2n+1}{2n-1} 
+                \xrightarrow{n \to \infty} = \frac{1}{\sqrt{3}} \cdot 1 =
+                \frac{1}{\sqrt{3}} < 1
+            \] 
+            επομένως από Κριτήριο Λόγου η σειρά 
+            $ \sum_{n=1}^{\infty} \frac{2n-1}{(\sqrt{3}) ^{n}} $ συγκλίνει.
+    \end{enumerate}
+\end{examples}
+
+\section{Κριτήριο Ρίζας}
+
+\myprop{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία αριθμών ώστε να υπάρχει το 
+    $ \lim_{n \to \infty} \sqrt[n]{\abs{a_{n}}} $. Τότε
+    \begin{enumerate}[i)]
+        \item $ \lim_{n \to \infty} \sqrt[n]{\abs{a_{n}}} < 1 \Rightarrow 
+            \sum_{n=1}^{\infty} a_{n}$ συγκλίνει
+        \item $ \lim_{n \to \infty} \sqrt[n]{\abs{a_{n}}} > 1 \Rightarrow 
+            \sum_{n=1}^{\infty} a_{n}$ αποκλίνει
+\end{enumerate}}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} \left(\frac{n}{n+1} \right)^{n^{2}} $ 
+            συγκλίνει
+            \[
+                \sqrt[n]{\abs{a_{n}}} = \sqrt[n]{\left(\frac{n}{n+1} \right)^{n^{2}}} 
+                = \left(\frac{n}{n+1}\right)^{n} = \frac{1}{\left(\frac{n+1}{n} 
+                \right)^{n}} = \frac{1}{(1+ \frac{1}{n})^{n}} \xrightarrow{n \to \infty}
+                \frac{1}{e} <1
+            \] 
+            επομένως από Κριτήριο Ρίζας η σειρά 
+            $ \sum_{n=1}^{\infty} \left(\frac{n}{n+1} \right)^{n^{2}} $ συγκλίνει.
+    \end{enumerate}
+\end{examples}
+
+\section{Κριτήριο Dirichlet}
+
+Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ και $ (b_{n})_{n \in \mathbb{N}} $ ακολουθίες 
+πραγματικών αριθμών τέτοιες ώστε:
+\begin{enumerate}[i)]
+    \item Η $ (b_{n})_{n \in \mathbb{N}} $ έχει θετικούς όρους, είναι φθίνουσα και 
+        συγκλίνει στο 0.
+    \item Η $ {(a_{n})}_{n \in \mathbb{N}} $ έχει φραγμένα μερικά αθροίσματα, δηλ.
+        \[
+            \exists M>0 \; : \; \abs{\sum_{n=1}^{N} a_{n}} \leq M, \; 
+            \forall n \in \mathbb{N} 
+        \] 
+        Τότε η σειρά $ \sum_{n=1}^{\infty} a_{n}\cdot \mathbb{N} $ συγκλίνει.
+\end{enumerate}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{(-1)^{n}}{n} $ συγκλίνει.
+            Θέτουμε $ a_{n}=(-1)^{n}, \; \forall n \in \mathbb{N} $ και $ b_{n}= 
+            \frac{1}{n}, \; \forall n \in \mathbb{N}$ και έχουμε:
+            Η $ (b_{n})_{n \in \mathbb{N}} $ έχει προφανώς θετικούς όρους, είναι 
+            φθίνουσα και $ \lim_{n \to \infty} \frac{1}{n} = 0 $. 
+
+            Για την $ {(a_{n})}_{n \in \mathbb{N}} $ ισχύει:
+            \[
+                \abs{\sum_{n=1}^{N} (-1)^{n}} = 0 \; \text{ή} \; 1, \; 
+                \forall N \in \mathbb{N} 
+            \] 
+            δηλαδή σε κάθε περίπτωση 
+            \[
+                \abs{\sum_{n=1}^{N} (-1)^{n}} \leq 1 = M, \; \forall n \in \mathbb{N}
+            \]
+            Επομένως από Κριτήριο Dirichlet η σειρά 
+            $ \sum_{n=1}^{\infty} \frac{(-1)^{n}}{n} $ συγκλίνει.
+
+        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{(-1)^{n}}{\sqrt{n}} $ συγκλίνει.
+
+            Θέτουμε $ a_{n}=(-1)^{n}, \; \forall n \in \mathbb{N} $ και $ b_{n}= 
+            \frac{1}{\sqrt{n}}, \; \forall n \in \mathbb{N}$ και έχουμε:
+            Η $ (b_{n})_{n \in \mathbb{N}} $ έχει προφανώς θετικούς όρους, είναι 
+            φθίνουσα και $ \lim_{n \to \infty} \frac{1}{\sqrt{n}} = 0 $. 
+
+            Για την $ {(a_{n})}_{n \in \mathbb{N}} $ ισχύει όπως και στο 
+            προηγούμενο παράδειγμα ότι έχει φραγμένα μερικά αθροίσματα.
+
+            Επομένως από Κριτήριο Dirichlet η σειρά 
+            $ \sum_{n=1}^{\infty} \frac{(-1)^{n}}{\sqrt{n} } $ συγκλίνει.
+
+    \end{enumerate}
+
+\end{examples}
+
+
+\end{document}

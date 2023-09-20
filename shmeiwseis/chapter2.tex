@@ -1,0 +1,1671 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+
+
+\section{Ορισμός Ακολουθίας}
+
+\mydfn{\textcolor{Col\thechapter}{Ακολουθία} πραγματικών αριθμών ονομάζεται 
+  κάθε συνάρτηση με πεδίο ορισμού τους φυσικούς αριθμούς. 
+  \begin{align*}
+    a \colon &\mathbb{N} \to \mathbb{R} \\
+             &n \mapsto a(n)=a_{n}
+  \end{align*} 
+  Οι ακολουθίες συμβολίζονται ως $ (a_{n})_{n \in \mathbb{N}} $  ή 
+$ \{ a_{n} \} _{n \in \mathbb{N}} $  ή $ \{ a_{n} \} _{n=1}^{+\infty}$ , κλπ.}
+
+\mydfn{\textcolor{Col\thechapter}{Σύνολο Τιμών} (Σ.Τ.) της ακολουθίας 
+  $ (a_{n})_{n \in \mathbb{N}} $, 
+  ονομάζουμε το σύνολο των όρων της, δηλαδή το σύνολο 
+$ \{ a_{1}, a_{2}, \ldots, a_{n} \} $ το οποίο μπορεί να είναι πεπερασμένο ή άπειρο.}
+
+\begin{examples}
+\item {}
+  \begin{enumerate}[i)]
+    \item Η ακολολουθία $ Η ακολουθία a_{n} = n, \; \forall n \in \mathbb{N} $. 
+      Έχει Σ.Τ.  το σύνολο $  \{ 1,2,3, \ldots \} $.
+    \item Η ακολουθία $ a_{n}=\left(\frac{1}{n}\right)_{n \in \mathbb{N}} $. 
+      Έχει Σ.Τ. το σύνολο $  \left\{ 1, \frac{1}{2}, \frac{1}{3}, \ldots \right\} $.
+    \item Η ακολουθία $ a_{n}= \{(-1)^{n}\}_{n=1}^{+ \infty}, $. Έχει Σ.Τ. 
+      το σύνολο $ \{ -1,1 \} $.
+    \item Η ακολουθία $ a_{n} = c, \; \forall n \in \mathbb{N}, c \in \mathbb{R} $.
+      Έχει Σ.Τ. το σύνολο $ \{ c \} $ και ονομάζεται 
+      \textcolor{Col\thechapter}{σταθερή ακολουθία}.
+    \item Η ακολουθία $ a_{n}=2n, \; \forall n \in \mathbb{N} $. Έχει Σ.Τ. το 
+      σύνολο $ \{ 2,4,6, \ldots, 2n, \ldots \} $. Πρόκειται για την 
+      \textcolor{Col\thechapter}{ακολουθία των άρτιων} φυσικών αριθμών.
+    \item Η ακολουθία $ a_{n}= 2n-1, \; \forall n \in \mathbb{N} $. Έχει Σ.Τ. το 
+      σύνολο $ \{ 1,3,5, \ldots, 2n-1, \ldots \} $. Πρόκεται για την 
+      \textcolor{Col\thechapter}{ακολουθία των περιττών} φυσικών αριθμών.
+    \item \label{ex:anadr} Η ακολουθία $ a_{1}= a_{2} = 1 $ και $ a_{n+2}=a_{n+1}
+      +a_{n}, \; \forall n \in \mathbb{N}$. Έχει Σ.Τ. το σύνολο 
+      $ \{ 1,1,2,3,5,8, 13,21,34, \ldots\} $.  Πρόκειται για την 
+      \textcolor{Col\thechapter}{ακολουθία Fibonacci}. 
+  \end{enumerate}
+\end{examples}
+
+\begin{rem}
+\item {}
+  \begin{enumerate}[i)]
+    \item Ουσιαστικά οι ακολουθίες είναι \textbf{λίστες} πραγματικών αριθμών.
+    \item Η ακολουθία~\ref{ex:anadr}, όπου κάθε επόμενος όρος,
+      ορίζεται με τη βοήθεια του προηγούμενου, λέγεται
+      \textcolor{Col\thechapter}{αναδρομική ακολουθία}. 
+      Προτάσεις που αφορούν αναδρομικές ακολουθίες, 
+      αποδεικνύονται με \textbf{Μαθηματική Επαγωγή}.
+  \end{enumerate}
+\end{rem}
+
+\mydfn{Δυο ακολουθίες, $(a_{n})_{n \in \mathbb{N}}$  και $ (b_{n})_{n \in 
+  \mathbb{N}} $ ονομάζονται \textcolor{Col\thechapter}{ίσες}, αν $ a_{n} 
+= b_{n}, \; \forall n \in \mathbb{N} $.}
+
+\mydfn{Οι πράξεις μεταξύ ακολουθιών, ορίζονται όπως ακριβώς και για τις 
+συναρτήσεις.}
+
+
+\section{Μονοτονία Ακολουθιών}
+
+\mydfn{Μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ λέγεται:
+  \begin{enumerate}[i)]
+    \item \textcolor{Col\thechapter}{γνησίως αύξουσα} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} 
+      < a_{n+1}, \; n \in \mathbb{N}$
+    \item \textcolor{Col\thechapter}{γνησίως φθίνουσα} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} 
+      > a_{n+1}, \; n \in \mathbb{N}$
+    \item \textcolor{Col\thechapter}{αύξουσα} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} \leq 
+      a_{n+1}, \forall n \in \mathbb{N}  $.
+    \item \textcolor{Col\thechapter}{φθίνουσα} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} a_{n} \geq 
+      a_{n+1}, \forall n \in \mathbb{N}  $.
+\end{enumerate}}
+
+\begin{rems}
+\item {}
+  \begin{enumerate}[i)]
+    \item $ (a_{n})_{n \in \mathbb{N}} $ γνησίως αύξουσα (φθίνουσα) $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ αύξουσα (φθίνουσα) 
+    \item $ (a_{n})_{n \in \mathbb{N}} $ γνησίως φθίνουσα  $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ ανω φραγμένη, με 
+      α.φ. το $ a_{1} $  
+    \item $ (a_{n})_{n \in \mathbb{N}} $ γνησίως αύξουσα  $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ κάτω φραγμένη, με 
+      κ.φ. το $ a_{1} $  
+  \end{enumerate}
+\end{rems}
+
+\begin{rem}\label{dfn:isodmono}
+\item {}
+  Αν μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ \textbf{διατηρεί σταθερό πρόσημο}, 
+  τότε έχουμε:
+  \begin{enumerate}[i)]
+    \item αν $ \frac{a_{n+1}}{a_{n}} > 1, \; \forall n \in \mathbb{N} $ τότε η $a_{n}$ 
+      είναι \textcolor{Col\thechapter}{γνησίως αύξουσα} , 
+    αν $ \bm {a_{n}>0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} > 1, \; \forall n \in \mathbb{N} $ τότε η $a_{n}$ 
+      είναι \textcolor{Col\thechapter}{γνησίως φθίνουσα} , 
+    αν $ \bm {a_{n}<0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} < 1, \; \forall n \in \mathbb{N} $ τότε η $a_{n}$ 
+      είναι \textcolor{Col\thechapter}{γνησίως φθίνουσα} , 
+    αν $ \bm {a_{n}>0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} < 1, \; \forall n \in \mathbb{N} $ τότε η $a_{n}$ 
+      είναι \textcolor{Col\thechapter}{γνησίως αύξουσα} , 
+    αν $ \bm {a_{n}<0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} \geq 1, \; \forall n \in \mathbb{N} $ 
+      τότε η $a_{n}$ είναι \textcolor{Col\thechapter}{αύξουσα} , 
+    αν $ \bm {a_{n}>0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} \geq 1, \; \forall n \in \mathbb{N} $ 
+      τότε η $a_{n}$ είναι \textcolor{Col\thechapter}{φθίνουσα} , 
+    αν $ \bm {a_{n}<0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} \leq 1, \; \forall n \in \mathbb{N} $ 
+      τότε η $a_{n}$ είναι \textcolor{Col\thechapter}{φθίνουσα} , 
+    αν $ \bm {a_{n}>0}, \; \forall n \in \mathbb{N} $  
+    \item αν $ \frac{a_{n+1}}{a_{n}} \leq 1, \; \forall n \in \mathbb{N} $ 
+      τότε η $a_{n}$ είναι \textcolor{Col\thechapter}{αύξουσα} , 
+    αν $ \bm {a_{n}<0}, \; \forall n \in \mathbb{N} $  
+  \end{enumerate}
+\end{rem}
+
+\section{Μεθοδολογία εύρεσης μονοτονίας μιας ακολουθίας}
+\begin{itemize}
+  \item Σχηματίζουμε τη διαφορά $ a_{n+1} - a_n $ και ελέγχουμε το 
+    πρόσημό της. Αν $ a_{n+1}-a_{n}>0, \; (<0), \; \forall n \in 
+    \mathbb{N} $ τότε $ (a_{n})_{n \in \mathbb{N}}$ γνησίως 
+    αύξουσα (γνησίως φθίνουσα). Αν για τουλάχιστον ένα 
+    $ n \in \mathbb{N} $, στις παραπάνω ανισότητες, έχω ισότητα, 
+    τότε  $ (a_{n})_{n \in \mathbb{N}} $ είναι αύξουσα (φθίνουσα).
+  \item Αν οι όροι της ακολουϑίας διατηρούν πρόσημο, $ \; \forall n \in
+    \mathbb{N} $ τότε συγκρίνουμε το πηλίκο δυο διαδοχικών όρων της 
+    ακολουθίας με τη μονάδα, και βγάζουμε τα συμπεράσματά μας 
+    σύμφωνα με την παρατήρηση~\ref{dfn:isodmono}
+  \item Αν η ακολουθία δίνεται με μη-αναδρομικό τύπο, και είναι 
+    (αρκετά) σύνθετη, τότε μετατρέπω την ακολουθία στην αντίστοιχη 
+    συνάρτηση και μελετάμε τη μονοτονία της αντίστοιχης συνάρτησης, 
+    συνήθως με τη βοήθεια της παραγώγου.
+  \item Αν η $ (a_{n})_{n \in \mathbb{N}} $ δίνεται με αναδρομικό 
+    τύπο $ (a_{n+1}= f(a_{n}), \; \forall n \in \mathbb{N}) $ τότε 
+    συνήθως η απόδειξή της γίνεται με Μαθηματική Επαγωγή.
+\end{itemize}
+
+\begin{examples}
+\item {}
+  \begin{enumerate}[i)]
+    \item Η $ a_{n} = 2n-1, \; \forall n \in \mathbb{N} $ είναι γνησίως 
+      αύξουσα. Πράγματι,
+
+      \twocolumnsides{%
+        \begin{description}
+          \item[Α᾽ τρόπος]
+            \begin{align*}
+              n+1 &\geq n, \; \forall n \in \mathbb{N} \\
+              2(n+1) &\geq 2n, \; \forall n \in \mathbb{N} \\
+              2(n+1) -1 &\geq 2n-1, \; \forall n \in 
+              \mathbb{N} \\
+              a_{n+1} &\geq a_{n}, \; \forall n \in \mathbb{N}
+            \end{align*}
+        \end{description}
+
+        }{%
+        \begin{description}
+          \item[Β᾽ τρόπος] 
+            \begin{align*}
+              a_{n+1}-a_{n} &= 2(n+1)-1 - (2n-1) \\
+                            &= 2 >0, \; \forall n \in 
+                            \mathbb{N} 
+            \end{align*}
+        \end{description}
+
+      }
+
+    \item Η $ a_{n} = \frac{(n-1)!}{n^{n}}, \; \forall n \in 
+      \mathbb{N} $ 
+      είναι γνησίως φθίνουσα. Πράγματι, επειδή όλοι οι όροι της 
+      ακολουθίας 
+      είναι θετικοί, επομένως διατηρεί πρόσημο, έχουμε:
+      \[
+        \frac{a_{n+1}}{a_n} =
+        \frac{\frac{(n+1-1)!}{(n+1)^{n+1}}}{\frac{(n-1)!}{n^{n}}} 
+        =  \frac{n^{n}\cdot n!}{(n+1)^{n+1}\cdot (n-1)!} =
+        \frac{n^{n+1}}{(n+1)^{n+1}} = \left(\frac{n}{n+1} 
+        \right)^{n+1} < 1, \; \forall n
+        \in \mathbb{N} 
+      \] 
+
+    \item Η $ a_{n}= \frac{4^{n}}{n^{2}}, \; \forall n \in \mathbb{N} $ 
+      είναι αύξουσα. Πράγματι, επειδή όλοι οι όροι της ακολουθίας 
+      είναι θετικοί, επομένως διατηρεί πρόσημο, έχουμε:
+      \[
+        \frac{a_{n+1}}{a_{n}} 
+        = \frac{\frac{4^{n+1}}{(n+1)^{2}}}{\frac{4^{n}}{n^{2}}} 
+        = \frac{4^{n+1}\cdot n^{2}}{4^{n}\cdot (n+1)^{2}} 
+        = \frac{4n^{2}}{(n+1)^{2}}
+        = \left( \frac{2n}{n+1} \right)^{2} \geq 1, 
+        \; \forall n \in \mathbb{N} 
+      \]
+      Η ακολουθία δεν είναι γνησίως αύξουσα, γιατί $ 
+      a_{1}= a_{2}=4$.
+
+    \item Η $ a_{n+1}=2 - \frac{1}{a_{n}}, \; \forall n \in \mathbb{N}
+      $ με $ a_{1} = 2 $ είναι γνησίως φθίνουσα. Πράγματι, 
+      \begin{itemize}
+        \item Για $ n=1 $, έχω: $ a_{1}= 2 >
+          \frac{3}{2} = 2 - \frac{1}{2} = a_{2}$, ισχύει.
+        \item Έστω ότι ισχύει για $n$, δηλ.
+          \inlineequation[eq:epag]{a_{n+1}<a_{n}}.
+        \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι, 
+          \[
+            a_{(n+1)+1}=2- \frac{1}{a_{n+1}}
+            \overset{\eqref{eq:epag}}{<} 2 - 
+            \frac{1}{a_{n}} = a_{n+1}
+          \] 
+      \end{itemize}
+
+    \item Να δείξετε ότι ακολουθία $ a_{n} = (-1)^{n} \frac{1}{n^{2}}, 
+      \; \forall n \in \mathbb{N} $ 
+      δεν είναι μονότονη.
+
+      \begin{proof}
+      \item {}
+        Θα δείξουμε ότι η ακολουθία δεν διατηρεί πρόσημο. Πράγματι, 
+        $ \forall n \in \mathbb{N} $
+        \begin{align*}
+          a_{n+1}- a_{n} = \frac{(-1)^{n+1}}{(n+1)^{2}} - 
+          \frac{(-1)^{n}} {n^{2}} 
+                        &= \frac{(-1)^{n+1}}{(n+1)^{2}} + 
+                        \frac{(-1)^{n+1}}{n^{2}}= \\
+                        &= (-1)^{n+1}\Biggl[\underbrace{\frac{1}{(n+1)^{2}} + 
+                            \frac{1}{n^{2}}}_{b_{n} > 0, \; \forall n \in 
+                        \mathbb{N}}\Biggr] 
+                        = \begin{cases}
+                          -b_{n}, & n \; \text{περιττός} \\
+                          b_{n}, & n \; \text{άρτιος} 
+                        \end{cases}
+        \end{align*} 
+      \end{proof}
+  \end{enumerate}
+\end{examples}
+
+\myprop{Η ακολουθία $ \left(1+ \frac{1}{n}\right)^{n} $ είναι γνησίως αύξουσα.}
+
+\begin{proof}
+\item {}
+  Έστω $ n_{0} \in \mathbb{N} $. Τότε 
+  \begin{align*}
+    \left(1+ \frac{1}{n_{0}+1} \right)^{n_{0}+1} > 
+    \left(1+ \frac{1}{n_{0}} \right)^{n_{0}} 
+        &\Leftrightarrow \left(1+ \frac{1}{n_{0}+1} \right)^{n_{0}} 
+        \cdot \left(1 + \frac{1}{n_{0} +1} \right) > \left(1+ \frac{1}{n_{0}+1} 
+        \right) \\
+        & \Leftrightarrow \frac{(n_{0}+2)^{n_{0}}}{(n_{0}+1)^{n_{0}}} \cdot 
+        \frac{n_{0}+2}{n_{0}+1} > \frac{(n_{0}+1)^{n_{0}}}{n_{0}^{n_{0}}} \\
+        & \Leftrightarrow \frac{n_{0}^{n_{0}}(n_{0}+2)^{n_{0}}}{(n_{0}+1)^{2n0}} > 
+        \frac{n_{0}+1}{n_{0}+2} \\
+        & \Leftrightarrow \left(\frac{n_{0}(n_{0}+2)}{(n_{0}+1)^{2}}\right)^{n_{0}} > 
+        \frac{n_{0}+2-2+1}{n_{0}+2} \\
+        & \Leftrightarrow \left(\frac{n_{0}^{2}+2 n_{0}+1-1}{(n_{0}+1)^{2}}\right)
+        ^{n_{0}} > 1-\frac{1}{n_{0}+2} \\
+        & \Leftrightarrow \left(\frac{(n_{0}+1)^{2}-1}{(n_{0}+1)^{2}} \right)^{n_{0}}
+        > 1 - \frac{1}{n_{0}+2} \\
+        & \Leftrightarrow \left(1 - \frac{1}{(n_{0}+1)^{2}} \right)^{n_{0} } > 1 - 
+        \frac{1}{n_{0}+2} \\
+  \end{align*} 
+  Άρα αρκεί να δείξουμε αυτή την ανισότητα. Πράγματι,
+  για $ a = - \frac{1}{(n_{0}+1)^{2}} > -1 $ απο ανισότητα Bernoulli: 
+  \begin{align*}
+    \left(1- \frac{1}{(n_{0}+1)^{2}}\right)^{n_{0}} > 1 - n_{0}\cdot 
+    \frac{1}{(n_{0}+1)^{2}} > 1 - \frac{1}{n_{0}+2} 
+  \end{align*}
+  όπου χρησιμοποιήσαμε το γεγονός ότι $ \frac{n_{0}}{(n_{0}+1)^{2}} < 
+  \frac{1}{n_{0}+2}  $, το οποίο ισχύει, γιατί 
+  \[
+    \frac{n_{0}}{(n_{0}+1)^{2}} < \frac{1}{n_{0}+2} 
+    \Leftrightarrow n_{0}(n_{0}+2) < (n_{0}+1)^{2} 
+    \Leftrightarrow n_{0}^{2}+2 n_{0} < n_{0}^{2} + 2 n_{0}+1 
+    \Leftrightarrow 0 < 1
+  \]
+\end{proof}
+
+\section{Φραγμένες Ακολουθίες}
+
+\mydfn{Μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ ονομάζεται:
+  \begin{enumerate}[i)]
+    \item \textcolor{Col\thechapter}{άνω φραγμένη} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} \exists M \in 
+      \mathbb{R} \; : \; a_{n} \leq M, \; \forall n \in \mathbb{N}$.
+    \item \textcolor{Col\thechapter}{κάτω φραγμένη} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} \exists m \in 
+      \mathbb{R} \; : \; m \leq a_{n}, \; \forall n \in \mathbb{N}  $
+    \item \textcolor{Col\thechapter}{φραγμένη} 
+      $ \overset{\text{ορ.}}{\Leftrightarrow} $ είναι άνω και κάτω φραγμένη.
+\end{enumerate}}
+
+\myprop{$ (a_{n})_{n \in \mathbb{N}} $ φραγμένη $ \Leftrightarrow \exists M>0, 
+  \; M \in \mathbb{R} \; : \; \abs{a_{n}} \leq M, \; \forall n \in \mathbb{N} $ 
+(\textbf{απολύτως φραγμένη}).}
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [($ \Rightarrow $)] Έστω $ (a_{n})_{n \in \mathbb{N}} $ φραγμένη. Τότε η 
+      $ (a_{n})_{n \in \mathbb{N}} $ είναι άνω και κάτω φραγμένη, δηλαδή υπάρχουν 
+      $ m,M \in \mathbb{R} $ ώστε $ m \leq a_{n} \leq M, \; \forall n \in \mathbb{N} $.
+      Θεωρούμε $ \mu = \max \{ \abs{m} , \abs{M} \} $. Τότε, η παραπάνω διπλή 
+      ανισότητα, λαμβάνοντας υπόψιν και τις γνωστές ιδιότητες της απόλυτης τιμής, 
+      γίνεται
+      \[
+        - \mu \leq - \abs{m} \leq m \leq a_{n} \leq M \leq \abs{M} \leq \mu , 
+        \quad \forall n \in \mathbb{N}
+      \]
+      Επομένως $ \exists \mu > 0 $ ώστε 
+      $ \abs{a_{n}} \leq \mu, \; \forall n \in \mathbb{N} $.
+    \item [($ \Leftarrow$)] Προφανώς, αν $( a_{n})_{n \in \mathbb{N}} $ είναι 
+      απολύτως φραγμένη, τότε $ \exists M>0 $ ωστε $ -M \leq a_{n} \leq M, \; \forall n
+      \in \mathbb{N} $, και άρα η ακολουθία είναι φραγμένη. \qedhere
+  \end{description}
+\end{proof}
+
+\begin{rem}
+  Πολλές φορές στη βιβλιογραφία, η παραπάνω πρόταση, δίνεται και ως ορισμός της 
+  φραγμένης ακολουθίας.
+\end{rem}
+
+\begin{examples}
+\item {}  
+  \begin{enumerate}[i)]
+    \item Η ακολουθία $ a_{n}= \frac{1}{n}, \; \forall n \in \mathbb{N} $, είναι 
+      φραγμένη.
+
+      Πράγματι, $ 0 \leq \frac{1}{n} \leq 1, \; \forall n \in 
+      \mathbb{N} $. 
+
+      Επίσης, $ \abs{\frac{1}{n}} = \frac{1}{n} \leq 1 $, άρα και 
+      απολύτως φραγμένη.
+    \item Η ακολουθία $ a_{n}=(-1)^{n} \frac{1}{n}, \; \forall n \in \mathbb{N} $ 
+      είναι απολύτως φραγμένη. Πράγματι,
+      \[
+        \abs{a_{n}} = \abs{(-1)^{n} \frac{1}{n}} = \abs{(-1)^{n}} 
+        \cdot \abs{\frac{1}{n}} = \abs{-1}^{n} \cdot \frac{1}{n}
+        = 1 \cdot \frac{1}{n} = \frac{1}{n} \leq 1, \; \forall n 
+        \in \mathbb{N}
+      \] 
+
+    \item Η ακολουθία $ a_{n}= \frac{(n-1)!}{n^{n}}, \; \forall n \in \mathbb{N} $
+      είναι φραγμένη. Πράγματι, 
+
+      $ a_{n} > 0, \; \forall n \in 
+      \mathbb{N}$, άρα 0 κ.φ. της $( a_{n})_{n \in 
+      \mathbb{N}} $. 
+      Επίσης 
+      \[
+        a_{n}= \frac{(n-1)!}{n^{n}} = \frac{1 \cdot 2 
+          \cdots (n-1)}{n^{n}} < \frac{\smash{\overbrace{n 
+              \cdot n \cdots n} ^{n-1 \; 
+        \text{φορές}}}}{n^{n}} = \frac{n^{n-1}}{n^{n}} =
+        \frac{1}{n} \leq 1, \; \forall n \in \mathbb{N},
+      \]
+      άρα το 1 είναι α.φ. της $(a_{n})_{n \in \mathbb{N}}$. 
+
+    \item Η ακολουθία $ a_{n}= 1 + \left(- \frac{1}{2} \right) + \left(- 
+        \frac{1}{2}\right)^{2} + \cdots + \left(-\frac{1}{2} 
+      \right) ^{n}, 
+      \; \forall n \in \mathbb{N} $ είναι απολύτως φραγμένη. Πράγματι,
+
+      Πρόκειται για το άθροισμα των $ n $ πρώτων όρων \textbf{γεωμετρικής προοδου} με 
+      λόγο $ -\frac{1}{2} $. Έτσι
+      \[ a_{n} = 1 + \left(- \frac{1}{2}\right) + \left(- \frac{1}{2} 
+        \right)^{2} + \cdots + \left(- \frac{1}{2} \right)^{n} = 
+        \frac{1 - (- \frac{1}{2} )^{n}}{1 - (- \frac{1}{2})} = 
+      \frac{2}{3} \left[1 - \left(- \frac{1}{2} \right)^{n}\right] \]
+      Επομένως
+      \[
+        \abs{a_{n}} = \abs{\frac{2}{3} \left[1-\left(- \frac{1}{2} \right)^{n}
+            \right]} = \frac{2}{3} \abs{1 - \left(- 
+        \frac{1}{2}\right)^{n}} \leq 
+        \frac{2}{3} \left(1 + \abs{-\frac{1}{2} }^{n} \right) = 
+        \frac{2}{3} \left(1+ \frac{1}{2^{n}}\right) < \frac{2}{3}
+        (1+1) = \frac{4}{3} 
+      \] 
+
+    \item Η ακολουθία $ a_{n}= 2n+5, \; \forall n \in \mathbb{N} $ είναι κάτω 
+      φραγμένη.
+      Πράγματι, $ 7 \leq 2n+5, \; \forall n \in \mathbb{N} $, άρα το 
+      7 είναι κ.φ. της $ (a_{n} )_{n \in \mathbb{N}} $.
+
+      Προσοχή, η ακολουθία $ a_{n}= 2n+5, \; \forall n \in \mathbb{N} $ δεν είναι 
+      άνω φραγμένη, γιατί αν υποθέσουμε ότι είναι, τότε $ \exists M>0 $ ώστε 
+      $ a_{n} \leq M \Leftrightarrow 2n+5 \leq M \Leftrightarrow 2n \leq M-5
+      \Leftrightarrow n \leq \frac{M-5}{2}, \; \forall n \in \mathbb{N} $, άτοπο, 
+      γιατί το $ \mathbb{N} $ δεν είναι άνω φραγμένο.
+
+    \item Η ακολουθία $ a_{1}=2, \; a_{n+1}=2 - \frac{1}{a_{n}}, \forall n \in 
+      \mathbb{N}$
+      είναι φραγμένη. Πράγματι, επειδή η ακολουθία είναι αναδρομική, 
+      με επαγωγή, έχουμε:
+      \begin{itemize}
+        \item Για $ n=1 $, $ a_{1}=2>1 $, ισχύει. 
+        \item Έστω ότι ισχύει για $n$, δηλ. \inlineequation[eq:
+          anadepag1]{a_{n}>1}.
+        \item Θ.δ.ο. ισχύει και για $ n+1 $. Πράγματι, από τη 
+          σχέση~\eqref{eq: anadepag1}, έχουμε
+          \[
+            a_{n}>1 \Rightarrow \frac{1}{a_{n}} 
+            < 1 \Rightarrow - \frac{1}{a_{n}} > 
+            -1 \Rightarrow 2 - \frac{1}{a_{n}} 
+            > 2-1 \Rightarrow a_{n+1} > 1.
+          \] 
+      \end{itemize}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = 
+      \frac{n^{2}+1}{3n+ \sin^{3}{n}} $ δεν είναι άνω φραγμένη. 
+
+      \begin{proof}
+      \item {}
+        Έστω ότι η $ a_{n} = \frac{n^{2}+1}{3n+ \sin^{3}{n}} $ είναι άνω 
+        φραγμένη. Τότε επειδή είναι και κάτω φραγμένη, από το 0, έχουμε ότι
+        $ \exists M>0 \; : \; \abs{a_{n}} \leq M, \; \forall n \in 
+        \mathbb{N} $, δηλαδή
+        \begin{align*}
+          \abs{\frac{n^{2}+1}{3n + \sin^{3}{n}}} \leq M \Leftrightarrow 
+          \frac{n^{2}+1}{\abs{3n + \sin^{3}{n}}} \leq M \Leftrightarrow 
+          n^{2}+1
+               &\leq M \cdot \abs{3n + \sin^{3}{n}} \\ 
+               &\leq 3nM + M \cdot \abs{\sin{n}} ^{3} \\
+               &\leq 3n M +M, \; \forall n \in \mathbb{N}
+        \end{align*} 
+        Δηλαδή, 
+        \[
+          n^{2}-3nM \leq M-1 \Rightarrow n^{2}-3nM < M, \; \forall n \in 
+          \mathbb{N}
+        \] 
+        και συμπληρώνοντας το τετράγωνο έχουμε
+        \[
+          \left(n - \frac{3}{2} M\right)^{2} < M + \frac{9}{4} M^{2}
+          \Rightarrow \abs{n - \frac{3}{2} M} < 
+          \sqrt{M + \frac{9}{4} M^{2}}, \; \forall n \in \mathbb{N}
+        \]
+        οπότε
+        \[
+          - \sqrt{M + \frac{9}{4} M^{2}}< \underbrace{n- \frac{3}{2} M 
+          < \sqrt{M + \frac{9}{4} M^{2}}}, \; \forall n \in \mathbb{N} 
+          \Rightarrow n < \frac{3}{2} M + \sqrt{M + \frac{9}{4} M^{2}}, 
+          \; \forall n \in \mathbb{N} 
+        \] 
+        άτοπο, γιατί $ \mathbb{N} $ όχι άνω φραγμένο.
+      \end{proof}
+  \end{enumerate}
+\end{examples}
+
+\myprop{Η ακολουθία $ a_{n} = \left(1 + \frac{1}{n} \right)^{n} $ είναι φραγμένη.}
+
+\begin{proof}
+\item {}
+  Θεωρούμε την (βοηθητική) ακολουθία $ b_{n} = \left(1+ \frac{1}{n} \right)^{n+1}, 
+  \; \forall n \in \mathbb{N}$. Θα δείξουμε ότι η $ (b_{n})_{n \in \mathbb{N}} $ 
+  είναι \textbf{γνησίως φθίνουσα}. Πράγματι, 
+  \begin{align*}
+    b_{n+1}< b_{n} 
+        &\Leftrightarrow \left(1+ \frac{1}{n_{0}+1} \right)^{n_{0}+2} < \left(1 + 
+        \frac{1}{n_{0}} \right)^{n_{0} +1} \\
+        & \Leftrightarrow \left(1+ \frac{1}{n_{0}+1} \right)^{n_{0}+1} \cdot 
+        \left(1 + \frac{1}{n_{0}+1}\right) < \left(1+ \frac{1}{n_{0}} \right)^{n_{0}+1}
+        \\
+        & \Leftrightarrow \left(\frac{n_{0}+2}{n_{0}+1} \right)^{n_{0}+1} 
+        \cdot \left(1 + \frac{1}{n_{0}+1}\right) < \left(\frac{n_{0}+1}{n_{0}} 
+        \right)^{n_{0}+1} \\
+        & \Leftrightarrow \left(1 + \frac{1}{n_{0}+1} \right) < 
+        \left(\frac{(n_{0}+1)^{2}}{n_{0}(n_{0} +2)} \right)^{n_{0}+1} \\
+        & \Leftrightarrow \left(1 + \frac{1}{n_{0}+1} \right) < \left(\frac{n_{0}^{2}+
+        2 n_{0}+1}{n_{0}^{2}+2 n_{0}} \right)^{n_{0}+1} \\
+        & \Leftrightarrow \left(1 + \frac{1}{n_{0}+1} \right) < 
+        \left(1+ \frac{1}{n_{0}(n_{0}+2)} \right)^{n_{0}+1}
+  \end{align*} 
+
+  Για $ a= \frac{1}{n_{0}(n_{0}+2)} \geq 0 $, η ανισότητα Bernoulli, δίνει:
+  \[
+    \left(1+ \frac{1}{n_{0}(n_{0}+2)} \right)^{n_{0}+1} > 1 + (n_{0}+1)\cdot 
+    \frac{1}{n_{0}(n_{0}+2)} = 1 + \frac{n_{0}+1}{n_{0}^{2}+ 2 n_{0}} 
+  \] 
+  Άρα αρκεί να δείξουμε ότι 
+  \begin{align*}
+    1 + \frac{n_{0}+1}{n_{0}^{2}+ 2 n_{0}} &> 1 + \frac{1}{n_{0}+1} 
+    \Leftrightarrow  \\
+    (n_{0}+1)^{2} &> n_{0}^{2} + 2 n_{0} \Leftrightarrow \\
+    1 &> 0 \quad \text{που ισχύει.}
+  \end{align*}
+
+  Άρα τελικά,
+  \[
+    b_{n} = \left(1+ \frac{1}{n} \right)^{n+1} = \left(1+ \frac{1}{n} \right)^{n} 
+    \cdot \left(1 + \frac{1}{n} \right) = a_{n}\cdot \left(1+ \frac{1}{n} \right) 
+    > a_{n}, \; \forall n \in \mathbb{N} 
+  \]
+  Οπότε, λαμβάνοντας υπόψιν ότι η ακολουθία 
+  $ a_{n} = \left(1 + \frac{1}{n}\right)^{n} $ είναι \textbf{γνησίως αύξουσα}, έχουμε
+  \begin{align*}
+    a_{1} \leq a_{n} &< b_{n} \leq b_{1}, \; \forall n \in \mathbb{N} 
+    \Leftrightarrow \\
+    2 \leq a_{n} &\leq 4, \; \forall n \in \mathbb{N}
+  \end{align*}
+  άρα η $ a_{n} = \left(1 + \frac{1}{n} \right)^{n} $ είναι φραγμένη.
+\end{proof}
+
+
+\section{Σύγκλιση Ακολουθιας}
+
+\mydfn{\textcolor{Col\thechapter}{Περιοχή} ένος πραγματικού αριθμού $ x_{0} $ 
+ονομάζεται κάθε ανοιχτό διάστημα $(a,b)$ που περιέχει το $ x_{0} $. }
+
+\begin{rem}
+\item {}
+  \begin{enumerate}[i)]
+    \item 
+      Αν $ \varepsilon > 0 $, τότε περιοχές του $ x_{0} $ της μορφής 
+      $ (x_{0}- \varepsilon , x_{0} + \varepsilon) $ έχουν 
+      \textcolor{Col\thechapter}{ακτίνα} $ \varepsilon $
+      και \textcolor{Col\thechapter}{κέντρο} το $ x_{0} $. 
+
+    \item $ x \in (x_{0}- \varepsilon, x_{0} + \varepsilon) 
+      \Leftrightarrow x_{0}- \varepsilon < x < x_{0}+ \varepsilon 
+      \Leftrightarrow - \varepsilon < x - x_{0} < \varepsilon 
+      \Leftrightarrow \abs{x- x_{0}} < \varepsilon  $ 
+  \end{enumerate}
+\end{rem}
+
+\mydfn{Μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ \textcolor{Col\thechapter}
+  {συγκλίνει} στον πραγματικό 
+  αριθμό $ a \in \mathbb{R} $ (έχει όριο το $ a \in \mathbb{R} $ ή 
+  τείνει στο $ a \in \mathbb{R} $), και συμβολίζουμε 
+  $ \lim\limits_{n\to \infty} a_{n}=a $ (ή $ a_{n} \xrightarrow{n \to 
+  \infty} a $) αν 
+  \[
+    \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} \; : 
+    \; \forall n \in \mathbb{N} \; \text{με} \; n \geq n_{0} 
+    \Rightarrow \abs{a_{n}-a} < \varepsilon
+\] }
+
+\begin{rem}
+  Γενικά το $ n_{0} $ εξαρτάται από το $ \varepsilon $ και ισχύει ότι
+  $ n_{0} = n_{0}(\varepsilon) $.
+\end{rem}
+
+\mydfn{Μια ακολουθία λέμε ότι \textcolor{Col\thechapter}{αποκλίνει} 
+  (ή είναι αποκλίνουσα), αν 
+  \begin{itemize}
+    \item δεν υπάρχει το όριό της, για παράδειγμα αν η ακολουθία 
+      ταλαντεύεται
+    \item απειρίζεται, θετικά ή αρνητικά.
+\end{itemize}}
+
+\begin{rem}[Άρνηση ορισμού του ορίου]
+  \[
+    \lim_{n \to \infty} a_{n} \neq a \Leftrightarrow \exists 
+    \varepsilon >0, \; \forall n \in \mathbb{N}, \; \exists n_{0} 
+    \geq n \quad \abs{a_{n_{0}}-a} \geq \varepsilon 
+  \] 
+\end{rem}
+
+\mydfn{Η ακολουθία $ (a_{n})_{n \in \mathbb{N}}$ λέγεται
+  \textcolor{Col\thechapter}{μηδενική ακολουθία}
+αν $ \lim\limits_{n\to \infty} = 0 $}
+
+\begin{examples}
+\item {}
+  \begin{enumerate}[i)]
+    \item $ \lim\limits_{n \to \infty} \frac{1}{n} = 0 $.
+      \begin{proof}
+      \item {}
+        \begin{description}
+          \item[Δοκιμή:] $ \abs{\frac{1}{n} -0} < \varepsilon
+            \Leftrightarrow \abs{\frac{1}{n}} < \varepsilon 
+            \Leftrightarrow \frac{1}{n} < \varepsilon 
+            \Leftrightarrow n > \frac{1}{\varepsilon}$
+        \end{description}
+        \begin{description}
+          \item[Α᾽ Τρόπος:] 
+            Έστω $ \varepsilon >0 $. Τότε $ \exists n_{0} \in
+            \mathbb{N} $ με \inlineequation[eq:1n1]{n_{0} > 
+            \frac{1}{\varepsilon}} (Αρχ. Ιδιοτ.) τέτοιο 
+            ώστε \inlineequation[eq:1n2]{\forall n \geq n_{0}}
+            \[
+              \abs{\frac{1}{n} -0} = \abs{\frac{1}{n}} =
+              \frac{1}{n} \overset{\eqref{eq:1n2}}{\leq}
+              \frac{1}{n_{0}} \overset{\eqref{eq:1n1}}{<} 
+              \frac{1}{\frac{1}{\varepsilon}} = \varepsilon 
+            \]
+
+          \item [Β᾽ Τρόπος:]
+            Έστω $ \varepsilon >0 $. Τότε $ \exists n_{0} \in
+            \mathbb{N} $ με \inlineequation[eq:1n3]
+            {\frac{1}{n_{0}} < \varepsilon} (Αρχ. Ιδιοτ.) 
+            τέτοιο ώστε \inlineequation[eq:1n4]{\forall n 
+            \geq n_{0}}
+            \[
+              \abs{\frac{1}{n} -0} = \abs{\frac{1}{n}} =
+              \frac{1}{n} \overset{\eqref{eq:1n4}}{\leq}
+              \frac{1}{n_{0}} \overset{\eqref{eq:1n3}}{<} 
+              \varepsilon 
+            \]
+        \end{description}
+      \end{proof}
+
+    \item $ \lim\limits_{n \to \infty} \frac{1}{n^{4}} = 0 $. 
+      \begin{proof}
+      \item {}
+        \begin{description}
+          \item[Δοκιμή:]$ \abs{\frac{1}{n^{4}} - 0} < \varepsilon 
+            \Leftrightarrow \abs{\frac{1}{n^{4}}} < \varepsilon 
+            \Leftrightarrow \frac{1}{n^{4}} < \varepsilon
+            \Leftrightarrow n^{4} > \frac{1}{\varepsilon}
+            \Leftrightarrow n > \sqrt[4]{\frac{1}{\varepsilon}}$
+        \end{description}
+        Έστω $ \varepsilon >0 $. Τότε $ \exists n_{0}  \in 
+        \mathbb{N}$ με \inlineequation[eq:limexn41]{n_{0} >
+        \sqrt[4]{\frac{1}{\varepsilon}}} (Αρχ. Ιδιοτ.)
+        τέτοιο ώστε \inlineequation[eq:limexn42]{\forall n 
+        \geq n_{0}} 
+        \[
+          \abs{\frac{1}{n^{4}} - 0 } = \abs{\frac{1}{n^{4}}} 
+          = \frac{1}{n^{4}} \overset{\eqref{eq:limexn42}}\leq 
+          \frac{1}{n_{0}^{4}} \overset{\eqref{eq:limexn41}}{<}
+          \frac{1}{\left(\sqrt[4]{\frac{1}{\varepsilon}
+          }\right)^{4}} = \frac{1}{\frac{1}{\varepsilon}} =  
+          \varepsilon
+        \] 
+      \end{proof}
+
+    \item $ \lim\limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0$.
+      \begin{proof}
+      \item {}
+        \begin{description}
+          \item[Δοκιμή:] $ \abs{\frac{1}{\sqrt{n}}-0 } 
+            < \varepsilon 
+            \Leftrightarrow \abs{\frac{1}{\sqrt{n}} } < 
+            \varepsilon 
+            \Leftrightarrow \frac{1}{\sqrt{n}} < 
+            \varepsilon \Leftrightarrow \sqrt{n} >
+            \frac{1}{\varepsilon} \Leftrightarrow n >
+            \left(\frac{1}{\varepsilon}\right)^{2}
+            $
+        \end{description}
+        Έστω $ \varepsilon > 0 $. Τότε $ \exists n_{0} \in 
+        \mathbb{N} $
+        με \inlineequation[eq:limexsqrt1]{n_{0} > \left(\frac{1}
+        {\varepsilon}\right)^{2}} (Αρχ. Ιδιοτ.) τέτοιο ώστε 
+        \inlineequation[eq:limexsqrt2]{\forall n \geq n_{0}}
+        \[
+          \abs{\frac{1}{\sqrt{n}} -0} = \abs{\frac{1}{\sqrt{n}}} =
+          \frac{1}{\sqrt{n}} \overset{\eqref{eq:limexsqrt2}}{\leq}
+          \frac{1}{\sqrt{n_{0}}} \overset{\eqref{eq:limexsqrt1}}
+          {<} \frac{1}{\sqrt{\left(\frac{1}{\varepsilon}\right)
+          ^{2}}} = \frac{1}{\frac{1}{\varepsilon}} = \varepsilon
+        \] 
+      \end{proof}
+
+    \item $ \lim_{n \to \infty} \frac{\sin{n}}{n} = 0 $
+
+      \begin{proof}
+      \item {}
+        \begin{description}
+          \item[Δοκιμή:] $ \abs{\frac{\sin{n}}{n} - 0} < 
+            \varepsilon \Leftrightarrow \abs{\frac{\sin{n}}{n}}
+            < \varepsilon \Leftrightarrow 
+            \inlineequation[eq:limexsin1]{\frac{\abs{\sin{n}}}
+            {n} < \varepsilon} $
+
+            Όμως
+            \inlineequation[eq:limexsin2]{\frac{\abs{\sin{n}}}
+              {n} \leq \frac{1}{n}, \; \forall n \in 
+            \mathbb{N}}
+
+            Οπότε από τις σχέσεις \eqref{eq:limexsin1} και 
+            \eqref{eq:limexsin2} αρκεί $ \frac{1}{n} < 
+            \varepsilon \Leftrightarrow n > \frac{1}{
+            \varepsilon} $
+        \end{description}
+
+        Έστω $ \varepsilon >0 $. Τότε $ \exists n_{0} \in \mathbb{N}
+        $ με \inlineequation[eq:limexsin3]{n_{0} >
+        \frac{1}{\varepsilon}} τέτοιο ώστε
+        \inlineequation[eq:limexsin4]{\forall n \geq n_{0}}
+        \[
+          \abs{\frac{\sin{n}}{n} - 0} =  \abs{\frac{\sin{n}}{n}} =
+          \frac{\abs{\sin{n}}}{n} \leq \frac{1}{n}
+          \overset{\eqref{eq:limexsin4}}{\leq}  \frac{1}{n_{0}}
+          \overset{\eqref{eq:limexsin3}}{<}
+          \frac{1}{\frac{1}{\varepsilon}
+          } = \varepsilon 
+        \] 
+      \end{proof}
+  \end{enumerate}
+\end{examples}
+
+\myprop{Η ακολουθία $ \{ (-1)^{n} \}_{n \in \mathbb{N}} $ δεν συγκλίνει.}
+
+\begin{proof}
+\item {}
+  Έστω ότι η $ a_{n}= (-1)^{n} $ συγκλίνει και έστω $ \lim_{n \to +
+  \infty}(-1)^{n} = a $. 
+
+  Τότε από τον ορισμό του ορίου, έχουμε ότι για 
+  \[ 
+    \varepsilon = 1, \; \exists n_{0} \in \mathbb{N} \; : \; \forall 
+    n \geq n_{0} \quad \abs{(-1)^{n}-a} < 1 \Leftrightarrow -1 < 
+    (-1)^{n} -a < 1 \Leftrightarrow a-1 < (-1)^{n} < a+1
+  \]
+
+  Όμως για $ n_{1} \geq n_{0} $ με $ n_{1} $ άρτιος, έχουμε:
+
+  \[
+    a-1 <  (-1)^{n_{1}} < a+1 \Leftrightarrow a-1 < 
+    \underbrace{1 < a+1}_{a>0} 
+  \] 
+
+  Όμως για $ n_{2} \geq n_{0} $ με $ n_{2} $ περιττός, έχουμε:
+
+  \[
+    a-1 <  (-1)^{n_{2}} < a+1 \Leftrightarrow 
+    \underbrace{a-1 < -1}_{a<0} < a+1
+  \] 
+
+  Οπότε καταλήγουμε σε άτοπο.
+\end{proof}
+
+
+\myprop{Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία πραγματικών αριθμών και 
+  $ l \in \mathbb{R} $. Τότε ισχύου οι ισοδυναμίες:
+
+  \[ \lim_{n \to \infty} a_{n} = l \Leftrightarrow \lim_{n \to \infty} (
+    a_{n}- l) = 0 
+\Leftrightarrow \lim_{n \to \infty} \abs{a_{n}-l} = 0\]}
+
+\begin{proof}
+\item {}
+  \begin{align*} 
+    \lim_{n \to \infty} a_{n}= l & \Leftrightarrow \forall 
+    \varepsilon > 0 \; \exists n_{0} \in \mathbb{N} \; : \; 
+    \abs{a_{n}-l} < \varepsilon, \forall n \geq n_{0} \\ 
+    \lim_{n \to \infty} (a_{n}-l) = 0 & \Leftrightarrow \forall 
+    \varepsilon >0 \; \exists n_{0} \in \mathbb{N} \; : \; 
+    \abs {(a_{n}-l) - 0} < \varepsilon , \forall n \geq n_{0} \\
+    \lim_{n \to \infty} \abs{a_{n}-l}=0 < \varepsilon & \Leftrightarrow 
+    \forall \varepsilon > 0 \; \exists n_{0} \in \mathbb{N} 
+    \; : \; \abs {\abs{a_{n}- l } - 0} < \varepsilon, \forall n \geq 
+    n_{0} 
+  \end{align*}
+
+  και ισχύει ότι $ \abs{a_{n}-l} = \abs{(a_{n}-l)-0} = 
+  \abs{\abs{a_{n}- l} -0} $
+\end{proof}
+
+\mythm{Το όριο μιας ακολουθίας, όταν υπάρχει είναι μοναδικό.}
+
+\begin{proof}
+\item {}
+  Έστω ότι μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ συγκλίνει σε 
+  δυο διαφορετικούς αριθμούς, $ a,b $. Έστω $ \varepsilon >0 $, τότε
+
+  \[ 
+    \lim_{n \to \infty} a_{n} = a \Leftrightarrow \forall 
+    \varepsilon > 0, \; \exists n_{0} \in \mathbb{N} \; : \: 
+    \forall n \geq n_{0} \quad \abs{a_{n}- a} \leq \varepsilon 
+  \]
+
+  Άρα και για $ \varepsilon = \frac{\varepsilon}{2}, \; \exists n_{1} \in 
+  \mathbb{N} \; : \; \forall n \geq n_{1} \quad \abs{a_{n_{1}} - a} 
+  < \frac{\varepsilon}{2}  $
+
+  \[ 
+    \lim_{n \to \infty} a_{n} = b \Leftrightarrow \forall 
+    \varepsilon > 0, \; \exists n_{0} \in \mathbb{N} \; : \: 
+    \forall n \geq n_{0} \quad \abs{a_{n}- b} \leq \varepsilon 
+  \]
+
+  Άρα και για $ \varepsilon = \frac{\varepsilon}{2}, \; \exists n_{2} \in 
+  \mathbb{N} \; : \; \forall n \geq n_{2}  \quad 
+  \abs{a_{n_{2}} - b} < \frac{\varepsilon}{2}  $
+
+  Θέτουμε $ n_{0} = \max \{ n_{1}, n_{2} \} $, ώστε να ισχύουν οι 
+  κ οι δύο παραπάνω ανισότητες ταυτόχρονα. 
+
+  Επομένως, έχουμε 
+  \[
+    0 \leq \abs{a-b} = \abs{a- a_{n}+ a_{n}- b} \leq 
+    \abs{a- a_{n}} + \abs{a_{n}- b} < \frac{\varepsilon}{2} + 
+    \frac{\varepsilon}{2} = \varepsilon 
+  \] 
+
+  άρα από την πρόταση~\ref{prop:epsilon_prot} έχουμε ότι 
+  $ \abs{a-b} = 0 \Rightarrow a=b $, άτοπο, γιατί $ a \neq b $.
+\end{proof}
+
+%TODO idiothtes oriwn
+
+\mythm{Κάθε συγκλίνουσα ακολουθία είναι φραγμένη.}
+
+\begin{proof}
+  Έστω $ (a_{n})_{n \in \mathbb{Ν}} $ συγκλίνουσα $ \Rightarrow 
+  \exists a \in \mathbb{R} $ τέτοιο ώστε $ \lim_{n \to +\infty} a_{n}
+  =a $, άρα 
+  \[
+    \forall \varepsilon > 0, \; \exists n_{0} \in \mathbb{N} \; 
+    : \; \forall n \geq n_{0}\quad \abs{a_{n}-a} < \varepsilon  
+  \] 
+  αρα και για $ \varepsilon =1>0, \; \exists n_{0} \in \mathbb{N} \; 
+  : \; \forall n \geq n_{0} \quad 
+  \inlineequation[eq:sygkfrag]{\abs{a_{n}-a} < 1} $. 
+
+  Δηλαδή $ \forall n \geq n_{0} $ έχουμε ότι 
+  \[
+    \abs{a_{n}} = \abs{a_{n}-a + a} \leq \abs{a_{n} - a} + \abs{a} 
+    \overset{\eqref{eq:sygkfrag}}{<} 1 + \abs{a}  
+  \] 
+
+  Δηλαδή, καταφέραμε να φράξουμε τους όρους της ακολουθίας με δείκτες 
+  $n \geq n_{0} $.
+
+  Τώρα, θέτουμε $ M = \max \{ \abs{a_{1}} , \abs{a_{2}} , \ldots, 
+  \abs{a_{n-1}} , 1 + \abs{a}\} $ και έχουμε ότι $ \abs{a_{n}} 
+  < M, \; \forall n \in \mathbb{N} $, επομένως η 
+  $ (a_{n})_{n \in \mathbb{N}} $ είναι φραγμένη.
+\end{proof}
+
+\begin{rem}
+  Προσοχή, το αντίστροφο της παραπάνω πρότασης, δεν ισχύει. Πράγματι, 
+  για την  ακολουθία $ a_{n} = (-1)^{n}, \; 
+  \forall n \in \mathbb{N} $ έχουμε ότι είναι φραγμένη, όχι όμως και 
+  συγκλίνουσα.
+\end{rem}
+
+\section{Υπακολουθίες}
+
+\mydfn{Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία, και έστω $ 
+  (k_{n})_{n \in \mathbb{N}} $ γνησίως
+  αύξουσα ακολουθία φυσικών αριθμών $ (k_{1}<k_{2}<k_{3}<\cdots) $. 
+  Τότε η ακολουθία $ b_{n} = (a_{k_{n}}), \; n \in \mathbb{N} $ 
+  ονομάζεται \textcolor{Col\thechapter}{υπακολουθία} της 
+$ (a_{n})_{n \in \mathbb{N}} $.}
+
+%TODO παραδειγματα υπακολουθιων
+
+\myprop{Αν μια ακολουθία είναι φραγμένη τότε και κάθε υπακολουθία της 
+είναι φραγμένη.}
+
+\begin{rem}
+\item {}
+  \begin{enumerate}[i)]
+    \item Ανάλογες προτάσεις ισχύουν και για την περίπτωση όπου η 
+      ακολουθία είναι άνω, ή αντίστοιχα κάτω φραγμένη.
+    \item 
+      Ενδιαφέρον παρουσιάζει το αντιθετοάντίστροφο της παραπάνω 
+      πρότασης, όπου λέει ότι αν τουλάχιστον μία υπακολουθία μιας 
+      ακολουθίας δεν είναι φραγμένη, τότε κ η ίδια η ακολουθία 
+      δεν θα είναι φραγμένη.
+  \end{enumerate}
+\end{rem}
+
+\myprop{Αν μια ακολουθία έιναι γνησίως αύξουσα (αντίστοιχα γνησίως φθίνουσα) 
+  τότε και κάθε υπακολουθία της θα είναι γνησίως αύξουσα (αντίστοιχα 
+γνησίως φθίνουσα).}
+%TODO υπολοιπες προτασεις εδω
+
+\begin{lem}\label{lem:kn}
+  Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία και $ (a_{k_{n}})_
+  {n \in \mathbb{N}} $ υπακολουθία της. Τότε $ k_{n} \geq n, \; 
+  \forall n \in \mathbb{N} $.
+\end{lem}
+
+\begin{proof}
+\item {}
+  \begin{itemize}
+    \item Για $ n=1 $, έχω: $ k_{n} \in \mathbb{N}, \; \forall n 
+      \in \mathbb{N} \Rightarrow k_{n} \geq 1 $, ισχύει:
+    \item Έστω ότι ισχύει για $ n $, δηλ. $ k_{n} \geq n $. 
+    \item θ.δ.ο. ισχύει για $ n+1 $. Πράγματι, 
+      \[ k_{n+1} 
+        \overset{k_{n} \; \text{γν.αυξ.}}{>} k_{n} 
+        \geq n \Rightarrow k_{n+1} > n \Rightarrow k_{n+1} 
+      \geq n+1\]
+  \end{itemize}
+\end{proof}
+
+\myprop{Αν μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ συγκλίνει στο $ a 
+  \in \mathbb{R} $, τότε και κάθε υπακολουθία της συγκλίνει επίσης 
+στο $ a \in \mathbb{R} $.}
+
+\begin{proof}
+\item {}
+  Έστω $ (a_{k_{n}})_{n \in \mathbb{N}} $ υπακολουθία της 
+  $ (a_{n})_{n \in \mathbb{N}} $. 
+
+  Έστω $ \varepsilon >0 $. Τότε
+
+  \[ \lim_{a_{n}} = a \Leftrightarrow \forall \varepsilon >0, \; 
+    \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} 
+  \quad \inlineequation[eq:ypaksygk]{\abs{a_{n}- a} < \varepsilon}. \]
+
+  Άρα και για το $ \varepsilon $ που έχουμε επιλέξει, έχουμε ότι $ 
+  \exists n_{0} \in \mathbb{N} \; : \; k_{n} \overset{\text{Λημ.} 
+  \;~\ref{lem:kn}}{\geq} n \geq n_{0}  $ 
+  και άρα από τη σχέση~\eqref{eq:ypaksygk}, έχουμε 
+  $\abs{a_{k_{n}} - a} < \varepsilon  $, δηλαδή 
+  $ \lim_{n \to +\infty} a_{k_{n}} = a$.
+\end{proof}
+
+\begin{rem}
+  Αν δυο υπακολουθίες μιας ακολουθίας $ (a_{n})_{n \in \mathbb{N}} $ συγκλίνουν 
+  σε διαφορετικά όρια, τότε δεν υπάρχει το όριο της ακολουθίας 
+  $ (a_{n})_{n \in \mathbb{N}} $.
+\end{rem}
+
+\begin{example}
+  Να δείξετε ότι η ακολουθία $ a_{n} = (-1)^{n}\frac{n}{n+1} $ δεν συγκλίνει. 
+\end{example}
+
+\begin{proof}
+\item {}
+  Θεωρούμε τις υπακολουθίες:
+  \begin{itemize}
+    \item $ a_{2n} = (-1)^{2n} \frac{2n}{2n+1} = \frac{2n}{2n+1} = \frac{2n}{n(2+
+      \frac{1}{n})} = \frac{2}{2+ \frac{1}{n}} \xrightarrow{n \to \infty} 1 $
+    \item $ a_{2n-1} = (-1)^{2n-1} \frac{2n-1}{2n-1+1} = -\frac{2n-1}{2n} = 
+      -\left(1 - \frac{1}{2n}\right) \xrightarrow{n \to \infty} -1  $
+  \end{itemize}
+  Άρα, η ακολουθία $ a_{n}= (-1)^{n} \frac{n}{n+1} $ δεν συγκλίνει.
+\end{proof}
+
+
+
+\section{Ιδιότητες Ορίου Ακολουθίας}
+
+\myprop{Έστω $ \lim_{n \to +\infty} a_{n} = a$ και $ \lim_{n \to +\infty} 
+  b_{n} = b $, όπου $ a,b \in \mathbb{R} $. Τότε:
+  \begin{enumerate}[i)]
+    \item $ \lim_{n \to +\infty} (a_{n} + b_{n}) = a+b = 
+      \lim_{n \to +\infty} a_{n} + \lim_{n \to +\infty} b_{n} $
+    \item $ \lim_{k a_{n}} = ka = k \lim_{n \to +\infty} a_{n}, \; 
+      k \in \mathbb{R} $
+    \item $ \lim_{n \to +\infty} (a_{n}\cdot b_{n}) = a\cdot b = 
+      \lim_{n \to +\infty} a_{n}\cdot \lim_{n \to +\infty} b_{n}$
+    \item $ \lim_{n \to +\infty} \frac{1}{a_{n}} = \frac{1}{a} = 
+      \frac{1}{\lim\limits_{n \to +\infty}
+      a_{n}}, \; a \neq 0, \; a_{n} \neq 0, \; \forall n \in 
+      \mathbb{N}  $
+    \item $ \lim_{n \to +\infty} \frac{a_{n}}{b_{n}} = \frac{a}{b} 
+      = \frac{\lim\limits_{n \to +\infty} a_{n}}
+      {\lim\limits_{n \to +\infty} 
+      b_{n}}, \; b \neq 0, \; n \neq 0, \forall n \in \mathbb{N} $
+    \item $ \lim_{n \to +\infty} {a_{n}}^{k} = a^{k}, 
+      \; k \geq 2, \; k \in \mathbb{N}  $  
+    \item $ \lim_{n \to +\infty} {a_{n}}^{\frac{1}{k}}
+      =a^{\frac{1}{k}}, \; \forall k \in 
+      \mathbb{N}, a_{n} \geq 0, \; \forall n \in \mathbb{N} $
+\end{enumerate}}
+
+\begin{proof}
+\item {}
+  \begin{enumerate}[i)]
+    \item $ \lim_{n \to +\infty} a_{n} = a \Leftrightarrow \forall 
+      \varepsilon > 0, \; \exists n_{1} \in \mathbb{N} \; : \; 
+      \forall n \geq n_{1} \quad \abs{a_{n}-a} < \varepsilon$.
+
+      Αρα και για $ \varepsilon = \frac{\varepsilon}{ 2}, \; 
+      \exists n_{1} \in \mathbb{N} \; : \; \forall n \geq n_{1} 
+      \quad \inlineequation[eq:idiot1]{\abs{a_{n}-a} <
+      \frac{\varepsilon}{2}} $
+
+      $ \lim_{n \to +\infty} b_{n} = b \Leftrightarrow \forall 
+      \varepsilon > 0, \; \exists n_{2} \in \mathbb{N} \; : \; 
+      \forall n \geq n_{2} \quad \abs{b_{n}-b} < \varepsilon$.
+
+      Αρα και για $ \varepsilon = \frac{\varepsilon}{ 2}, \; 
+      \exists n_{2} \in \mathbb{N} \; : \; \forall n \geq n_{2} 
+      \quad \inlineequation[eq:idiot2]{\abs{b_{n}-b} <
+      \frac{\varepsilon}{2}} $
+
+      Θέτουμε $ n_{0}= \max \{ n_{1}, n_{2} \} $, ώστε να ισχύουν 
+      και οι δύο παραπάνω ανισότητες ταυτόχρονα.
+
+      Έστω $ \varepsilon >0 $. Τότε για $ n \geq n_{0} $, έχουμε 
+      \[
+        \abs{(a_{n}+ b_{n}) - (a+b)} = \abs{(a_{n}- a) + 
+        (b_{n}-b)} \leq \abs{a_{n}- a} + \abs{b_{n}-b} 
+        \overset{\eqref{eq:idiot1}}
+        {\underset{\eqref{eq:idiot2}}{<}} 
+        \frac{\varepsilon }{2} + \frac{\varepsilon}{ 2} = 
+        \varepsilon
+      \] 
+
+    \item 
+      Αν $ k=0 $, τότε η σχέση είναι προφανής.
+
+      Έστω $ k \neq 0 $. 
+
+      $ \lim_{n \to +\infty} a_{n} = a \Leftrightarrow \forall 
+      \varepsilon >0, \; \exists 
+      n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad 
+      \abs{a_{n}- a} < \varepsilon$. 
+
+      Άρα και για $ \varepsilon = \frac{\varepsilon}{\abs{k}} >0$,
+      έχουμε ότι $ \exists n_{0} \in \mathbb{N} \; : \; 
+      \forall n \geq n_{0} \quad \inlineequation[eq:idiot3]
+      {\abs{a_{n}- a} < \frac{\varepsilon}{\abs{k}}}$. 
+
+      Έστω $ \varepsilon >0 $. Τότε $ \forall n \geq n_{0} $, 
+      έχουμε ότι 
+      \[
+        \abs{k a_{n}- ka} = \abs{k(a_{n}- a)} = \abs{k} \cdot 
+        \abs{a_{n}- a} \overset{\eqref{eq:idiot3}}{<} \abs{k}
+        \cdot \frac{\varepsilon}{\abs{k}} = \varepsilon 
+      \] 
+
+    \item Έχουμε ότι $ (a_{n})_{n \in \mathbb{N}} $ συγκλίνουσα $ 
+      \Rightarrow (a_{n})_{n \in \mathbb{N}} $ είναι φραγμένη. 
+      Άρα 
+      \[ 
+        \exists M >0, \; M \in \mathbb{R} \; : \; \forall n \in 
+        \mathbb{N} \quad \inlineequation[eq:idiot4]{\abs{a_{n}} 
+        \leq M}
+      \] 
+      Τότε 
+      \begin{align*}
+        \abs{a_{n} b_{n} - ab} = \abs{a_{n}b_{n} - a_{n}b + 
+        a_{n}b -ab} &= \abs{a_{n}(b_{n}-b)+b(a_{n}-a) } \\
+                    &\leq \abs{a_{n}}\cdot \abs{b_{n}-b} + \abs{b} 
+                    \cdot \abs{a_{n}-a} \\
+                    &\overset{\eqref{eq:idiot4}}{\leq} 
+                    M \cdot  \abs{b_{n}-b} + \abs {b}\cdot 
+                    \abs{a_{n}-a}
+      \end{align*}
+
+      Απο τη σύγκλιση των $ a_{n} $ και $ b_{n} $, έχουμε:
+
+      Θέτουμε $ \varepsilon_{1} = \frac{\varepsilon}{2M} >0 $ 
+      και $ \varepsilon_{2} = \frac{\varepsilon}{2\abs{b}} >0 $ 
+      και επιλέγουμε $ n_{0}= \max \{ n_{1}, n_{2}\} $.
+
+      Έστω $ \varepsilon >0 $, τότε $ \forall n \geq n_{0}$, 
+      έχουμε ότι 
+      \[
+        \abs{a_{n} b_{n} - ab} \leq M \cdot \abs{b_{n}-b} + 
+        \abs{b} \cdot \abs{a_{n}- a} < M \cdot 
+        \frac{\varepsilon}{2 M} + \abs {b} \cdot 
+        \frac{\varepsilon}{2 \abs{b}} =
+        \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = 
+        \varepsilon
+      \]
+
+      \begin{description}
+        \item [Β᾽ Τρόπος:]
+        \item {} 
+          \begin{minipage}{0.45\textwidth}
+            \begin{itemize}
+              \item $ \lim_{n \to \infty} a_{n} 
+                = a \Leftrightarrow 
+                \lim_{n \to +\infty} (a_{n}-a) 
+                = 0 $ \hfill \tikzmark{a}
+              \item $ \lim_{n \to \infty} b_{n} 
+                = b \Leftrightarrow 
+                \lim_{n \to +\infty} (b_{n}-b) 
+                = 0 $ \hfill \tikzmark{b}
+            \end{itemize}
+          \end{minipage}
+
+          \mybrace{a}{b}[$(a_{n})_{n \in \mathbb{N}}, \; 
+          (b_{n})_{n \in \mathbb{N}}$ μηδενικές ακολουθίες, 
+          άρα φραγμένες.]
+
+          Συνπώς (από μηδενική επι φραγμένη) έχουμε ότι 
+          \[ \lim_{n \to +\infty} [(a_{n}- a) 
+            \cdot (b_{n} -b)] = 0 \Rightarrow 
+            \lim_{n \to +\infty} [a_{n} b_{n} - a_{n}b -
+          b_{n} a + ab] = 0\] 
+
+          Έχουμε ότι 
+          $
+          \left.
+            \begin{aligned}
+              \lim_{n \to +\infty} a_{n}b = ab \\
+              \lim_{n \to +\infty} b_{n}a = ab
+            \end{aligned} 
+          \right\}  
+          \overset{(+)}{\Rightarrow} \lim_{n \to +\infty} 
+          [a_{n} b_{n} + ab] = 2ab \Rightarrow 
+          \lim_{n \to +\infty} (a_{n}b_{n}) = ab $
+      \end{description}
+
+    \item (Χωρίς Απόδειξη)
+
+      % \begin{lem}
+      %     $ b \neq 0 \Rightarrow \exists n_{0} \in \mathbb{N} \; 
+      %     : \; b_{n} \neq 0, \; n \geq n_{0} $ 
+      % \end{lem}
+
+      % \begin{proof}
+      % \item {}
+      %     Έστω $ b \neq 0 \Rightarrow \frac{\abs{b}}{2} >0 $. 
+
+      % Για $ \varepsilon = \frac{\abs{b}}{2} >0 $ και λόγω 
+      % ότι $ \lim_{n \to +\infty} b_{n} = b $
+      % έχουμε ότι $ \exists n_{1} \in \mathbb{N} \; : \; 
+      % \forall n \geq n_{1} \quad \abs{b_{n}-b} 
+      % < \frac{\abs{b}}{2} $
+
+      % Άρα για $ n \geq n_{1} $, έχουμε 
+      % \[
+      %     \abs{b} = \abs{b - b_{n} + b_{n}} \leq 
+      %     \abs{b - b_{n}} + \abs{b_{N}} \leq
+      %     \frac{\abs{b}}{2} + \abs{b_{n}} \Leftrightarrow 
+      %     \abs{b_{n}} > \abs{b} -
+      %     \frac{\abs{b}}{2} \Leftrightarrow \abs{b_{n}}  > 
+      %     \frac{\abs{b}}{2} \Rightarrow b_{n} 
+      %     \neq 0, \; \forall n \geq n_{1}
+      % \] 
+
+      % \begin{description}
+      %     \item [Β᾽ Τρόπος:] 
+      %     \item {}
+      %         Γενικά ισχύει ότι αν $ x >0 $ και $ 
+      %         \abs{y-x} < \frac{x}{2} $, 
+      %         τότε \inlineequation[eq:lemidiot]{\abs{y} < 
+      %         \frac{x}{2}}.
+
+      % $ \lim_{n \to +\infty} b_{n} =b \Rightarrow 
+      % \exists n_{0} \in \mathbb{N} \; : \; 
+      % \forall n \geq n_{0} \quad \abs{b_{n}-b} < 
+      % \frac{\abs{b}}{2} = \varepsilon $
+
+      % Οπότε $ \forall n \geq n_{0} \; : \; 
+      % \abs{\abs{b_{n}} - \abs{b}} \leq \abs{b_{n}-b}
+      % < \frac{\abs{b}}{2} \Rightarrow \abs{b_{n}} 
+      % \overset{\eqref{eq:lemidiot}}{<} 
+      % \frac{\abs{b}}{2}   $ 
+      % \end{description}
+
+      % Τώρα αν $ n \geq n_{1} $ ισχύει ότι:
+
+      %                 $ \abs{\frac{1}{b_{n}} - \frac{1}{b}} = 
+      %                 \frac{b-b_{n}}{b_{n}\cdot b} = \frac{\abs{b-b_{n}}
+      %                     }{\abs{b_{n}} \cdot \abs{b}} < \frac{2 
+      %                 \abs{b - b_{n}}}{\abs{b}^{2}} $
+
+      % Έστω $ \varepsilon >0 $, τότε
+      % \[
+      %     \lim_{n \to +\infty} b_{n} =b \Leftrightarrow 
+      %     \exists n_{2} \in \mathbb{N} \; : \; \forall n 
+      %     \geq n_{2} \quad \abs{b - b_{n}} < 
+      %     \frac{\varepsilon \abs{b}^{2}}{2}
+      % \] 
+
+      % Επιλέγουμε $ n_{0} = \max \{ n_{1}, n_{2} \} $. 
+      % Τότε $ \forall n \geq n_{0} $ ισχύει ότι 
+      % \[
+      %     \abs{\frac{1}{b_{n}} - \frac{1}{b}} \leq 
+      %     \frac{2 \abs{b -b_{n}}}{\abs{b} ^{2}} < \varepsilon 
+      % \] 
+      % \end{proof}
+
+    \item 
+      $ \lim_{n \to +\infty} \frac{a_{n}}{b_{n}} = 
+      \lim_{n \to +\infty} \left(a_{n}\cdot \frac{1}{b_{n}}
+      \right) = \lim_{n \to +\infty} a_{n} \cdot \lim_{n \to +\infty} 
+      \frac{1}{b_{n}} = a \cdot \frac{1}{b} = \frac{a}{b}$
+
+    \item 
+      Θα αποδείξουμε την πρόταση με Μαθηματική Επαγωγή.
+      \begin{itemize}
+        \item Για $ k=2 $, έχω: $ \lim_{n \to +\infty} 
+          a_{n}^{2} = \lim_{n \to
+          +\infty} (a_{n} \cdot a_{n}) = 
+          \lim_{n \to +\infty} a_{n} \cdot 
+          \lim_{n \to +\infty}
+          a_{n} =  a \cdot a = a^{2}  $, ισχύει.
+        \item Έστω ότι ισχύει για $k$, δηλ. $ 
+          \lim_{n \to +\infty} {a_{n}}^{k} = a^{k}  $
+        \item θ.δ.ο. ισχύει για $ k+1 $. Πράγματι, 
+          \[
+            \lim_{n \to +\infty} {a_{n}}^{k+1}= 
+            \lim_{n \to +\infty} ({a_{n}}^{k} \cdot a_{n})  
+            = \lim_{n \to +\infty} {a_{n}}^{k} \cdot 
+            \lim_{n \to +\infty} a_{n} = a^{k} \cdot a = 
+            a^{k+1}
+          \] 
+      \end{itemize}
+
+    \item (Χωρίς Απόδειξη)
+  \end{enumerate}
+\end{proof}
+
+\myprop{Έστω $ (a_{n})_{n \in \mathbb{N}} $ μηδενική ακολουθία και 
+  $ (b_{n})_{n \in \mathbb{N}} $ 
+φραγμένη. Τότε, $ \lim_{n \to +\infty} (a_{n}\cdot b_{n}) = 0 $.}
+
+\begin{proof}
+\item {}
+  Έστω $ \varepsilon >0$, τότε
+  \[ 
+    (b_{n})_{n \in \mathbb{N}} \;\; \text{φραγμένη} \; \Rightarrow 
+    \exists M>0 
+    \; : \; \inlineequation[eq:qq1]{\abs{b_{n}} \leq M}, 
+    \forall n \in \mathbb{N} 
+  \]
+  \[ 
+    (a_{n})_{n \in \mathbb{N}}  \;\; \text{μηδενική} \; \Rightarrow  
+    \text{για} \;\; \frac{\varepsilon}{M} > 0, \;  \exists n_{0} \in 
+    \mathbb{N} \; : \; \forall n \geq n_{0} \quad \abs{a_{n}-0} 
+    < \frac{\varepsilon}{M} \Leftrightarrow     
+    \inlineequation[eq:qq2]{\abs{a_{n}} < \frac{\varepsilon}{M}}
+  \]
+  Άρα για κάθε $ n \geq n_{0} $ έχουμε
+  \[
+    \abs{a_{n}\cdot b_{n} - 0} = \abs{a_{n}\cdot b_{n} } 
+    = \abs{a_{n}} \cdot \abs{b_{n}} 
+    \overset{\eqref{eq:qq1}}{\leq} \abs{a_{n}} \cdot M 
+    \overset{\eqref{eq:qq2}}{<} 
+    \frac{\varepsilon}{M} \cdot M = \varepsilon
+  \]
+  Άρα $ \lim_{n \to +\infty} a_{n} \cdot b_{n} = 0 $.
+\end{proof}
+
+%TODO παραδείγματα (μηδενικη επι φραγμενη)
+
+\myprop{Έστω $ (a_{n})_{n \in \mathbb{N}}, (b_{n})_{n \in \mathbb{N}} $ και 
+  $ (c_{n})_{n \in \mathbb{N}} $, τρεις ακολουθίες, τέτοιες ώστε:
+
+  \vspace{\baselineskip}
+
+  \begin{minipage}{0.35\textwidth}
+    \begin{enumerate}[i)]
+      \item $ a_{n} \leq b_{n} \leq c_{n}, \; \forall n \in 
+        \mathbb{N} $ \hfill \tikzmark{a} 
+      \item $ \lim_{n \to +\infty} a_{n} = \lim_{n \to +\infty} 
+        c_{n} = l $ \hfill \tikzmark{b}
+    \end{enumerate}
+  \end{minipage}
+
+\mybrace{a}{b}[$ \lim_{n \to +\infty} b_{n} = l$]}
+
+\begin{proof}
+\item {}
+  Έστω $ \lim_{n \to +\infty} a_{n} = \lim_{n \to +\infty} c_{n} = l $ και 
+  έστω $ \varepsilon >0 $, τότε
+  \[ \lim_{n \to +\infty} a_{n} = l \Leftrightarrow \forall 
+    \varepsilon >0, \; \exists n_{1} \in \mathbb{N} \; : \; \forall n 
+    \geq n_{1} \quad \abs{a_{n} - l} < \varepsilon \Leftrightarrow 
+  \overbrace{l - \varepsilon < a_{n}} < l + \varepsilon \] 
+
+  \[ \lim_{n \to +\infty} c_{n} = l \Leftrightarrow \forall 
+    \varepsilon >0, \; \exists n_{2} 
+    \in \mathbb{N} \; : \; \forall n \geq n_{2} \quad \abs{c_{n} - l} 
+    < \varepsilon \Leftrightarrow 
+  l - \varepsilon < \underbrace{c_{n} < l + \varepsilon} \]
+
+  Επιλέγουμε $ n_{0} = \max \{ n_{1}, n_{2} \} $, οπότε 
+  $ \exists n_{0} \in \mathbb{N} \; : \; 
+  \forall n \geq n_{0} $
+  \begin{gather*}
+    l - \varepsilon < a_{n} \leq b_{n} \leq c_{n} < l + 
+    \varepsilon \Leftrightarrow \\
+    l - \varepsilon < b_{n} < l + \varepsilon \Leftrightarrow \\
+    - \varepsilon < b_{n} - l < \varepsilon \Leftrightarrow \\
+    \abs{b_{n}-l} < \varepsilon, \; \forall n \geq n_{0}
+  \end{gather*}
+  Άρα $ \lim_{n \to +\infty} b_{n} = l $.
+\end{proof}
+
+\begin{cor}
+  Έστω $ (a_{n})_{n \in \mathbb{N}} $ και $ 
+  (b_{n})_{n \in \mathbb{N}} $ ακολουθίες, τέτοιες ώστε: 
+
+  \vspace{\baselineskip}
+
+  \begin{minipage}{0.25\textwidth}
+    \begin{enumerate}[i)]
+      \item $ \abs{a_{n}} \leq \abs{b_{n}}, \; \forall n \in 
+        \mathbb{N} $ \hfill \tikzmark{a}
+      \item $ \lim_{n \to +\infty} b_{n} = 0$ \hfill \tikzmark{b}
+    \end{enumerate}
+  \end{minipage}
+
+  \mybrace{a}{b}[$ \lim_{n \to +\infty} a_{n} = 0 $]
+\end{cor}
+
+\myprop{Έστω $ \lim_{n \to +\infty} a_{n} = a $ και $ 
+  \lim_{n \to +\infty} b_{n} = b $. Τότε
+$ a_{n} \leq b_{n}, \; \forall n \in \mathbb{N} \Rightarrow a \leq b $ }
+
+\begin{proof}(Με άτοπο)
+\item {}
+  Έστω $ a>b \Rightarrow a-b>0 $. Θέτουμε $ \varepsilon = 
+  \frac{a-b}{2} $.
+
+  Από τον ορισμό του ορίου για τις δύο ακολουθίες, έχουμε ότι:
+  \begin{align}
+    \exists n_{1} \in \mathbb{N} \; : \; \forall n \geq n_{1} 
+    \quad \abs{a_{n}-a} < \frac{a-b}{2} \label{eq:aleqb1} \\
+    \exists n_{2} \in \mathbb{N} \; : \; \forall n \geq n_{2} 
+    \quad \abs{b_{n}-b} < \frac{a-b}{2} \label{eq:aleqb2} 
+  \end{align}
+
+  Έχουμε ότι
+
+  \begin{minipage}{0.5\textwidth}
+    \begin{itemize}
+      \item $ -\abs{a_{n}-a} \leq a_{n}-a \leq \abs{a_{n}-a} $ \hfill 
+        \tikzmark{a}
+      \item Από την~\eqref{eq:aleqb1} έχουμε $ - \abs{a_{n}-a} > - 
+        \frac{a-b}{2} $ \hfill \tikzmark{b}
+    \end{itemize}    
+  \end{minipage}
+
+  \mybrace{a}{b}[$ a_{n}- a > - \frac{a-b}{2}$]
+
+  Άρα \[ a_{n} > a - \frac{a-b}{2} 
+  = \frac{a+b}{2}, \forall n \geq n_{1} \]
+
+  Έχουμε ότι
+
+  \begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+      \item $ -\abs{b_{n}-b} \leq b_{n}-b \leq \abs{b_{n}-b} $ \hfill 
+        \tikzmark{a}
+      \item Από την~\eqref{eq:aleqb2} έχουμε $ \abs{b_{n}-b} < 
+        \frac{a-b}{2} $ \hfill \tikzmark{b}
+    \end{itemize}    
+  \end{minipage}
+
+  \mybrace{a}{b}[$ b_{n}- b < \frac{a-b}{2}$]
+
+  Άρα \[ b_{n} < b + \frac{a-b}{2} 
+  = \frac{a+b}{2}, \forall n \geq n_{1} \]
+
+
+  Για $ n_{0} = \max \{ n_{1}, n_{2} \} $ έχουμε ότι $ a_{n} > 
+  \frac{a+b}{2}, \; \forall n \geq n_{0}$
+  και $ b_{n} < \frac{a+b}{2}, \; \forall n \geq n_{0}$, οπότε
+
+  $a_{n} > b_{n}, \; \forall n \geq n_{0} $, άτοπο.
+\end{proof}
+
+
+\myprop{Έστω $ \lim_{n \to +\infty} a_{n} = a $ και $ \lim_{n \to +\infty} 
+  b_{n} = b $. Τότε
+$ a_{n} < b_{n}, \; \forall n \in \mathbb{N} \Rightarrow a \leq b $ }
+
+\begin{proof}
+\item {}
+  \[ a_{n}< b_{n}, \; \forall n \in \mathbb{N} \Rightarrow a_{n} \leq 
+  b_{n}, \; \forall n \in \mathbb{N} \Rightarrow a \leq b \]
+\end{proof}
+
+\begin{rem}
+\item {}
+  Αν $ a_{n}= \frac{1}{n}, \; \forall n \in \mathbb{N} $ 
+  και $ b_{n}=0, \; \forall n \in \mathbb{N} $, τότε έχουμε ότι 
+  $ \lim_{n \to +\infty} \frac{1}{n} = 0 = a $ και $ \lim_{n \to
+  +\infty} b_{n} = 0 = b $, δηλαδή $ a=b=0  $.
+\end{rem}
+
+\begin{cor}
+  Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία, τέτοια ώστε 
+  $ \lim_{n \to +\infty} a_{n} = a$ και $ a_{n} \geq 0, \; \forall 
+  n \in \mathbb{N} $, τότε $ a \geq 0 $.
+\end{cor}
+
+\begin{proof}
+  Έστω $ b_{n} = 0, \; \forall n \in \mathbb{N} $. Τότε προφανώς 
+  $ a_{n} \geq b_{n}, \; \forall n
+  \in \mathbb{N} \Rightarrow \lim_{n \to +\infty} a_{n} \geq 
+  \lim_{n \to +\infty} b_{n} = 0$.
+\end{proof}
+
+\mythm{Κάθε αύξουσα και άνω φραγμένη ακολουθία συγκλίνει στο 
+supremum του συνόλου των όρων της.}
+
+\begin{proof}
+  Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία πραγματικών αριθμών, 
+  τέτοια ώστε:
+  \begin{enumerate}[i)]
+    \item $ (a_{n})_{n \in \mathbb{N}} $ αύξουσα $ \Leftrightarrow 
+      a_{n+1} \geq a_{n}, \; \forall n \in \mathbb{N}$ 
+    \item $ (a_{n})_{n \in \mathbb{N}} $ άνω  φραγμένη $ 
+      \Leftrightarrow a_{n} \leq M, \; \forall n \in 
+      \mathbb{N}$, με $ M \in \mathbb{R} $.
+  \end{enumerate}
+
+  Έστω $ \varepsilon >0 $. Από τη χαρακτηριστική ιδιότητα του 
+  supremum, έχουμε ότι $ \exists a_{n_{0}} \in A \; : \; s - \varepsilon 
+  < a_{n_{0}} $.
+
+  Ζητούμενο, είναι $ \lim_{n \to \infty} a_{n} = s \Leftrightarrow 
+  - \varepsilon < a_{n} -s < \varepsilon \Leftrightarrow s - 
+  \varepsilon < a_{n} < s + \varepsilon $. Πράγματι, 
+
+  \[ a_{n} \leq s < s + \varepsilon, \; \forall n \in \mathbb{N} \] και 
+  \[ a_{n} \overset{a_{n} \text{γν. αυξ.}}{\geq} a_{n_{0}} > s - 
+  \varepsilon, \forall n \geq n_{0} \]
+\end{proof}
+
+\mythm{Κάθε φθίνουσα και κάτω φραγμένη ακολουθία συγκλίνει στο infimum του 
+συνόλου των όρων της.}
+
+\begin{proof}
+  Ομόίως με το προηγούμενο θεώρημα. Έστω 
+  $ (b_{n})_{n \in \mathbb{N}} $ 
+  φθίνουσα και κάτω φραγμένη ακολουθία. Τότε η ακολουϑία 
+  $ -(b_{n})_{n \in \mathbb{N}} $ είναι αύξουσα και άνω φραγμένη, 
+  οπότε από το προηγούμενο θεώρημα, η $ -(b_{n})_{n \in \mathbb{N}} $
+  συγκλίνει στο supremum του συνόλου των όρων της, δηλαδή στο  
+  $ \sup \{ - b_{1}, - b_{2}, -b_{3}, \ldots \}$. Οπότε η 
+  $ (b_{n})_{n \in \mathbb{N}} $ 
+  %TODO   
+\end{proof}
+
+\myprop{$ \lim_{n \to \infty} x^{n} = 0, \; \abs{x} <1  $}
+
+\begin{proof}
+\item {}
+  \begin{itemize}
+    \item $ x = 0 \Rightarrow x^{n} = 0, \; \forall n \in 
+      \mathbb{N} $ και άρα η ακολουθία είναι σταθερή και ίση με 
+      0, επομένως 
+      $ \lim_{n \to \infty} x^{n} = \lim_{n \to \infty} 0 = 0 $.
+
+    \item $ x \neq 0 \Rightarrow 0 < \abs{x} < 1 
+      \overset{x \neq 0}{\Rightarrow} \frac{1}{\abs{x}} > 1  $. 
+
+      Οπότε θέτουμε $ a = \frac{1}{\abs{x}} - 1 > 0 $. Τότε έχουμε ότι 
+      \begin{align*} 
+        \frac{1}{\abs{x}} = a+1 
+                    &\Rightarrow 0< \frac{1}{\abs{x}^{n}}  = (1+a)^{n}
+                    \overset{\text{Bernoulli}}{\geq} 1 + na \\ 
+                    & \Leftrightarrow 0 \leq \abs{x}^{n} \leq 
+                    \frac{1}{1+na} \leq \frac{1}{na} = \frac{1}{a} 
+                    \cdot \frac{1}{n} 
+      \end{align*} 
+
+      Επείδη, $ \lim_{n \to \infty} 0 = 0 $ και 
+      $ \lim_{n \to \infty} \left(\frac{1}{a} \cdot \frac{1}{n} 
+      \right) = 0$, από Κριτήριο Παρεμβολής, έχουμε ότι 
+      $ \lim_{n \to \infty} \abs{x} ^{n} = 
+      0 \Rightarrow \lim_{n \to \infty}x^{n} = 0$.
+  \end{itemize}
+\end{proof}
+
+
+\section{Άπειρο Όριο Ακολουθίας}
+
+
+\mydfn{Μια ακολουθία πραγματικών αριθμών $ (a_{n})_{n \in \mathbb{N}} $ 
+  \textcolor{Col\thechapter}{αποκλίνει} στο $ +\infty $ (συμβ.: 
+  $ \lim_{n \to \infty} a_{n} = + 
+  \infty $), αν $ \forall M>0, \; \exists n_{0} \in 
+\mathbb{N} \; : \; a_{n} > M, \; \forall n \geq n_{0}$}
+
+\mydfn{Μια ακολουθία πραγματικών αριθμών $ (a_{n})_{n \in \mathbb{N}} $ 
+  \textcolor{Col\thechapter}{αποκλίνει} στο $ -\infty $ (συμβ.: 
+  $ \lim_{n \to \infty} a_{n} = - 
+  \infty $), αν $ \forall M>0, \; \exists n_{0} \in 
+\mathbb{N} \; : \; a_{n} < -M, \; \forall n \geq n_{0}$}
+
+\myprop{Έστω $ (a_{n})_{n \in \mathbb{N}} $ γνησίως αύξουσα και μη-άνω φραγμένη 
+  ακολουϑία, τότε $ \lim_{n \to +\infty} a_{n} = + \infty $.
+}
+
+\myprop{Έστω $ (a_{n})_{n \in \mathbb{N}} $ γνησίως φθίνουσακ  και μη-κάτω φραγμένη 
+  ακολουϑία, τότε $ \lim_{n \to +\infty} a_{n} = - \infty $.
+}
+
+\myprop{Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία θετικών 
+  πραγματικών αριθμών. 
+  Η $ (a_{n})_{n \in \mathbb{N}} $ αποκλίνει στο $ + \infty $ αν και 
+  μονον αν η ακολουθία 
+  $ \left(\frac{1}{a_{n}} \right)_{n \in \mathbb{N}} $ συγκλίνει 
+στο 0.}
+
+
+\begin{proof}
+\item {}
+  \begin{description}
+    \item[$ (\Rightarrow) $] Έστω ότι $ (a_{n})_{n \in \mathbb{N}} $ 
+      αποκλίνει στο $ + \infty $. Αφού $ (a_{n})_{n \in \mathbb{N}} $
+      ακολουθία θετικών πραγματικών αριθμών, τότε $ a_{n} \neq 0, 
+      \; \forall n \in \mathbb{N}$ και άρα, μπορούμε να θεωρήσουμε 
+      την ακολουθία, $ b_{n} = \frac{1}{a_{n}}, \; \forall n \in
+      \mathbb{N}  $. 
+
+      Θα δείξουμε ότι $ \lim_{n \to \infty} b_{n} = 0 $. Πράγματι,
+
+      Έστω $ \varepsilon >0 $. Θέτω $ M = \frac{1}{\varepsilon} >0 $.
+      Τότε $ \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq 
+      n_{0} \quad a_{n}> M \Rightarrow a_{n} > \frac{1}{\varepsilon} 
+      \Rightarrow \frac{1}{a_{n}} < \varepsilon \Rightarrow
+      \abs{\frac{1}{a_{n}} - 0} < \varepsilon \Rightarrow 
+      \abs{b_{n}-0} < \varepsilon, \forall n \geq n_{0} $
+
+    \item [$ ( \Leftarrow) $]
+      Έστω ότι για μια ακολουθία θετικών πραγματικών, ισχύει ότι 
+      $ \lim_{n \to \infty} \frac{1}{a_{n}} = 0$. θ.δ.ο. η $ 
+      (a_{n})_{n \in \mathbb{N}}$ αποκλίνει στο $ + \infty $. Πράγματι,
+
+      Έστω $ M > 0 $. Θέτω $ \varepsilon = \frac{1}{M} > 0 $. Από 
+      δεδομένο $ \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq 
+      n_{0} \quad \abs{\frac{1}{a_{n}} - 0} < \varepsilon \Rightarrow
+      a_{n} > \frac{1}{\varepsilon}=M $
+  \end{description}
+\end{proof}
+
+\myprop{Αν $ x>1 $ τότε $ \lim_{n \to \infty} x^{n} = +\infty $}
+
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [Α᾽ Τρόπος:]
+      $ x >1 \Rightarrow x \neq 0 $. Θέτω  $a = \frac{1}{x} \Rightarrow 
+      \frac{1}{a^{n}} = x^{n} $ και $ \lim_{n \to \infty} \frac{1}{a_{n}} = 
+      \lim_{n \to \infty}x^{n}$. 
+
+
+      Προφανώς $ 0 < a <1 $, ως αντίστροφος του $x$. Σύμφωνα με γνωστή προταση
+      $ \lim_{n \to \infty} a^{n} = 0 $. Η ακολουθία $ (a_{n})_{n \in \mathbb{N}}
+      $ είναι μια ακολουθία θετικών όρων που συγκλίνει στο 0. Σύμφωνα με 
+      την προηγούμενη πρόταση, η ακολουθία $ \left(\frac{1}{a_{n}}\right)_{n 
+      \in \mathbb{N}} $ αποκλίνει στο $ + \infty $, και άρα έχουμε το ζητούμενο.
+    \item [Β᾽ Τρόπος:]
+      $ x>1 \Rightarrow x-1>0 $. Θέτουμε $ a = x-1>0 $, άρα $ x = 1+a 
+      \Rightarrow x^{n} = (1+a)^{n} \geq 1+na, \; \; \forall n \in \mathbb{N} $ 
+      Επομένως 
+      \[
+        \lim_{n \to +\infty} x^{n} = \lim_{n \to +\infty} (1+na) 
+        \overset{a>0}{=} +\infty 
+      \]
+  \end{description}
+\end{proof}
+
+
+\myprop{$ \lim_{n \to \infty} \sqrt[n]{n} = 1, \; \forall n \in \mathbb{N}  $}
+
+\begin{proof}
+  Έστω $ n \in \mathbb{N} \Rightarrow n \geq 1, \; \forall n \in 
+  \mathbb{N} \Rightarrow n ^{\frac{1}{2n}} \geq 1^{\frac{1}{2n}}, \; 
+  \forall n \in \mathbb{N} \Rightarrow \sqrt[2n]{n} \geq 1, \; \forall n 
+  \in \mathbb{N} $
+
+  Θέτουμε $ a = \sqrt[2n]{n} -1 \geq 0 $. Τότε $ \sqrt[2n]{n} = 1 + a 
+  \Rightarrow \sqrt{n} = (1+a)^{n} \overset{\text{Bernoulli}}{\geq} 1 
+  + na \Rightarrow na \leq \sqrt{n} - 1  $. Οπότε $ 0 \leq a \leq
+  \frac{\sqrt{n} -1}{n} $. Τώρα έχουμε, 
+
+  $ \lim_{n \to \infty} \frac{\sqrt{n} -1}{n} = \lim_{n \to \infty} 
+  \left( \frac{\sqrt{n}}{n} - \frac{1}{n}\right) = 0 - 0 = 0 $ και 
+  άρα από το Κριτήριο Παρεμβολής, έχουμε ότι \[ \lim_{n \to \infty} a = 0 
+    \Rightarrow \lim_{n \to \infty} \sqrt[2n]{n} = 1 \Rightarrow \lim_{n \to
+    \infty} (\sqrt[n]{n}) = \lim_{n \to \infty} (\sqrt[2n]{n})^{2} =  
+  1^{2} = 1 \Rightarrow \lim_{n \to \infty} \sqrt[n]{n} =1 \]
+\end{proof}
+
+\myprop{Έστω $ a>0 $. Τότε $ \lim_{n \to \infty} \sqrt[n]{a}=1, \; \forall n \in
+\mathbb{N} $.}
+
+\begin{proof}
+\item {}
+  \begin{itemize}
+    \item $ a>1 \Rightarrow a^{\frac{1}{n}} > 1^{\frac{1}{n}}, \; 
+      \forall n \in \mathbb{N} \Rightarrow \sqrt[n]{a} >1, \; 
+      \forall n \in \mathbb{N} $
+
+      Για κάθε $ n \in \mathbb{N} $ θέτουμε $ b_{n} = \sqrt[n]{a} -1 
+      > 0 \Rightarrow \sqrt[n]{a} = b_{n} + 1 \Rightarrow a = (
+      b_{n}+1)^{n} \geq 1 + n b_{n} \Rightarrow n b_{n} \leq a-1
+      \Rightarrow 0 \leq b_{n} \leq \frac{a-1}{n}, \; \forall n \in
+      \mathbb{N} $
+
+      Επειδή $ \lim_{n \to \infty} \frac{a-1}{n} = \lim_{n \to \infty}
+      \left(\frac{a}{n} - \frac{1}{n}\right) = 0 - 0 = 0 $, άρα από το 
+      Κριτήριο Παρεμβολής, έχουμε ότι $ \lim_{n \to \infty} b_{n} = 
+      \lim_{n \to \infty} (\sqrt[n]{a}-1) = 0 \Rightarrow \lim_{n \to
+      \infty} \sqrt[n]{a} =1 $.
+
+    \item $ a< 1 \Rightarrow \frac{1}{a} > 1 $. Τότε από την 
+      προηγούμενη πρόταση έχουμε 
+      $ \lim_{n \to \infty} \sqrt[n]{\frac{1}{a} } = 1 \Rightarrow 
+      \lim_{n \to \infty} \frac{1}{\sqrt[n]{\frac{1}{a}}} = 
+      \frac{1}{1} = 1 \Rightarrow \lim_{n \to \infty} \sqrt[n]{a} 
+      = 1$.
+  \end{itemize}
+\end{proof}
+
+\myprop{$ \lim_{n \to \infty} \sqrt[n]{n!} = +\infty $ }
+
+
+\begin{proof}
+\item {}
+  \begin{itemize}
+    \item 
+      Έστω $ n \in \mathbb{N} $ με $ n $ άρτιος, δηλαδή ο 
+      $ \frac{n}{2} \in \mathbb{N} $. Τότε
+
+      \begin{align*}
+        \sqrt[n]{n!} = \sqrt[n]{1 \cdot 2 \cdot \frac{n+1}{2}
+        \left(\frac{n+1}{2} +1\right) \cdots n} 
+                    &\geq \sqrt[n]{1\cdot 2 \cdots
+                      \underbrace{\frac{n+1}{2} \cdot \frac{n+1}{2} 
+                        \cdots \frac{n+1}{2}}_{\frac{n+1}{2} \; 
+                    \text{φορές}}} \\
+                    &\geq \sqrt[n]{\left(\frac{n+1}{2}\right)^
+                    {\frac{n+1}{2}}} \\ 
+                    &\geq \sqrt[n]{\left(\frac{n+1}{2}\right)^
+                    {\frac{n}{2}}} = \sqrt{ \frac{n+1}{2} } \geq 
+                    \sqrt{\frac{n}{2}} 
+      \end{align*} 
+
+    \item Έστω $ n \in \mathbb{N} $ με $ n $ περιττός, δηλαδή ο $
+      \frac{n+1}{2} = \frac{n}{2} + \frac{1}{2} \in \mathbb{N} $.
+      Τότε
+
+      \begin{align*}
+        \sqrt[n]{n!} = \sqrt[n]{1\cdot 2 \cdots \frac{n+1}{2}
+        \left(\frac{n+1}{2} +1\right) \cdots n}
+             &\geq \sqrt[n]{1 \cdot 2 \cdots
+             \frac{n+1}{2}  \cdot \frac{n+1}{2} \cdots \frac{n+1}{2} } \\ 
+             &\geq 
+             \sqrt[n]{\left(\frac{n+1}{2} \right)^{\frac{n+1}{2}}} \\ 
+             & \geq
+             \sqrt[n]{\left(\frac{n+1}{2} \right)^{\frac{n}{2}}} = 
+             \sqrt{\frac{n+1}{2}} \geq 
+             \sqrt{\frac{n}{2}}
+      \end{align*}
+  \end{itemize}
+
+  Από τα παραπάνω προκύπτει ότι $ \sqrt[n]{n!} \geq \sqrt{\frac{n}{2}
+  }, \; \forall n \in \mathbb{N} $. 
+
+  Θ.δ.ο. $ \lim_{n \to \infty} \sqrt[n]{n!} = + \infty $, 
+  δηλαδή ότι η ακολουθία αποκλίνει.
+
+  Έστω $ M >0 $. Από την Αρχιμήδεια Ιδιότητα υπάρχει 
+  φυσικός αριθμός $ 
+  n_{0} \in  \mathbb{N} $ με $ n_{0}>2M^{2} $, ώστε 
+
+  $ \forall n \geq n_{0} \quad \frac{n}{2} > M^{2} \Rightarrow
+  \sqrt{\frac{n}{2}} > M \Rightarrow \sqrt[n]{n!} > M $. 
+\end{proof}
+
+
+\mythmm{Bolzano-Weierstrass}{Κάθε φραγμένη ακολουθία πραγματικών αριθμών 
+έχει συγκλίνουσα υπακολουθία}
+
+
+\begin{proof}[Χωρίς Απόδειξη]
+
+\end{proof}
+
+
+
+
+
+
+
+
+\end{document}

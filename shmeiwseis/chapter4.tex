@@ -1,0 +1,926 @@
+\documentclass[main.tex]{subfiles}
+
+
+
+\begin{document}
+
+\section{Ορισμός}
+
+\begin{dfn}
+    Έστω $ f \colon A \subset \mathbb{R} \to \mathbb{R} $ συνάρτηση και $ x_{0} \in A $. 
+    Η $f$ ονομάζεται συνεχής στο $ x_{0} \in \mathbb{R} $ αν $ \forall \varepsilon >0, 
+    \; \exists \delta >0 \; : \forall x \in A \quad \abs{x- x_{0}} < \delta 
+    \Rightarrow \abs{f(x) - f(x_{0})} < \varepsilon $
+\end{dfn}
+
+\begin{prop}
+    Οι σταθερές συναρτήσεις $ f \colon \mathbb{R} \to \mathbb{R} $ με $ f(x)=c, \; c \in 
+    \mathbb{R}$ είναι συνεχείς.
+\end{prop}
+\begin{proof}
+\item {}
+    Έστω $ \varepsilon >0 $ και $ x_{0} \in \mathbb{R} $. 
+    Επιλέγουμε τυχαίο $ \delta >0 $ και έχουμε ότι $ \forall x \in \mathbb{R} $ 
+    \[
+        \abs{x- x_{0}} < \delta \Rightarrow \abs{f(x)- f(x_{0})} = \abs{c-c} = 0 < 
+        \varepsilon 
+    \]
+\end{proof}
+
+\begin{prop}
+    Η ταυτοτική συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ με $ f(x)=x, \; x \in 
+    \mathbb{R}$ είναι συνεχής στο $ \mathbb{R} $.
+\end{prop}
+\begin{proof}
+\item {}
+    Έστω $ \varepsilon >0 $ και $ x_{0} \in \mathbb{R} $. 
+    Επιλέγουμε $ \delta = \varepsilon $ και έχουμε ότι $ \forall x \in \mathbb{R} $ 
+    \[
+        \abs{x- x_{0}} < \delta \Rightarrow \abs{f(x)-f(x_{0})} = \abs{x- x_{0}} < 
+        \delta = \varepsilon
+    \]
+\end{proof}
+
+\begin{prop}
+    Η συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ με $ f(x)= \sin{x}, \; x \in 
+    \mathbb{R}$ είναι συνεχής.
+\end{prop}
+\begin{proof}
+\item {}
+    Έστω $ \varepsilon >0 $ και $ x_{0} \in \mathbb{R} $. 
+    \[
+        \abs{\sin{x} - \sin{x_{0}}} = 2 \abs{\sin{\left(\frac{x - x_{0}}{2}\right)} 
+        \cdot \cos{\left(\frac{x+ x_{0}}{2}\right)}} = 2 
+        \abs{\sin{\left(\frac{x- x_{0}}{2}\right)}} \cdot 
+        \abs{\cos{\left(\frac{x+ x_{0}}{2}\right)}} \leq 2 \frac{\abs{x- x_{0}}}{2}
+    \]
+    Επιλέγουμε $ \delta = \varepsilon $ και έχουμε ότι $ \forall \varepsilon >0, \; 
+    \exists \delta = \varepsilon > 0 \; : \; \forall x \in \mathbb{R} \quad 
+    \abs{x- x_{0}} < \delta $
+    \begin{align*}
+        \abs{\sin{x} - \sin{x_{0}}} = \cdots \leq \abs{x - x_{0}} < \delta = 
+        \varepsilon  
+    \end{align*} 
+\end{proof}
+
+\begin{thm}[Αρχή Μεταφοράς]
+    Μια συνάρτηση $ f \colon A \to \mathbb{R} $ είναι συνεχής στο $ x_{0} \in A $, 
+    αν και μόνον αν, για κάθε ακολουθία $ {(x_{n})}_{n \in \mathbb{N}} $ με
+
+    \vspace{\baselineskip}
+
+    \begin{minipage}{0.25\textwidth}
+        \begin{myitemize}
+        \item $ x_{n} \in A, \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+        \item $ \lim_{n \to \infty} x_{n} = x_{0} $ \hfill \tikzmark{b}
+        \end{myitemize}
+    \end{minipage}
+    \mybrace{a}{b}[$ \lim_{n \to \infty} f(x_{n}) = f(x_{0}) $]
+\end{thm}
+
+\begin{proof}
+\item {}
+    \begin{description}
+        \item [($ \Rightarrow $)]
+            Έστω $ f $ συνεχής στο $ x_{0} $ και έστω ακολουθία 
+            $ {(x_{n})}_{n \in \mathbb{N}} $ με $ x_{n} \in A $ και $ x_{n} 
+            \xrightarrow{n \to \infty} x_{0} $.
+            Θα δείξουμε ότι $ f(x_{n}) \xrightarrow{n \to \infty} x_{0} $.
+
+            Έστω $ \varepsilon > 0 $.
+
+            Ζητάμε $ n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} 
+            \quad \abs{f(x_{n}) - f(x_{0})}< \varepsilon $.
+
+            Από την συνέχεια της $f$ στο $ x_{0} $ έχουμε:
+            \[
+                \exists \delta >0 \; : \; \quad \forall x \in A \quad 
+                \abs{x- x_{0}} < \delta \Rightarrow 
+                \inlineequation[eq:contres]{\abs{f(x) - f(x_{0}) < \varepsilon}}
+            \] 
+            Επειδή $ x_{n} \xrightarrow{n \to \infty} x_{0} $ τότε $ \exists n_{0} 
+            \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad \abs{x_{n} - x_{0}} < 
+            \delta $. 
+
+            Οπότε $ \forall n \geq n_{0}$ έχω ότι $ x_{n} \in A $ και 
+            $ \abs{x_{n}- x_{0}} < \delta \overset{\eqref{eq:contres}}{\Rightarrow} 
+            \abs{f(x_{n}) - f(x_{0})} < \varepsilon $ 
+
+        \item [($ \Leftarrow $)]
+            Έστω ότι γιά κάθε ακολουθία $ {(x_{n})}_{n \in \mathbb{N}} $ 
+            $ x_{n} \in A $ και $ x_{n} \xrightarrow{n \to \infty} x_{0} $ 
+            έχουμε ότι $ f(x_{n}) \xrightarrow{n \to \infty} f(x_{0}) $.
+
+            Θα δείξουμε ότι η $f$ είναι συνεχής στο $ x_{0} $. (Με άτοπο)
+
+            Έστω ότι $f$ όχι συνεχής στο $ x_{0} $. Οπότε 
+            \[
+                \exists \varepsilon >0 \; : \; \exists x \in A \quad 
+                \abs{x_{\delta} - x_{0}} < \delta \; \text{και} \; 
+                \abs{f(x_{\delta})- f(x_{0})} \geq \varepsilon 
+            \] 
+            Άρα για 
+            \begin{myitemize}
+            \item $ \delta =1 \; \exists x_{1} \in A \; : \; \abs{x_{1}- x_{0}} < 1 
+                $ και $ \abs{f(x_{1}) - f(x_{0})} \geq \varepsilon $
+            \item $ \delta =2 \; \exists x_{2} \in A \; : \; \abs{x_{2}- x_{0}} < 
+                \frac{1}{2}$ και $ \abs{f(x_{2}) - f(x_{0})} \geq \varepsilon $ 
+                \hspace{0.2\textwidth} \vdots 
+            \end{myitemize}
+            Γενικά για κάθε $ n \in \mathbb{N} $ επιλέγουμε $ x_{n} \in A $ 
+            τέτοιο ώστε $ \abs{x_{n}- x_{0}} < \frac{1}{n} $ και 
+            $ \abs{f(x_{n}) - f(x_{0})} \geq \varepsilon  $
+
+            Οπότε έχουμε
+            \begin{myitemize}
+            \item $ x_{n} \in A, \forall n \in \mathbb{N} $ 
+            \item $ - \frac{1}{n} < x_{n} - x_{0} < \frac{1}{n}, \; 
+                \forall n \in \mathbb{N} 
+                \Leftrightarrow x_{0}- \frac{1}{n} < x_{n} < x_{0}+ \frac{1}{n} $ 
+            \end{myitemize}
+            και $ \lim_{n \to \infty} (x_{0}- \frac{1}{n}) = 
+            \lim_{n \to \infty} (x_{0}+ \frac{1}{n}) = x_{0} $ άρα από Κριτήριο 
+            Παρεμβολής και $ \lim_{n \to \infty} x_{n} = x_{0} $ και από υπόθεση 
+            έχουμε ότι $ \lim_{n \to \infty} f(x_{n}) = f(x_{0}) $.
+
+            Άτοπο γιατι $ \abs{f(x_{n})- f(x_{0})} \geq \delta, 
+            \; \forall n \in \mathbb{N}$
+    \end{description}
+\end{proof}
+
+\begin{prop}
+    Έστω $ f,g \colon A \to \mathbb{R} $ συνεχείς στο $ x_{0} \in A $ και έστω 
+    $ \lambda \in \mathbb{R} $. Τότε:
+    \begin{enumerate}[i.]
+        \item $ f+g $ συνεχής στο $ x_{0} $.
+        \item $ f\cdot g $ συνεχής στο $ x_{0} $.
+        \item $ \lambda f $ συνεχής στο $ x_{0} $.
+        \item $ \frac{f}{g} $ συνεχής στο $ x_{0} $, αν $g \neq 0$ ($g$ δεν έχει
+            ρίζες) 
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+\item {}
+    \begin{enumerate}[wide,labelindent=0pt]
+        \item Έστω $ {(x_{n})}_{n \in \mathbb{N}} $ στο $A$ με 
+            $ x_{n} \xrightarrow{n \to \infty} x_{0} $. Θα δείξουμε ότι 
+            $ (f+g)(x) \xrightarrow{n \to \infty} (f+g)(x_{0}) $. 
+
+            \begin{myitemize}
+            \item Επειδή $f$ είναι συνεχής στο $ x_{0} $, έχουμε: 
+                $ f(x_{n}) \xrightarrow{n \to \infty} f(x_{0}) $
+            \item Επειδή $g$ είναι συνεχής στο $ x_{0} $, έχουμε: 
+                $ g(x_{n}) \xrightarrow{n \to \infty} g(x_{0}) $
+            \end{myitemize}
+
+            Σύμφωνα με τον ορισμό του αρθοίσματος συναρτήσεων 
+            \begin{gather*}
+                (f+g)(x_{n}) = f(x_{n}) + g(x_{n}), \; \forall n \in \mathbb{N} \\
+                (f+g)(x_{0}) = f(x_{0}) + g(x_{0}) 
+            \end{gather*} 
+
+            Επίσης $ {(f(x_{n}) + g(x_{n}))}_{n \in \mathbb{N}} $ συγκλίνει ως άθροισμα 
+            συγκλινουσών ακολουθιών και μάλιστα 
+            \[
+                \lim_{n \to \infty} (f(x_{n})+g(x_{n})) = f(x_{0}) + g(x_{0}) 
+            \] 
+            Άρα $ \lim_{n \to \infty} (f+g)(x_{n}) = (f+g)(x_{0}) $.
+    \end{enumerate}
+\end{proof}
+
+\begin{prop}
+    Η συνάρτηση $ f(x)=x^{2}, \; x \in \mathbb{R} $ είναι συνεχής.
+\end{prop}
+
+\begin{proof}
+    Από προηγούμενη πρόταση, για $ f(x)=g(x) = x $, συνεχείς, έχουμε ότι     
+    $ f\cdot g = x\cdot x = x^{2} $ θα είναι συνεχής.
+\end{proof}
+
+\begin{prop}
+    Όλες οι πολυωνυμικές συναρτήσεις είναι συνεχείς.
+\end{prop}
+
+\begin{proof}
+    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο $ f(x) = a_{n} x^{n} + 
+    a_{n-1} x^{n-1} + \cdots + a_{1}x + a_{0}$, όπου οι συντελεστές είναι πραγματικοί 
+    αριθμοί. 
+    \begin{myitemize}
+    \item $ f_{0}(x) = a_{0} $, σταθερή αλλά συνεχής.
+    \item $ f_{1}(x) = a_{1}x $, αριθμός επί $x$, άρα συνεχής.
+    \item $ f_{2}(x) = a_{2}x^{2} $, αριθμός επί $ x^{2} $, άρα συνεχής.
+    \item $ f_{3}(x) = a_{3}x^{3}$, αριθμός επί $ x^{3} $, άρα συνεχής.
+    \end{myitemize}
+
+    \begin{isx}
+        Όλες οι συναρτήσεις της μορφής $ x^{n}, \; \forall n \in \mathbb{N} $ 
+        είναι συνεχείς, άρα και το άθροισμά τους, σύμφωνα με την προηγούμενη πρόταση.
+    \end{isx}
+
+    \begin{proof}
+        Με Μαθηματική Επαγωγή 
+    \end{proof}
+\end{proof}
+
+\begin{thm}
+    Έστω $ f \colon [a,b] \to \mathbb{R} $ συνεχής. Τότε $ \exists m,M \in \mathbb{R} $ 
+    τέτοια ώστε $ m \leq f(x) \leq M, \; \forall x \in [a,b] $. Δηλαδή το $ f([a,b]) $ 
+    είναι φραγμένο ή ισοδύναμα η $f$ είναι φραγμένη.
+\end{thm}
+
+\begin{proof} (Με άτοπο)
+\item {}
+    Έστω ότι το σύνολο $ f([a,b]) $ δεν είναι άνω φραγμένο.    
+
+    Για κάθε $ n \in \mathbb{N} $ επιλέγω $ x_{n} \in [a,b] $ τέτοιο ώστε 
+    $ f(x_{n}) > n $
+
+    Δηλαδή $ a \leq x_{n} \leq b, \; \forall n \in \mathbb{N} $, οπότε η ακολουθία 
+    $ {(x_{n})}_{n \in \mathbb{N}} $ είναι φραγμένη. Άρα από το θεώρημα 
+    Bolzano-Weierstrass υπάρχει υπακολουθία της, έστω 
+    $ {(x_{k_{n}})}_{n \in \mathbb{N}} $ συγκλίνουσα, και έστω 
+    $ \lim_{n \to \infty} x_{k_{n}} = l \in \mathbb{R} $. 
+
+    Επειδή $ a \leq x_{n} \leq b, \; \forall n \in \mathbb{N} $, έπεται, από γνωστή 
+    πρόταση, ότι $ a \leq l \leq b \Rightarrow l \in [a,b]$.
+
+    Επειδή $f$ συνεχής στο $ [a,b] $ θα είναι και συνεχής στο $ l \in [a,b] $, οπότε:
+    \[
+        f(x_{k_{n}})_{n \in \mathbb{N}} \xrightarrow{n \to \infty} f(l) \Rightarrow 
+        {(f(x_{k_{n}}))}_{n \in \mathbb{N}} \quad \text{φραγμένη}
+    \] 
+    Άτοπο, γιατί $ f(x_{k_{n}}) > k_{n} > n $.
+
+    Ομοίως για κάτω φραγμένη.
+\end{proof}
+
+\begin{example}
+\item {}
+    \begin{enumerate}[wide,labelindent=0pt]
+        \item Έστω η συνάρτηση $ f(x) = [x], \; x \in \mathbb{R} $. 
+            \begin{enumerate}[i.]
+                \item Η $f$ είναι συνεχής στο $ \frac{1}{2} $.
+                \item Η $f$ δεν είναι συνεχής στο $1$.
+            \end{enumerate}
+
+            \begin{proof}
+            \item {}
+                \begin{enumerate}[i.]
+                    \item Έχουμε ότι 
+                        \[
+                            [x] \leq x \leq [x]+1 
+                        \] 
+                        όπου $ [x], [x] + 1 \in \mathbb{Z} $. 
+
+                        Έστω $ {(x_{n})}_{n \in \mathbb{N}}$ ακολουθία 
+                        πραγματικών αριθμών με 
+                        $ \lim_{n \to \infty} x_{n} = \frac{1}{2} $. Θα δείξουμε ότι 
+                        \[ \lim_{n \to \infty} f(x_{n}) = 
+                        f\left(\frac{1}{2}\right) \] 
+                        Πράγματι:
+                        \[
+                            \lim_{n \to \infty} x_{n} = \frac{1}{2} \Rightarrow 
+                            \exists n_{0} \in \mathbb{N} \; : \; \forall n 
+                            \geq n_{0} \quad \abs{x_{n} - \frac{1}{2}} < \frac{1}{10} 
+                        \]
+                        Δηλαδή 
+                        \begin{gather*}
+                            -\frac{1}{10} < x_{n} - \frac{1}{2} < \frac{1}{10}, 
+                            \; \forall n \geq n_{0} \Leftrightarrow \\
+                            - \frac{1}{10} + \frac{1}{2} < x_{n} < 
+                            \frac{1}{10} + \frac{1}{2}, \; \forall n \geq n_{0} 
+                            \Rightarrow  \\ 0 < x <1, \; \forall n \geq n_{0} 
+                            \Rightarrow \\ [x_{n}] = 0, \; \forall n \geq n_{0}
+                        \end{gather*}
+                        Άρα 
+                        \[
+                            \lim_{n \to \infty} f(x_{n}) = 
+                            \lim_{n \to \infty} [x_{n}] = 
+                            \lim_{n \to \infty} 0 = 0 = \left[\frac{1}{2} \right] = 
+                            f\left(\frac{1}{2}\right), \; \forall n \geq n_{0} 
+                        \] 
+
+                    \item 
+                        Επιλέγω $ {(\tilde{x}_{n})}_{ n \in \mathbb{N}} $ 
+                        ακολουθία με τύπο 
+                        $ \tilde{x}_{n} = 1 - \frac{1}{n}, \; \forall n \in 
+                        \mathbb{N} $. Τότε
+                        $ \lim_{n \to \infty} \tilde{x}_{n} = 1 $, όμως 
+                        \[
+                            \lim_{n \to \infty} f(\tilde{x}_{n}) = 
+                            \lim_{n \to \infty} 
+                            [\tilde{x}_{n}] = \lim_{n \to \infty} 0 = 0 \quad 
+                            \text{ενώ} \quad  f(1) = [1] = 1 
+                        \] 
+                \end{enumerate}
+            \end{proof}
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    Η συνάρτηση $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο 
+    $ f(x) = \chi _{\mathbb{Q}} $, δεν είναι συνεχής σε κανένα σημείο.
+\item {}
+    \begin{description}
+        \item [Α᾽ Τρόπος: (Με αρχή Μεταφοράς)]
+            \begin{equation*}
+                f(x) = \chi _{\mathbb{Q}} = 
+                \begin{cases} 
+                    1, & x \in 
+                    \mathbb{Q} \\ 0, & x \not \in \mathbb{Q}
+                \end{cases} 
+            \end{equation*}
+            Έστω $ x_{0} \in \mathbb{R} $. Τότε:
+            \begin{itemize}
+                \item Από πυκνότητα ρητών, υπάρχει ακολουθία ρητών 
+                    $ {(q_{n})}_{ n \in \mathbb{N}} $ με 
+                    \begin{equation*}
+                        \lim_{n \to \infty} q_{n} = x_{0} \Rightarrow 
+                        \lim_{n \to \infty} f(q_{n}) = 
+                        \lim_{n \to \infty} 1 = 1  
+                    \end{equation*}
+                \item Από πυκνότητα άρρητων, υπάρχει ακολουθία άρρητων 
+                    $ {(a_{n})}_{n \in \mathbb{N}} $ με
+                    \begin{equation*}
+                        \lim_{n \to \infty} a_{n} = x_{0} \Rightarrow  
+                        \lim_{n \to \infty} f(a_{n}) = 
+                        \lim_{n \to \infty} 0 = 0 
+                    \end{equation*}
+            \end{itemize}
+            Άρα $f$ ασυνεχής στο $ x_{0} $, όμως $ x_{0} $ τυχαίο, οπότε 
+            $f$ ασυνεχής παντού.
+        \item [Β᾽ Τρόπος: (Με άρνηση ορισμού συνέχειας)]
+        \item {}
+            Για $ \varepsilon = \frac{1}{2} > 0 $ θα δείξουμε ότι 
+            \begin{equation*} 
+                \forall \delta >0, \; \exists x \in \mathbb{R} \; : \; 
+                \abs{x - x_{0}} < \delta  \quad \text{αλλά} \quad
+                \abs{f(x) - f(x_{0})} \geq \frac{1}{2}.
+            \end{equation*}
+            Πράγματι:
+            Έστω $ \delta > 0 $, τότε:
+            \begin{itemize}
+                \item Αν $ x_{0} $ ρητός, τότε $ \exists$  άρρητος $a$ (από 
+                    πυκνότητα άρρητων) με
+                    $ \abs{a - x_{0}} < \delta $ και $ \abs{f(a) - f(x_{0})} = 
+                    \abs{0 - 1} = 1 > \frac{1}{2} $
+                \item Αν $ x_{0} $ άρρητος, τότε $ \exists $ ρητός $q$ (από 
+                    πυκνότητα ρητών) με 
+                    $ \abs{q- x_{0}} < \delta $ και $ \abs{f(q) - f(x_{0})} = 
+                    \abs{1 - 0} = 1 > \frac{1}{2} $
+            \end{itemize}
+    \end{description}
+\end{example}
+
+\begin{prop}
+    Έστω $ f \colon A \to \mathbb{R} $ συνεχής σ᾽ ένα σημείο $ x_{0} \in A $ 
+    και $ g \colon f(A) \to \mathbb{R} $ συνεχής στο $ f(x_{0}) \in f(A) $. 
+    Τότε η συνάρτηση $ g \circ f $ είναι συνεχής στο $ x_{0} \in A $.
+\end{prop}
+
+\begin{proof}
+    Εύκολη με Αρχή Μεταφοράς
+\end{proof}
+
+\begin{prop}
+    Η συνάρτηση $ \cos{} \colon \mathbb{R} \to \mathbb{R} $ είναι συνεχής.
+\end{prop}
+
+\begin{proof}
+\item {}
+    \begin{myitemize}
+    \item Ομοίως με την $ \sin{x} $
+    \item Ή $ \cos{x} = \pm \sqrt{1- \sin^{2}{x}} $ είναι σύνθεση και 
+        πράξεις συνεχών συναρτήσεων, με κατάλληλη προσαρμογή στο 
+        κάθε τεταρτημόριο.
+    \end{myitemize}
+\end{proof}
+
+\begin{prop}
+    Η συνάρτηση $ f(x) = a^{x}, \; x \in \mathbb{R}, \; a>0 $ είναι συνεχής.
+\end{prop}
+
+\begin{proof}
+\item {}
+    Έστω $ x_{0} \in \mathbb{R} $. Θα δείξουμε ότι η $f$ είναι συνεχής 
+    στο $ x_{0} $, με την αρχής της μεταφοράς.
+
+    Θεωρούμε την ακολουθία $ {(x_{n})}_{n \in \mathbb{N}} $ πραγματικών αριθμών 
+    με $ \lim_{n \to \infty} x_{n} = x_{0} $ και θα δείξουμε ότι  
+    $\lim_{n \to \infty} a^{x_{n}} = a^{x_{0}}$.
+
+    Επιλέγουμε ρητούς $ q_{n} \in \left(x_{n} - \frac{1}{n}, x_{n}\right), 
+    \; \forall n \in \mathbb{N} $ και $ \tilde{q}_{n} \in \left(x_{n}, x_{n}+ 
+    \frac{1}{n} \right), \; \forall n \in \mathbb{N} $.
+
+    \begin{description}
+        \item [1η Περίπτωση: (a>1)]
+            \begin{gather*}
+                x_{n} - \frac{1}{n} < q_{n} < x_{n}, \; \forall n \in 
+                \mathbb{N} \Rightarrow \lim_{n \to \infty} q_{n} = x_{0} \\
+                x_{n} < \tilde{q}_{n} < x_{n}+ \frac{1}{n}, \; \forall n \in 
+                \mathbb{N} \Rightarrow \lim_{n \to \infty} \tilde{q}_{n} = x_{0}
+            \end{gather*}
+
+            Οπότε 
+            \[
+                \lim_{n \to \infty} a^{q_{n}} = 
+                \lim_{n \to \infty} a^{\tilde{q}_{n}} = a^{x_{0}}
+            \] 
+            και επίσης
+            \[
+                q_{n} < x_{n} < \tilde{q}_{n}, \; \forall n \in \mathbb{N} 
+                \Rightarrow a^{q_{n}} < a^{x_{n}} < a^{\tilde{q}_{n}}, \; 
+                \forall n \in \mathbb{N}
+            \] 
+            Οπότε από Κριτήριο παρεμβολής και 
+            $ \lim_{n \to \infty} a^{x_{n}} = a^{x_{0}} $ 
+        \item [2η Περίπτωση: (0<a<1)]
+            Ομοίως με την 1η Περίπτωση.
+        \item [3η Περίπτωση: (a=1)]
+            Αν $ a=1 \Rightarrow $ τότε η $f$ είναι σταθερή, και άρα συνεχής.
+    \end{description}
+\end{proof}
+
+\begin{prop}
+    Η συνάρτηση $ f(x) = x^{a}, \; x>0 $ είναι συνεχής $ \forall a 
+    \in \mathbb{R} $.
+\end{prop}
+
+\begin{proof}
+    Έστω $ x_{0}>0 $. Θα δείξουμε ότι η $f$ είναι συνεχής στο $ x_{0} $.
+    \begin{description}
+        \item [1η Περίπτωση: $(a \in \mathbb{N})$]
+            Αν $ a \in \mathbb{N} $ τότε η $ f $ είναι μονώνυμο και άρα είναι 
+            συνεχής στο $ \mathbb{R} $.
+        \item [2η Περίπτωση: $(a \in \mathbb{Q}, a>0)$]
+            Αν $ a \in \mathbb{Q}, \; a >0  \Rightarrow a = \frac{\kappa}{\lambda}, \; 
+            \kappa, \lambda \in \mathbb{N} $. Τότε αν $ {(x_{n})}_{n \in \mathbb{N}} $ 
+            ακολουθία πραγματικών αριθμών με $ \lim_{n \to \infty} x_{n} = x_{0} $, τότε
+            \[
+                \lim_{n \to \infty} {x_{n}}^{\frac{1}{\lambda}} = 
+                {x_{0}}^{\frac{1}{\lambda}} \Rightarrow \lim_{n \to \infty} 
+                {x_{n}}^{\frac{\kappa}{\lambda} } = {x_{0}}^{\frac{\kappa}{\lambda}} 
+                \Rightarrow \lim_{n \to \infty} f(x_{n}) = f(x_{0})
+            \] 
+            όπου πρέπει $ x_{0} \geq 0 $.
+        \item [3η Περίπτωση: $(a \in \mathbb{Q}, \; a<0) $]
+            Αν $ a<0 \Rightarrow -a>0 \Rightarrow \lim_{n \to \infty} {x_{n}}^{-a} = 
+            {x_{0}}^{-a} \Rightarrow \lim_{n \to \infty} {x_{n}}^{a} = {x_{0}}^{a} $
+        \item [4η Περίπτωση: $ a \in \mathbb{R} \setminus \mathbb{Q} $] 
+            Χωρίς Απόδειξη.
+    \end{description}
+\end{proof}
+
+\begin{thm}
+    Έστω $ f \colon [a,b] \to \mathbb{R} $ συνεχής. Τότε $ \exists x_{1}, x_{2} \in 
+    [a,b] \; : \; f(x_{1}) \leq f(x) \leq f(x_{2}), \; \forall x \in [a,b]$.
+\end{thm}
+
+\begin{proof}
+    Όπως είδαμε στο θεώρημα Μέγιστης, Ελάχιστης τιμής, το σύνολο $ f([a,b]) $ είναι 
+    φραγμένο. Γιατί φραγμένη συνάρτηση, σημαίνει ακριβώς φραγμένο σύνολο τιμών. 
+
+    Από το αξίωμα της Πληρότητας, έχω ότι υπάρχουν τα $ \sup f([a,b]) $ και 
+    $ \inf f([a,b]) $. Έστω ότι $ s = \sup f([a,b]) $. Θα δείξουμε ότι το σύνολο 
+    $ f([a,b]) $ έχει μέγιστο στοιχείο, δηλαδή ότι $ s \in f([a,b]) $. Ζητάμε 
+    $ x_{0} \in [a,b] $ τέτοιο ώστε $ s = f(x_{0}) $.
+
+    Σύμφωνα με γνωστή πρόταση, $ \exists \tilde{x}_{n} \in [a,b], \; 
+    \forall n \in \mathbb{N} $ τέτοιο ώστε 
+    \inlineequation[eq:asd1]{\lim_{n \to \infty} f(\tilde{x}_{n}) = s}. 
+    Η ακολουθία $ {(x_{n})}_{n \in \mathbb{N}} $ είναι φραγμένη, αφού 
+    $ x_{n} \in [a,b], \; \forall n \in \mathbb{N} $, οπότε από το θεώρημα 
+    Bolzano-Weierstrass θα έχει συγκλίνουσα υπακολουθία, δηλαδή:
+    \[
+        \lim_{n \to \infty} {x_{k}}_{n} = l \in [a,b] \Rightarrow 
+        \inlineequation[eq:asd2]{\lim_{n \to \infty} f({x_{k}}_{n}) = f(l)}
+    \]
+
+    Από τις σχέσεις~\eqref{eq:asd1} και~\eqref{eq:asd2}, έχουμε ότι $ f(l) =s $, 
+    δηλαδή το ζητούμενο.
+
+    Ομοίως για το ελάχιστο.
+\end{proof}
+
+\begin{thm}[Bolzano]
+    Έστω $ f \colon [a,b] \to \mathbb{R} $ συνεχής, με $ f(a) \cdot f(b) <0 $. 
+    Τότε $ \exists \xi \in (a,b) \; : \; f(\xi) = 0 $.
+\end{thm}
+
+\begin{proof}
+    %TODO
+\end{proof}
+
+\begin{thm}[Ενδιάμεσης Τιμής]
+    ΄Εστω $ f \colon [a,b] \to \mathbb{R} $, συνεχής. Αν επιλέξουμε έναν αριθμό 
+    $ \rho $ τέτοιον ώστε $ f(a) < \rho < f(b) $ ή $ f(b) < \rho < f(a) $, τότε 
+    $ \rho \in f([a,b]) $.
+\end{thm}
+
+\begin{proof}
+\item {}
+    \begin{description}
+        \item [1η Περίπτωση: $(f(a)< \rho < f(b))$]
+        \item {}
+            Θεωρούμε συνάρτηση $ F \colon [a,b] \to \mathbb{R} $ τέτοια ώστε $ 
+            F(x) = f(x) - \rho$. Τότε 
+
+            \begin{minipage}{0.3\textwidth}
+                \begin{myitemize}
+                \item $F(a) = f(a) - \rho < 0 $ \hfill \tikzmark{a}
+                \item $F(b) = f(b) - \rho >0 $ \hfill  \tikzmark{b}
+                \end{myitemize}
+            \end{minipage}
+            \mybrace{a}{b}[$ \exists x_{0} \in (a,b) \; : \; F(x_{0}) = 0 $]
+
+            Οπότε 
+            $ 
+            f(x_{0}) = \rho \Rightarrow \rho \in f([a,b])
+            $
+
+        \item [2η Περίπτωση: $(f(b)< \rho < f(a))$]
+        \item {}
+            Ομοίως
+    \end{description}
+\end{proof}
+
+\begin{dfn}
+    Ένα υποσύνολο $I$ των πραγματικών αριθμών, ονομάζεται διάστημα, αν 
+    $ [x,y] \subseteq I, \; \forall x,y \in I $ με $ x<y $.
+\end{dfn}
+
+\begin{example}
+    Το σύνολο $ A = (0,2) \cup (3,4) $ δεν είναι διάστημα, γιατί $ 1 \in A $ και 
+    $ \frac{7}{2} \in A $, όμως το $ \left[1, \frac{7}{2}\right] \not\subseteq A $.
+\end{example}
+
+\begin{thm}
+    Συνεχής εικόνα διαστήματος είναι διάστημα. (ΘΜΤ με άλλα λόγια)
+\end{thm}
+
+\begin{prop}
+    Η εικόνα κλειστού διαστήματος είναι διάστημα. 
+\end{prop}
+
+\begin{proof}
+    Συνδυασμός του Θεωρήματος Μέσης Τιμής και του θεωρήματος, ότι μια συνεχής σε 
+    κλειστό διάστημα συνάρτηση, παίρνει μέγιστη και ελάχιστη τιμή σε αυτό το διάστημα.
+\end{proof}
+
+\begin{thm}[Σταθερού Σημείου]
+    Έστω $ f \colon [0,1] \to [0,1] $ συνεχής. Τότε $ \exists x_{0} \in [0,1] \; 
+    : \; f(x_{0}) = x_{0} $.
+\end{thm}
+
+\begin{proof}
+\item {}
+    Αρκεί να δείξουμε ότι καμπύλη $ y= f(x) $ τέμνει γεωμετρικά τη διαγώνιο $ y=x $.
+    Δηλαδή, αρκεί να δείξουμε ότι η συνεχής συνάρτηση $ H(x) = f(x)-x, \; x \in [0,1] $, 
+    μηδενίζεται στο $ [0,1] $. Πράγματι:
+    Αν $ f(0)=0 $ ή $ f(1)= 1 $, τότε έχουμε το ζητούμενο. Οπότε, έστω ότι 
+    $ f(0) > 0 $ και $ f(1)<1 $, αφού η $ f $ παίρνει τιμές στο $ [0,1] $. Τότε:
+
+    \begin{minipage}{0.3\textwidth}
+        \begin{myitemize}
+        \item $ H(0) = f(0) > 0 $ \hfill \tikzmark{a}
+        \item $ H(1) = f(1)-1 < 0 $ \hfill \tikzmark{b}
+        \end{myitemize}
+    \end{minipage}
+    \mybrace{a}{b}[$ \exists x_{0} \in (0,1) \; : \; H(x_{0}) = 0$]
+
+    και επομένως $ f(x_{0}) = x_{0} $ και το θεώρημα έχει αποδειχθεί.
+\end{proof}
+
+\begin{thm}
+    Έστω $ f \colon I \to \mathbb{R} $ συνεχής και 1-1. Τότε η $f$ είναι 
+    γνησίως αύξουσα ή γνησίως φθίνουσα.
+\end{thm}
+
+\begin{thm}
+    Έστω $ f \colon I \to \mathbb{R} $ συνεχής και 1-1. Τότε η $f$ αντιστρέφεται.
+\end{thm}
+
+\begin{prop}
+    Η συνάρτηση $ e^{x} \colon \mathbb{R} \to (0,+\infty) $ είναι 1-1 και επί.
+\end{prop}
+
+\begin{proof}
+\item {}
+    Η $ e^{x} $ είναι γνησίως αύξουσα, επομένως είναι και 1-1.
+
+    Έστω $ y>0 $. Θα δείξουμε ότι υπάρχει $ x \in \mathbb{R} $ με $ e^{x}=y $. Πράγματι
+    \begin{gather*}
+        \lim_{n \to \infty} e^{n} = + \infty \Rightarrow \exists n_{1} \in 
+        \mathbb{N} \; : e^{n_{1}} > y \\
+        \lim_{n \to \infty} \left(\frac{1}{e}\right)^{n} = 0 \Rightarrow \exists n_{2} 
+        \in \mathbb{N} \; : e^{- n_{2}} < y 
+    \end{gather*} 
+
+    Επομένως 
+    \[
+        e^{- n_{2}} < y < e^{n_{1}}
+    \] 
+    και από θεώρημα Ενδιάμεσης Τιμής, έχουμε ότι $ \exists x \in \mathbb{R} \; : \; 
+    e^{x} = y$.
+\end{proof}
+
+\begin{dfn}
+    Ορίζουμε $ \log{} \colon (0,+ \infty) \to \mathbb{R} $ με τύπο $ \log{y} = x $, 
+    για το μοναδικό $ x \; : \; e^{x} = y $.
+\end{dfn}
+
+\section{Όριο Συνάρτησης}
+
+\begin{dfn}
+    Έστω $ A \subseteq \mathbb{R} $. Το $ x_{0} $ ονομάζεται σημείο συσσώρευσης του 
+    συνόλου $A$, αν υπάρχει ακολουθία $ (x_{n})_{n \in \mathbb{N}} $ τέτοια ώστε 
+    \begin{myitemize}
+    \item $ x_{n} \in A \setminus \{ x_{0} \} $
+    \item $ \lim_{n \to \infty} x_{n} = x_{0} $
+    \end{myitemize}
+\end{dfn}
+
+\begin{examples}
+\end{examples}
+
+\begin{dfn}
+    Έστω $ f \colon A \to \mathbb{R} $ και $ x_{0} $ σημείο συσσώρευσης του $A$. 
+    \begin{myitemize}
+    \item Το όριο $ \lim_{x \to x_{0}} f(x) $ υπάρχει και είναι ο αριθμός 
+        $ l \in \mathbb{R} $ αν 
+        \[
+            \forall \varepsilon >0, \; \exists \delta >0 \; : \; \forall x \in A \quad 
+            \abs{x-x0} < \delta \Rightarrow \abs{f(x)-l} < \varepsilon
+        \] 
+
+    \item Το όριο $ \lim_{x \to x_{0}} f(x) $ υπάρχει και είναι $ + \infty $, αν
+        \[
+            \forall M>0, \; \exists \delta >0 \; : \; \forall x \in A 
+            \quad \abs{x - x_{0}} < \delta \Rightarrow f(x) > M
+        \] 
+
+    \item Το όριο $ \lim_{x \to x_{0}} f(x) $ υπάρχει και είναι $ - \infty $, αν
+        \[
+            \forall M>0, \; \exists \delta >0 \; : \; \forall x \in A 
+            \quad \abs{x - x_{0}} < \delta \Rightarrow f(x) < -M
+        \] 
+    \end{myitemize}
+\end{dfn}
+
+\begin{dfn}
+    Έστω $ f \colon A \to \mathbb{R} $ με $A$ όχι άνω φραγμένο.
+    \begin{myitemize}
+    \item $ \lim_{x \to +\infty} f(x) = l \in \mathbb{R} \Leftrightarrow \forall 
+        \varepsilon > 0, \; \exists M>0 \; : \; \forall x > M \quad 
+        \abs{f(x)-l} < \varepsilon $ 
+    \item $ \lim_{x \to +\infty} f(x) = + \infty \in \mathbb{R} \Leftrightarrow \forall 
+        M > 0, \; \exists \overline{M} >0 \; : \; \forall x > \overline{M} \quad 
+        f(x) > M $ 
+    \end{myitemize}
+\end{dfn}
+
+\begin{prop}
+    Να αποδείξετε ότι $ \lim_{x \to 0} \frac{\sin{x}}{x} = 1 $.
+\end{prop}
+
+\begin{prop}
+    Ισχύει ότι 
+    \begin{align*}
+        \sin{x} < x < \tan{x}, \; \forall x \in \left(0, \frac{\pi}{2}\right) 
+        \Leftrightarrow \\
+        \frac{\cos{x}}{\sin{x}} < \frac{1}{x} < \frac{1}{\sin{x}}, \; \forall x \in 
+        \left(0, \frac{\pi}{2}\right) \Leftrightarrow \\
+        \cos{x} < \frac{\sin{x}}{x} < 1, \; \forall x \in \left(0, \frac{\pi}{2}\right) 
+        \Leftrightarrow \\
+    \end{align*} 
+
+    Τότε $ \lim_{x \to 0^{+}} \cos{x} = 1, \; \lim_{x \to 0^{+}} 1 = 1 $, 
+    οπότε από Κριτήριο Παρεμβολής, έχουμε ότι 
+    $ \lim_{x \to 0^{+}} \frac{\sin{x}}{x} = 1$
+
+    Επίσης, έχουμε
+    \[
+        \lim_{x \to 0^{-}} \frac{\sin{x}}{x} = \lim_{x \to 0^{+}} 
+        \frac{\sin{(-x)}}{-x} = \lim_{x \to 0^{+}} \frac{- \sin{x}}{-x} = 
+        \lim_{x \to 0^{+}} \frac{\sin{x}}{x} = 1 
+    \] 
+\end{prop}
+
+\begin{examples}
+\item {}
+    \begin{enumerate}
+        \item Να βρεθεί το $ \lim_{x \to 0} f(x) $, με 
+            \[
+                f(x) = 
+                \begin{cases} 
+                    x^{3}, & x \in \mathbb{Q} \\
+                    x^{2}, & x\not \in \mathbb{Q} 
+                \end{cases} 
+            \] 
+
+            Έχουμε 
+            \[
+                \lim_{\substack{x \to 0 \\ x \in \mathbb{Q}}} f(x) = 
+                \lim_{\substack{x \to 0 \\ x \in \mathbb{Q}}} x^{3} = 0^{3} = 0 
+            \] 
+
+            Επίσης
+\[
+    \lim_{\substack{x \to 0 \\ s \not \in \mathbb{Q}}} f(x) =  
+    \lim_{\substack{x \to 0 \\ s \not \in \mathbb{Q}}} x^{2} = 0^{2} = 0
+ \] 
+
+ Άρα $ \lim_{x \to 0} f(x) = 0 $.
+
+    \end{enumerate}
+\end{examples}
+
+\begin{prop}
+    Το όριο $ \lim_{x \to \infty} \sin{x} $ δεν υπάρχει.
+\end{prop}
+
+\section{Παράγωγος Συνάρτησης}
+
+\begin{dfn}
+    Έστω $ f \colon (a,b) \to \mathbb{R} $ συνάρτηση και $ x_{0} \in (a,b) $. Αν 
+    υπάρχει το $ \lim_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}}$, τότε λέμε ότι 
+    η $f$ είναι παραγωγίσιμη στο $ x_{0} $ και $ f'(x_{0}) = \lim_{x \to x_{0}} 
+    \frac{f(x)-f(x_{0})}{x- x_{0}} $.
+\end{dfn}
+
+\begin{prop}
+    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο $ f(x)=c $, σταθερή. Τότε 
+    $ f'(x) = 0, \; \forall x \in \mathbb{R} $. 
+\end{prop}
+
+\begin{proof}
+    Έστω $ x_{0} \in \mathbb{R} $ και $ x \neq x_{0} $. Τότε
+    \[
+        \lim_{x \to x_{0}}  \frac{f(x) - f(x_{0})}{x - x_{0}} = \lim_{x \to x_{0}} 
+        \frac{c - c}{x - x_{0}} = \lim_{x \to x_{0}} 0 = 0
+     \] 
+
+\end{proof}
+
+\begin{prop}
+    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο $ f(x)=x $. Τότε 
+    $ f'(x) = 1, \; \forall x \in \mathbb{R} $. 
+\end{prop}
+
+\begin{proof}
+    Έστω $ x_{0} \in \mathbb{R} $ και $ x \neq x_{0} $. Τότε
+   \[
+       \lim_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}} = \lim_{x \to x_{0}} 
+       \frac{x - x_{0}}{x - x_{0}} = \lim_{x \to x_{0}} 1 = 1
+    \] 
+
+\end{proof}
+
+\begin{prop}
+    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο $ f(x)=x^{2} $. Τότε 
+    $ f'(x) = 2x, \; \forall x \in \mathbb{R} $. 
+\end{prop}
+
+\begin{proof}
+    Έστω $ x \in \mathbb{R} $ και $ x \neq x_{0} $. Τότε 
+    \[
+        \lim_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x- x_{0}} = \lim_{x \to x_{0}} 
+        \frac{x^{2} - x_{0}^{2}}{x - x_{0}} = \lim_{x \to x_{0}} (x+x0) = x_{0}+ x_{0}
+        = 2 x_{0}
+     \] 
+\end{proof}
+
+\begin{prop}
+    Έστω $ f \colon \mathbb{R} \to \mathbb{R} $ με τύπο $ f(x) = \abs{x}, \; 
+    x \in \mathbb{R}$. Τότε 
+    \begin{equation*}
+        f'(x) = 
+        \begin{cases} 
+            \phantom{-}1, & x>0 \\ -1, & x<0 
+        \end{cases} 
+    \end{equation*} 
+    και δεν υπάρχει η παράγωγος στο $0$.
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{examples}
+\end{examples}
+
+\begin{thm}
+    Έστω $ f,g \colon (a,b) \to \mathbb{R} $ και $ x_{0} \in (a,b) $. Αν οι $ f,g $ 
+    είναι παραγωγίσιμες στο $ x_{0} $, τότε:
+    \begin{myitemize}
+    \item $ (f+g)'(x_{0}) = f'(x_{0}) + g'(x_{0})$
+    \item $ (f\cdot g)'(x_{0}) = f'(x_{0}) \cdot g(x_{0}) + g'(x_{0})\cdot 
+        f(x_{0}) $
+    \item $ \left(\frac{f}{g}\right)'(x_{0}) = \frac{f'(x_{0})
+        \cdot g(x_{0}) - g'(x_{0})\cdot f(x_{0})}{g^{2}(x_{0})} $,
+        με την προυπόθεση ότι η $ \frac{f}{g} $ ορίζεται.
+    \end{myitemize}
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{prop}
+    Έστω $ f \colon (a,b) \to \mathbb{R} $ και $ x_{0} \in (a,b) $. Αν η $f$ είναι 
+    παραγωγίσιμη στο $ x_{0} $, τότε η $f$ είναι συνεχής στο $ x_{0} $.
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{prop}
+    Έστω $ f(x) = a_{n}x^{n} + \cdots + a_{1}x + a_{0} $ πολυώνυμο. Τότε 
+    $ f'(x) = n a_{n}x^{n-1} + \cdots a_{1} $.
+\end{prop}
+
+\begin{proof}
+    Εύκολη (Γ᾽ Λυκείου)
+\end{proof}
+
+\begin{prop}
+    Έστω $ f \colon \mathbb{R} \to (-1,1)$, με τύπο, $ f(x) = \sin{x} $. Τότε 
+    $ f'(x) = \cos{x} $.
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{prop}
+    Η εκθετική συνάρτηση $ f \colon \mathbb{R} \to (0,+ \infty) $, με τύπο 
+    $ f(x) = e^{x} $ είναι παραγωγίσιμη και ισχύει $ f'(x) = e^{x} $.
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\section{Ακρότατα Συνάρτησης}
+
+\begin{dfn}
+    Έστω $I$ διάστημα των πραγματικών αριθμών και $ f \colon I \to \mathbb{R} $. 
+    Ένα εσωτερικό σημείο $ x_{0} $ του $I$ λέγεται κρίσιμο σημείο για την $f$, αν 
+    $ f'(x_{0} ) = 0 $.
+\end{dfn}
+
+\begin{rem}
+    Έστω $ f \colon [a,b] \to \mathbb{R} $ συνεχής συνάρτηση. Γνωρίζουμε ότι η $f$ 
+    παίρνει μέγιστη και ελάχιστη τιμή στο $ [a,b] $. Αν $ x_{0} \in [a,b] $ και 
+    $ f(x_{0}) = \max f $ ή $ f(x_{0}) = \min f $ τότε συμβαίνει αναγκαστικά 
+    κάτι από τα παρακάτω:
+    \begin{myitemize}
+    \item $ x_{0} = a $ ή $ x_{0} =b $ (άκρα του διαστήματος)
+    \item $ x_{0} \in (a,b) $ και $ f'(x_{0} ) = 0 $ (κρίσιμο σημείο)
+    \item $ x_{0} \in (a,b) $ και η $f$ δεν είναι παραγωγίσιμη στο $ x_{0} $.
+    \end{myitemize}
+\end{rem}
+
+\begin{examples}
+\end{examples}
+
+\begin{thm}[Rolle]
+    Έστω $ f \colon [a,b] \to \mathbb{R} $. Υποθέτουμε ότι η $ f $ είναι συνεχής 
+    στο $ [a,b] $ και παραγωγίσιμη στο $ (a,b) $. Έστω ότι $ f(a)=f(b) $. Τότε
+    $ \exists x_{0} \in (a,b) \; : \; f'(x_{0}) = 0 $.
+\end{thm}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{thm}[Μέσης Τιμής]
+    Έστω $ f \colon [a,b] \to \mathbb{R} $ συνεχής στο $ [a,b] $ και παραγωγίσιμη 
+    στο $ (a,b) $. Τότε $ \exists x_{0} \in (a,b) \; : \; f'(x_{0}) = 
+    \frac{f(b)-f(a)}{b-a} $
+\end{thm}
+
+\begin{proof}
+    \begin{rem}
+        Η υπόθεση ότι η $f$ είναι συνεχής στο κλειστό διάστημα $ [a,b] $ είναι 
+        απαραίτητη για να μπορώ να ισχυριστώ ότι $ f(a), f(b) $ επίσης 
+        μέγιστα της $f$.
+    \end{rem}   
+\end{proof}
+
+\begin{thm}
+    Έστω $ f \colon (a,b) \to \mathbb{R} $ παραγωγίσιμη συνάρτηση. Τότε:
+    \begin{myitemize}
+    \item $ f'(x_{0}) \geq 0, \; x \in (a,b) \Rightarrow f $ αύξουσα στο $ (a,b) $.
+    \item $ f'(x_{0}) > 0, \; x \in (a,b) \Rightarrow f $ γνησίως αύξουσα στο 
+        $ (a,b) $.
+    \item $ f'(x_{0}) \leq 0, \; x \in (a,b) \Rightarrow f $ φθίνουσα στο $ (a,b) $.
+    \item $ f'(x_{0}) < 0, \; x \in (a,b) \Rightarrow f$ γνησίως φθίνουσα στο 
+        $ (a,b) $.
+    \item $ f'(x_{0}) = 0, \; x \in (a,b) \Rightarrow f $ σταθερή στο $ (a,b) $.
+    \end{myitemize}
+\end{thm}
+\end{document}

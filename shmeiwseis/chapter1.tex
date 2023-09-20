@@ -1,0 +1,1201 @@
+\documentclass[main.tex]{subfiles}
+
+
+
+\begin{document}
+
+\section{Μαθηματική Επαγωγή}
+
+\mythm{Έστω $ S \subseteq \mathbb{N} $ τέτοιο ώστε:
+  \begin{minipage}[t]{0.25\textwidth}
+    \begin{enumerate}[(i)]
+      \item  $ 1 \in S $ \hfill \tikzmark{a}
+      \item  $ n \in S \Rightarrow n + 1 \in S $ \hfill \tikzmark{b}
+    \end{enumerate} 
+  \end{minipage}
+\mybrace{a}{b}[$ S = \mathbb{N} $]}
+
+\begin{example}
+  Να αποδείξετε ότι $ 4^{n} \geq n^{2}, \; \forall n \in \mathbb{N} $.
+\end{example}
+\begin{proof}
+\item {}
+  \begin{myitemize}
+    \item Για $ n=1 $, έχω: $ 4^{1} \geq 1^{2} $, ισχύει.
+    \item Έστω ότι η ανισότητα ισχύει για $n$, δηλ. 
+      $\inlineequation[eq:epagex1]{4^{n} \geq n^{2}}$
+    \item Θα δείξουμε ότι ισχύει και για $ n+1 $. Πράγματι:
+      \begin{align*}
+        4^{n+1} = 4^{n}\cdot 4 \overset{\eqref{eq:epagex1}}{\geq}
+        n^{2}\cdot 4 
+        = 4n^{2} = n^{2} + 2n^{2} + n^{2} \geq n^{2} + 2n + 1 = (n+1)^{2}.
+      \end{align*}
+  \end{myitemize}
+\end{proof}
+
+\begin{example}
+  Να αποδείξετε ότι $ 2^{n} \geq n^{3}, \; \forall n \geq 10 $.
+\end{example}
+\begin{proof}
+\item {}
+  \begin{myitemize}
+    \item Για $ n=10 $, έχω: $ 2^{10} = 1024 \geq 1000 = 10^{3}  $, 
+      ισχύει.
+    \item Έστω ότι η ανισότητα ισχύει για $n$, δηλ. 
+      $\inlineequation[eq:epagex2]{2^{n} \geq n^{3}}$.
+    \item Θα δείξουμε ότι ισχύει και για $ n+1 $. Πράγματι:
+      \begin{align*}
+        2^{n+1} = 2^{n} \cdot 2 \overset{\eqref{eq:epagex2}}{\geq} n^{3} 
+        \cdot 2 = 2n^{3} = n^{3} + n^{3} = n^{3} + nn^{2} \overset{n\geq 10}
+        {\geq} n^{3}+10n^{2} > n^{3}+7n^{2} &= n^{3} + 3n^{2} + 3n^{2} + n^{2} \\ 
+                                            &\geq  n^{3} + 3n^{2} + 3n + 1 \\ 
+                                            &= (n+1)^{3}
+      \end{align*} 
+  \end{myitemize}
+\end{proof}
+
+\section{Ανισότητα Bernoulli}
+\[
+  \boxed{(1+a)^{n} \geq 1 + na, \quad \forall a \geq -1, \; \forall n \in
+  \mathbb{N}}
+\] 
+\begin{proof}
+\item {}
+  \begin{myitemize}
+    \item Για $ n=1 $, έχω: $ (1+a)^{1} = 1+a \geq 1+a = 1 + 1 \cdot a $, ισχύει.
+    \item Έστω ότι η ανισότητα ισχύει, για $ n $, δηλ. $\inlineequation[eq:bern]
+      {(1+a)^{n} \geq 1 + na}$
+    \item Θα δείξουμε ότι ισχύει και για $ n+1 $. Πράγματι
+      \begin{align*}
+        (1+a)^{n+1} = (1+a)^{n}(1+a) \overset{\eqref{eq:bern}}
+        {\underset{a \geq -1}{\geq}} (1+na)(1+a) &= 1 + a + na + na^{2} 
+        = 1 + (n+1)a + na^{2} \geq 1 + (n+1)a
+      \end{align*}
+  \end{myitemize}
+\end{proof}
+
+\begin{rem}
+  Αν $ n=2,3,4,\ldots $ και $ a>-1 $, τότε ισχύει $ (1+a)^{n}>1+na $.
+\end{rem}
+
+\section{Αθροίσματα}
+
+\mydfn{Έστω $ a_{1}, a_{2}, \ldots, a_{N} \in \mathbb{R} $. Ορίζουμε 
+\[ \sum_{n=1}^{N} a_{n} = a_{1} + a_{2} + \cdots + a_{N} \]}
+
+Το σύμβολο του αθροίσματος έχει τις παρακάτω ιδιότητες.
+{
+  \everymath{\displaystyle}
+\begin{myitemize}
+  \item $ \sum_{n=k}^{N} a_{n} = \sum_{n=k- \rho }^{N- \rho } a_{n+ \rho} $ ή  
+$ \sum_{n=k}^{N} a_{n} = \sum_{n=k+ \rho }^{N+ \rho } a_{n- \rho} $
+  \item $ \sum_{n=k}^{N} \lambda a_{n} = \lambda \sum_{n=k}^{N} a_{n} $ 
+  \item $ \sum_{n=k}^{N} (a_{n}+b_{n}) = \sum_{n=k}^{N} a_{n} + \sum_{n=k}^{N} b_{n} $ 
+\end{myitemize}
+}
+
+\begin{rem}
+  Αν ένα από τα όρια του συμβόλου του αθροίσματος είναι $ - \infty $ ή $ + \infty $, 
+  τότε ή τρίτη ιδιότητα δεν ισχύει πάντα.
+\end{rem}
+
+Τα παρακάτω παραδείγματα, περιγράφουν μερικές από τις πιο βασικές ιδιότητες που 
+έχουν τα αθροίσματα.
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=3}^{6} n^{2} = \sum_{n=4}^{7} (n-1)^{2}   $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \sum_{n=4}^{7} (n-1)^{2} &= (4-1)^{2}+(5-1)^{2}+(6-1)^{2}+(7-1)^{2} 
+    = 3^{2}+4^{2}+5^{2}+6^{2} = \sum_{n=3}^{6} n^{2} 
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=3}^{6} n^{2} = \sum_{n=1}^{4} (n+2)^{2}   $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \sum_{n=1}^{4} (n+2)^{2} = (1+2)^{2}+(2+2)^{2}+(3+2)^{2}+(4+2)^{2}=
+    3^{2}+4^{2}+5^{2}+6^{2} = \sum_{n=3}^{6} n^{2} 
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=1}^{5} (2n+1) - \sum_{n=3}^{5} (2n+1)  =  
+  \sum_{n=1}^{2} (2n+1) $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \sum_{n=1}^{5} (2n+1)- \sum_{n=3}^{5} (2n+1) = 
+    (3+5+7++11) - (7+9+11) = 3 + 5 = \sum_{n=1}^{2} (2n+1) 
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=1}^{20} (2n+1) - \sum_{n=8}^{20} (2n+1) = \sum_{n=1}^{7} 
+  (2n+1) $ 
+\end{example}
+\begin{proof}
+\item 
+  \[
+    \sum_{n=1}^{20} (2n+1) = \sum_{n=1}^{7} (2n+1) + 
+    \sum_{n=8}^{20} (2n+1) - \sum_{n=8}^{20} (2n+1) = 
+    \sum_{n=1}^{20} (2n+1)
+  \]
+\end{proof}
+
+\begin{example}[Τηλεσκοπικό Άθροισμα]
+  Να δείξετε ότι $ \sum_{n=1}^{5} \frac{1}{n(n+1)} = 1 - \frac{1}{6}  $
+\end{example}
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [Α᾽ Τρόπος:]
+      \begin{align*}
+        \sum_{n=1}^{5} \frac{1}{n(n+1)} 
+        &= \frac{1}{1\cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} 
+        + \frac{1}{4 \cdot 5} + \frac{1}{5 \cdot 6} \\
+        &= \left(\frac{1}{1} - \frac{1}{2}\right) + \left(\frac{1}{2} 
+        - \frac{1}{3} \right) + \left(\frac{1}{3} - \frac{1}{4}\right) 
+        + \left(\frac{1}{4} - \frac{1}{5}\right) +
+        \left(\frac{1}{5} - \frac{1}{6}\right)  = 1 - \frac{1}{6}
+      \end{align*}
+    \item [Β᾽ Τρόπος: (Με ανάλυση σε Απλά Κλάσματα)]
+      Έχουμε $ \frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1} = 
+      \frac{1}{n} - \frac{1}{n+1}$, οπότε
+      \begin{equation*}
+        \sum_{n=1}^{5} \frac{1}{n(n+1)} = \sum_{n=1}^{5} \left(\frac{1}{n} - 
+        \frac{1}{n+1}\right)    
+        = \left(\frac{1}{1} - \frac{1}{2}\right) + \left(\frac{1}{2} 
+        - \frac{1}{3} \right) + \left(\frac{1}{3} - \frac{1}{4}\right) 
+        + \left(\frac{1}{4} - \frac{1}{5}\right) +
+        \left(\frac{1}{5} - \frac{1}{6}\right)  = 1 - \frac{1}{6}
+      \end{equation*} 
+  \end{description}
+\end{proof}
+
+% \begin{example}[Γεωμετρική Πρόδος] Να υπολογιστεί το άθροισμα $ \sum_{n=1}^{6} 2^{n} $
+% \item {}
+%   \begin{description} 
+%     \item [Ά Τρόπος:]
+%       \[
+%         \sum_{n=1}^{6} 2^{n} = 2 + 2^{2} + 2^{3} + 2^{4} + 2^{5} + 2^{6} = 
+%         2 \left(1 + 2 + 2^{2} + 2^{3}+2^{4}+2^{5}\right) = 
+%         2 \cdot \sum_{n=0}^{5} 2^{n} = 2 \cdot 
+%         \frac{2^{6}-1}{2-1} = 2 \cdot 63 = 126
+%       \] 
+%     \item [Β᾽ Τρόπος:]
+%       \[
+%         \sum_{n=1}^{6} 2^{6} = \sum_{n=0}^{5} 2^{n+1} = 2 \cdot \sum_{n=0}^{5} 2^{n} 
+%         = 2 \cdot \frac{2^{6}-1}{2-1} = 2 \cdot 63 = 126 
+%       \]
+%   \end{description}
+% \end{example}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=1}^{100} \frac{1}{n(n+1)} \leq \sum_{n=1}^{100} 
+  \frac{1}{n^{2}} $
+\end{example}
+\begin{proof}
+\item {} 
+  Έχουμε $ n+1 > n $ , $ \forall n \in \mathbb{N} $, οπότε
+  \[
+    \frac{1}{n+1} < \frac{1}{n} \overset{\cdot \frac{1}{n} >0}{\Rightarrow}
+    \frac{1}{n(n+1)} < \frac{1}{n^{2}} \Rightarrow \sum_{n=1}^{100} 
+    \frac{1}{n(n+1)} \geq \sum_{n=1}^{100} \frac{1}{n^{2}} 
+  \] 
+\end{proof}
+
+\begin{exercise}
+  Να δείξετε ότι $ \sum_{n=1}^{100} \frac{1}{n(n+1)} \leq \sum_{n=2}^{101} 
+  \frac{1}{n^{2}} $
+\end{exercise} 
+\begin{proof}
+\item {} 
+  Έχουμε $ n-1 < n, \; \forall n \in \mathbb{N} $ και 
+  $ n-1>0, \; \forall n \geq 2 $, άρα
+  \[
+    \frac{1}{n-1} \leq \frac{1}{n} \overset{\cdot \frac{1}{n} >0}{\Rightarrow}
+    \frac{1}{n(n-1)} \leq \frac{1}{n^{2}}, \quad \forall n \geq 2 \Rightarrow 
+    \sum_{n=2}^{101} \frac{1}{n(n-1)} \leq 
+    \inlineequation[eq:sumex]{\sum_{n=2}^{101} \frac{1}{n^{2}}}
+  \] 
+  Άρα, 
+  \[
+    \sum_{n=1}^{100} \frac{1}{n(n+1)} = \sum_{n=2}^{101} \frac{1}{(n-1)n} 
+    \overset{\eqref{eq:sumex}}{\leq} \sum_{n=2}^{101} \frac{1}{n^{2}} 
+  \]
+\end{proof}
+
+\begin{example}
+  Με Μαθηματική Επαγωγή, αποδεικνύονται εύκολα τα παρακάτω αθροίσματα.
+  \begin{enumerate}[wide,labelindent=0pt]
+    \item $ \sum_{n=1}^{N} n = 1+2+3+\cdots+N = \frac{N(N+1)}{2}, 
+      \quad \forall N \in \mathbb{N}  $
+    \item $ \sum_{n=1}^{N} n^{2} =1^{2}+2^{2}+3^{2}+\cdots+N^{2} = 
+      \frac{N(N+1)(2N+1)}{6}, \quad \forall N \in \mathbb{N} $
+    \item $ \sum_{n=1}^{N} n^{3} = 1^{3}+2^{3}+3^{3}+\cdots +N^{3} =
+      \left(\frac{N(N+1)}{2}
+      \right)^{2}, \; \forall n \in \mathbb{N}$
+  \end{enumerate}
+\end{example}
+
+\section{Απόλυτη Τιμή}
+
+\mydfn{Για κάθε $ a \in \mathbb{R} $, θέτουμε
+\[ \abs{a} = \begin{cases} a, & a \geq 0 \\ -a, & a < 0 \end{cases}  \]}
+
+\begin{rem}
+  Άμεση συνέπεια του ορισμού είναι οι σχέσεις:
+  \begin{myitemize}
+    \item $ \abs{a} \geq 0, \;  \forall a \in \mathbb{R} $
+    \item $ -\abs{a} \leq a \leq \abs{a}, \; \forall a \in \mathbb{R} $
+  \end{myitemize}
+\end{rem}
+
+\myprop{Έστω $ \theta > 0 $. Τότε 
+  \label{prop:absprop1}
+  \[
+    \abs{a} \leq \theta \Leftrightarrow - \theta \leq a \leq \theta  
+\]}
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [$(  \Rightarrow ) $] 
+      Έστω ότι $ \abs{a} \leq \theta, \; a \in \mathbb{R} $ και 
+      $ \theta >0 $. 
+      \begin{myitemize}
+        \item Έστω $ a \geq 0 $. Τότε $ \abs{a} = a $, οπότε:
+          $
+          0 \leq \abs{a} \leq \theta \Rightarrow 
+          0 \leq a \leq \theta \Rightarrow - \theta 
+          \leq a \leq \theta
+          $ 
+        \item Έστω $ a < 0 $. Τότε $ \abs{a} = -a $, οπότε:
+          $
+          0 \leq \abs{a} \leq \theta \Rightarrow 
+          0 < -a \leq \theta \Rightarrow 
+          - \theta \leq a < 0 \Rightarrow 
+          - \theta \leq a \leq \theta 
+          $ 
+      \end{myitemize}
+    \item [$(\Leftarrow)$] Έστω $ - \theta \leq a \leq \theta $ 
+      για $ a \in \mathbb{R} $ και $ \theta >0 $.
+      \begin{myitemize}
+        \item Έστω $ a \geq 0 $. Τότε $ \abs{a} = a $. Οπότε 
+          $ \abs{a} = a \leq \theta $.
+        \item Έστω $ a <0 $. Τότε $ \abs{a} = -a $. Οπότε
+          $ \abs{a} = -a \leq \theta $.
+      \end{myitemize}
+  \end{description}
+\end{proof}
+
+\myprop{Έστω $ \theta > 0 $. Τότε 
+  \[
+    \abs{a} \geq \theta \Leftrightarrow a \geq \theta \quad \text{ή} \quad 
+    a \leq - \theta 
+\]}
+
+\myprop{Για κάθε $ a, b \in \mathbb{R} $, ισχύει:
+  \begin{enumerate}[(i)]\label{prop:trig_ineq}
+    \item $ \abs{a+b} \leq \abs{a} + \abs{b}   $
+    \item $ \abs{a} - \abs{b} \leq \abs{a+b}  $
+\end{enumerate}}
+\begin{proof}
+\item {}
+  \begin{enumerate}[(i)]
+    \item Έχουμε ότι 
+      \[ 
+        a \leq \abs{a} \Rightarrow - \abs{a} \leq a \leq \abs{a}
+      \] 
+      \[
+        b \leq \abs{b} \Rightarrow - \abs{b} \leq b \leq \abs{b} 
+      \] 
+      Με πρόσθεση, προκύπτει
+      \[
+        - (\abs{a} + \abs{b} ) \leq a + b \leq \abs{a} + \abs{b} 
+      \] 
+      Οπότε από την πρόταση~\ref{prop:absprop1}, ισχύει:
+      $ \abs{a+b} \leq \abs{a} + \abs{b} $
+    \item Θέτω $ x = a+b $ και $ y = -b $. Για τους $ x,y $ από το $ \rm{i}) $ 
+      ερώτημα, έχουμε:
+      \[
+        \abs{x+y} \leq \abs{x} + \abs{y} \Rightarrow \abs{a} \leq 
+        \abs{a+b} + \abs{b} \Rightarrow \abs{a+b} \geq \abs{a} - \abs{b}
+      \] 
+  \end{enumerate} 
+\end{proof} 
+
+\begin{rem}
+  Αν θέσουμε $ x = a+b $ και $ y = -a $, τότε για τους $ x,y $ από το $ \rm{i)} $ 
+  υποερώτημα της προηγούμενης πρότασης, έχουμε:
+  \[
+    \abs{x+y} \leq \abs{x} + \abs{y} \Rightarrow \abs{b} \leq 
+    \abs{a+b} + \abs{a} \Rightarrow \abs{a+b} \geq \abs{b} - \abs{a} 
+  \] 
+  Άρα, αφού $ \abs{a+b} \geq \abs{a} - \abs{b} $ και 
+  $ \abs{a+b} \geq \abs{b} - \abs{a} $ τελικά ισχύει ότι
+  \begin{equation}\label{eq:trigs} 
+    \boxed{\abs{\abs{a} - \abs{b}} \leq \abs{a+b}}
+  \end{equation}
+
+  Τώρα, χρησιμοποιώντας το $ \rm{i)} $ υποερώτημα της προηγούμενης πρότασης, για το 
+  $ -b $, έχουμε:
+  \[
+    \abs{a-b} \leq \abs{a} + \abs{b} 
+  \] 
+  και από την σχέση~\eqref{eq:trigs}, για $-b$ έχουμε:
+  \[
+    \abs{\abs{a} - \abs{b}} \leq \abs{a-b} 
+  \]
+  Οπότε, τελικά έχουμε:
+  \[
+    \boxed{\abs{\abs{a} - \abs{b}} \leq \abs{a \pm b} \leq \abs{a} + \abs{b}  }
+  \]
+\end{rem}
+
+\section{Μέγιστο και Ελάχιστο}
+
+\mydfn{Έστω $ A \subseteq \mathbb{R} $. Λέμε ότι το $A$ έχει μέγιστο 
+  (αντίστοιχα ελάχιστο) στοιχείο, αν υπάρχει $ x_{0} \in A $ τέτοιο 
+  ώστε $ x \leq x_{0}, \; \forall x \in A $ (αντίστοιχα $ x_{0} \leq 
+x, \; \forall x \in A$).}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Το μέγιστο του συνόλου $A$, συμβολίζεται: $ \max A $
+    \item Το ελάχιστο του συνόλου $A$, συμβολίζεται $ \min A $
+  \end{myitemize}
+\end{rem}
+
+\begin{example}
+  Έστω $ A = [0,3] = \{ x \in \mathbb{R} \; : \; 0 \leq x \leq 3 \} $. 
+  Το $ x_{0}= 3 $ είναι μέγιστο του $A$, γιατί $ 3 \in A $ και 
+  $ a \leq 3, \; \forall a \in A $. Ομοίως $ x_{0}= 0 $ είναι ελάχιστο 
+  του $A$.
+\end{example}
+
+\begin{example}
+  Να δείξετε ότι το σύνολο $ A = (0,3) $ δεν έχει μέγιστο στοιχείο.
+\end{example}
+
+%todo Να γράψω και άλλα παραδείγματα
+
+\begin{proof}
+\item {}
+  $ A = (0,3) = \{ x \in \mathbb{R} \; : \; 0 < x < 3 \} $. 
+  Έστω ότι $ x_{0} = \max A $. Έχουμε  $ x_{0} \in A \Rightarrow  x_{0} 
+  < 3$. Άρα  $ (x_{0}, 3) \neq \emptyset \Rightarrow (x_{0},3) \cap A \neq 
+  \emptyset \Rightarrow \exists a \in (x_{0},3) \cap A $. Δηλαδή $ 
+  \exists a \in A$ τέτοιο ώστε $ a > x_{0} $. Άτοπο, γιατί $ x_{0}= \max A $.
+\end{proof}
+
+
+\myprop{Αν $ A \subseteq \mathbb{R} $ έχει μέγιστο στοιχείο, τότε αυτό είναι 
+μοναδικό.}
+
+
+\begin{proof}
+  Έστω ότι το $A$ έχει δυο μέγιστα στοιχεία,  $ x_{0}, {x_{0}}' $,  με 
+  $ x_{0} \neq {x_{0}}'$. 
+
+  Τότε 
+  \begin{myitemize}
+    \item $ a \leq x_{0}, \; \forall a \in A \xRightarrow{{x_{0}}' 
+      \in A } {x_{0}}'  \leq x_{0} $ \tikzmark{a}
+    \item $ a \leq {x_{0}}', \; \forall a \in A \xRightarrow{x_{0} 
+      \in A } x_{0} \leq {x_{0}}' $ \tikzmark{b}
+      \mybrace{a}{b}[$ x_{0} = {x_{0}}' $, άτοπο.] 
+  \end{myitemize}
+\end{proof}
+
+\myprop{Αν $ A \subseteq \mathbb{R} $ έχει ελάχιστο στοιχείο, τότε αυτό είναι 
+μοναδικό.}
+
+\begin{proof}
+  Ομοίως 
+\end{proof}
+
+\mydfn{Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $. Λέμε ότι το 
+  $A$ είναι άνω φραγμένο (αντίστοιχα κάτω φραγμένο), αν $ 
+  \exists x_{0} \in \mathbb{R}$ τέτοιο ώστε $ a \leq x_{0}, \; 
+\forall a \in A$ (αντίστοιχα $ x_{0} \leq a, \; \forall a \in A $).}
+
+\begin{example}
+\item {}
+  \begin{enumerate}[(i)]
+    \item Το  σύνολο $ A = (0,3) $  έχει ως άνω φράγματα τους αριθμούς 
+      $ 3, 4, 144, \ldots$ και κάτω φράγματα τους αριθμούς
+      $ 0, -1, -2, -128, \ldots $ 
+
+    \item Το σύνολο $ B = (0,+\infty) $ δεν είναι άνω φραγμένο.
+  \end{enumerate}
+\end{example}
+
+\begin{rem}
+  Το  $ 3 $ είναι το ελάχιστο από τα άνω φράγματα του $A$, ενώ το $ 0
+  $ είναι το μέγιστο από τα κάτω φράγματα του $A$. 
+\end{rem}
+
+
+\mydfn{Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $. Λέμε ότι το $A$ 
+είναι φραγμένο, αν είναι άνω και κάτω φραγμένο.}
+
+\myprop{Ένα σύνολο $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ είναι 
+  φραγμένο αν και μόνο αν $ \exists M>0 \; : \; \abs{a} \leq M, \; 
+\forall a \in A$.}
+
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [$ (\Rightarrow) $] Έστω $A$ φραγμένο. Τότε 
+      $ \exists m',M' \in \mathbb{R} \; : \; m' \leq a \leq M', \; 
+      \forall a \in A $.
+
+      Επιλέγω $ M = \max \{ \abs{m'}, \abs{M'} \} $. Τότε $ M >0 $ και 
+      \begin{gather*}
+        -M \leq - \abs{m'} \leq m' \leq a \leq M' \leq \abs{M'} 
+        \leq M, \quad \forall a \in A \\
+        -M \leq a \leq M, \quad \forall a \in A \\
+        \abs{a} \leq M, \quad \forall a \in A
+      \end{gather*}
+
+    \item [(Β΄ τρόπος)]
+      Επιλέγω $ M > \max \{ \abs{m'}, \abs{M'} \} $. Τότε $ M >0 $ και 
+      \begin{gather*}
+        \abs{m'} < M \Leftrightarrow - M < m' < M \\
+        \abs{M'} < M \Leftrightarrow -M < M' < M 
+      \end{gather*}
+      οπότε: 
+      \begin{gather*}
+        -M < m' \leq a \leq M' < M, \quad a \in A \\
+        \abs{a} \leq M, \quad a \in A
+      \end{gather*}
+
+
+    \item [$ (\Leftarrow) $]
+      Έστω ότι $ \exists M>0 \; : \; \abs{a} \leq M, \; \forall a \in 
+      A \Leftrightarrow -M \leq a \leq M, \; \forall a \in A$. 
+
+      Τότε προφανώς έχουμε ότι $-M $ και $ M $, 
+      είναι αντίστοιχα άνω και κάτω φράγματα του $A$, και άρα $A$ 
+      φραγμένο.
+  \end{description} 
+\end{proof}
+
+\myprop{Έστω $ A \subseteq \mathbb{R}, A \neq \emptyset $ και έστω 
+  $ -A = \{ x \in \mathbb{R} \; : \; x = -a, \; a \in A \} = \{ 
+  -a \; : \; a \in A\} $. Αν $M$ είναι άνω φράγμα 
+του $A$, τότε το $ -M $ είναι κάτω φράγμα του συνόλου $ -A $.}
+
+\begin{proof}
+  Έστω $M$ α.φ.\ του $A$. Τότε 
+  \begin{align*}
+    a &\leq M, \; \forall a \in A \Rightarrow  \\
+    -a &\geq -M, \; \forall a \in A \xRightarrow{x= -a, a \in A} \\
+    x &\geq -M, \; \forall x \in -A
+  \end{align*}
+  οπότε $ -M $  κ.φ.\ του $ -A $.
+\end{proof}
+
+\section{Supremum και Infimum}
+
+\mydfn{Έστω $ A \subseteq \mathbb{R}, A \neq \emptyset $ και $A$ άνω 
+  φραγμένο. Αν υπάρχει άνω φράγμα $s$ του $A$ τέτοιο ώστε 
+  \[
+    s \leq M, \quad \text{για κάθε M άνω φράγμα του A}, 
+  \] 
+τότε το $s$ ονομάζεται supremum του $A$ και συμβολίζεται $ s=\sup A $.}
+
+\mydfn{Έστω $ A \subseteq \mathbb{R}, A \neq \emptyset $ και $A$ κάτω 
+  φραγμένο. Αν υπάρχει κάτω φράγμα $s$ του $A$ τέτοιο ώστε 
+  \[
+    s \geq m, \quad \text{για κάθε m κάτω φράγμα του A}, 
+  \] 
+τότε το $s$ ονομάζεται infimum του $A$ και συμβολίζεται $ s=\inf A $.}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Αν το $A$ δεν είναι άνω φραγμένο, τότε γράφουμε ότι $ \sup A = 
+      + \infty $.
+    \item Αν το $A$ δεν είναι κάτω φραγμένο, τότε γράφουμε ότι $ \inf A = 
+      - \infty $.
+  \end{myitemize}
+\end{rem}
+
+\begin{example}
+  Έστω $ A = (0,3) $. Θα δείξουμε ότι $ \sup A = 3 $. Πράγματι, 
+  το $ 3 $ προφανώς είναι α.φ.\ του $A$. Θα δείξουμε ότι είναι το
+  ελάχιστο από τα άνω φράγματα του $A$. Έστω ότι δεν είναι, δηλαδή 
+  $ \exists M $ α.φ.\ του $A$, ώστε $ M < 3 \Rightarrow (M,3) \neq 
+  \emptyset \Rightarrow (M,3) \cap A \neq \emptyset \Rightarrow \exists 
+  a \in (M,3) \cap A $. Τότε, έχουμε ότι $ a \in A $ και $ a > M $, 
+  άτοπο, γιατί $M$ είναι ά.φ.\ του $A$. Ομοίως αποδεικνύουμε ότι $ 
+  \inf A = 0$.
+\end{example}
+
+\section{Αξίωμα Πληρότητας}
+
+Κάθε μη κενό και άνω φραγμένο υποσύνολο των πραγματικών αριθμών έχει 
+supremum, δηλαδή έχει ελάχιστο άνω φράγμα.
+
+\myprop{\label{prop:epsilon_prot}
+  Έστω ότι για τον $a \in \mathbb{R}$ ισχύει ότι 
+  \[
+    0 \leq a < \varepsilon, \quad \forall \varepsilon >0 \Rightarrow a =0 
+\]}
+
+
+
+\begin{proof}
+\item {}
+  Έστω ότι $ 0 \leq a < \varepsilon, \quad \varepsilon >0 $ και 
+  $ a \neq 0 \xRightarrow{a \geq 0} a > 0$. Τότε για $ \varepsilon = 
+  a > 0$, έχουμε ότι $ 0 \leq a < a $, άτοπο.
+\end{proof}
+
+\myprop{
+  Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία, και έστω $ a \in \mathbb{R} $, ώστε:
+
+  \vspace{\baselineskip}
+
+  \begin{minipage}{0.3\textwidth}
+    \begin{enumerate}[(i)]
+      \item $ 0 \leq a < a_{n}, \; \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+      \item $ \lim_{n \to +\infty} a_{n} = 0 $ \hfill \tikzmark{b}
+    \end{enumerate}
+  \end{minipage}
+
+\mybrace{a}{b}[$ a = 0 $]}
+
+
+\myprop{
+  \begin{enumerate}[(i)]
+    \item Το $ \mathbb{N} $ δεν είναι άνω φραγμένο.
+    \item $ \forall y > 0, \; \exists n \in \mathbb{N} \; ; \; 
+      n > y$
+    \item $ \forall \varepsilon >0, \; \exists n \in \mathbb{N} \; 
+      : \; \frac{1}{n} < \varepsilon$
+\end{enumerate}}
+
+\begin{proof}
+\item {}
+  \begin{enumerate}[(i)]
+    \item Έστω ότι το $ \mathbb{N} $ είναι άνω φραγμένο. Λόγω ότι 
+      είναι και μη κενό ($ 1 \in \mathbb{N} $), από το αξίωμα 
+      Πληρότητας, έχουμε ότι υπάρχει το $ \sup \mathbb{N} $. 
+      Τότε από τη χαρακτηριστική ιδιότητα του supremum, έχουμε 
+      ότι για $ \varepsilon = 1 >0, \; \exists n \in \mathbb{N} 
+      \; : \; \sup \mathbb{N}-1 < n \Leftrightarrow n+1 > \sup
+      \mathbb{N} $, άτοπο.
+
+    \item Έστω ότι δεν ισχύει η πρόταση. Τότε  $ \exists y >0, \; 
+      \forall n \in \mathbb{N} \; : \; n \leq y$. Δηλαδή
+      το  $y$  είναι α.φ.\ του $\mathbb{N}$, άτοπο.
+
+    \item Έστω ότι δεν ισχύει η πρόταση. Τότε $ \exists 
+      \varepsilon >0 , \; \forall n \in \mathbb{N} \; : \; 
+      \frac{1}{n} \geq \varepsilon  \Leftrightarrow \ n \leq 
+      \frac{1}{\varepsilon} $, δηλαδή $ \frac{1}{\varepsilon} $ 
+      α.φ.\ του $ \mathbb{N} $, άτοπο. 
+  \end{enumerate}
+\end{proof}
+
+\myprop{Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ και το $A$ έχει μέγιστο 
+στοιχείο, έστω $ x_{0} = \max A $. Τότε $ \sup A = \max A = x_{0}$.}
+
+\begin{proof}
+\item {}
+  $ x_{0} = \max A \Rightarrow a \leq x_{0}, \; \forall a \in A $, άρα $ x_{0} $ α.φ.\
+  του $A$. Άρα το $A$ είναι άνω φραγμένο και επειδή $ A \neq \emptyset $ υπάρχει 
+  το $ \sup A $. 
+
+  Ισχύει $ x_{0} \leq \sup A $, γιατί $ \sup A $ α.φ.\ του $A$.
+  Όμως $ x_{0} $ επίσης α.φ.\ του $A$, άρα $ \sup A \leq x_{0} $.
+
+  Άρα $ x_{0}= \sup A $.
+\end{proof}
+
+\myprop{Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ και το $A$ έχει ελάχιστο
+στοιχείο, έστω $ x_{0} = \min A $. Τότε $ \inf A = \min A = x_{0}$.}
+
+\begin{proof}
+  Ομοίως 
+\end{proof}
+
+\section{Χαρακτηριστική Ιδιότητα του Supremum}
+
+\myprop{Έστω $ A \subseteq \mathbb{R} $, $ A \neq \emptyset $ και άνω φραγμένο. 
+  Έστω $ s $ α.φ.\ του $A$. Τότε 
+  \[
+    s= \sup A \Leftrightarrow \forall \varepsilon >0, \; \exists a \in A \; 
+    : \; s - \varepsilon < a
+\]}
+
+\begin{proof}
+\item {}
+  \begin{description}
+    \item[$ (\Rightarrow) $] 
+      Έστω $ s = \sup A $. Έστω $ \varepsilon >0 $. Έχουμε $ 
+      s - \varepsilon < s $ άρα το $ s- \varepsilon $ δεν είναι 
+      α.φ.\ του $A$, άρα $ \exists a \in A $ τέτοιο ώστε $ 
+      a > s- \varepsilon$. 
+
+    \item [$ (\Leftarrow) $] 
+      Έστω ότι $ \forall \varepsilon >0, \; \exists a \in A \; : 
+      \; s- \varepsilon < a$. Θ.δ.ο. $ s = \sup A $. 
+
+
+      \begin{minipage}{0.23\textwidth}
+        \begin{myitemize}
+          \item $ A \neq \emptyset $ \hfill \tikzmark{a}
+          \item $ A $ άνω φραγμένο \hfill  \tikzmark{b}
+        \end{myitemize}
+      \end{minipage}
+
+      \mybrace{a}{b}[$ \exists $ το $ \sup A $]
+
+      Έστω ότι $ s \neq \sup A $, και λόγω ότι $ s $ α.φ.\ του $A$ 
+      έχουμε ότι $sup A < s $. 
+
+      Επιλέγουμε $ \varepsilon = s - \sup A > 0 $
+
+      Τότε από την υπόθεση έχουμε ότι 
+      υπάρχει $ a \in A \; : \; s - \varepsilon < a \Rightarrow s 
+      - s + \sup A < a \Rightarrow \sup A < a $, άτοπο, γιατί 
+      $ \sup A $ α.φ.\ του $A$.  
+  \end{description} 
+\end{proof}
+
+\myprop{Έστω $ A \subseteq \mathbb{R} $, $ A \neq \emptyset $ και άνω φραγμένο. 
+  Έστω $ s $ α.φ.\ του $A$. Τότε 
+  \[
+    s = \sup A \Leftrightarrow \forall n \in \mathbb{N} \; \exists a_{n} \in A
+    \; : \; s - \frac{1}{n} < a_{n} 
+\]}
+
+\mythm{Έστω $ A \subseteq \mathbb{R} $, $ A \neq \emptyset $ και άνω φραγμένο. 
+  Έστω $ s $ α.φ.\ του $A$. Τότε 
+  \[
+    s = \sup A \Leftrightarrow \text{υπάρχει ακολουθία στοιχείων του $A$ με όριο το $s$} 
+\]}
+
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [$ (\Rightarrow) $]
+      Έστω $ s = \sup A $. Τότε από τη χαρακτηριστική ιδιότητα του supremum έχουμε ότι:
+      \begin{align*}
+        \exists a_{1} \in A \; &: \; s - 1 < a_{1} \\
+        \exists a_{2} \in A \; &: \; s - \frac{1}{2}  < a_{2} \\
+                               &\vdots \\
+        \exists a_{n} \in A \; &: \; s - \frac{1}{n}  < a_{n} 
+      \end{align*} 
+
+      Επομένως υπάρχει ακολουθία, η $ (a_{n})_{n \in \mathbb{N}} $, στοιχείων του $A$, 
+      με την ιδιότητα $ s - \frac{1}{n} < a_{n} \leq s, \; \forall n \in \mathbb{N}$. 
+
+      Παρατηρούμε ότι $ \lim_{n \to +\infty} s- \frac{1}{n} = \lim_{n \to +\infty} s = s $ 
+
+      Οπότε από το Κριτήριο Παρεμβολής, έχουμε ότι $ \lim_{n \to +\infty} a_{n}= s $, 
+      το ζητούμενο.
+
+    \item [$ (\Rightarrow) $]
+      Έστω $ s $ α.φ.\ του $A$ και έστω ότι υπάρχει ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ 
+      στοιχείων του $A$ ώστε $ \lim_{n \to +\infty} a_{n}= s$. Θ.δ.ο. $ s = \sup A $. 
+      Πράγματι, 
+
+      Έστω ότι $ s \neq \sup A $. Τότε $ \sup A < s \Rightarrow s - \sup A > 0 > 0 $. 
+
+      Επιλέγω $ \varepsilon = s - \sup A >0 $. Οπότε από τον ορισμό του ορίου, έχουμε ότι 
+      $ \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad \abs{a_{n} - a} < 
+      s - \sup A \Leftrightarrow \underbrace{-(s - \sup A) < a_{n} - s} < s - \sup A 
+      \Leftrightarrow a_{n} > \sup A$, άτοπο, γιατί $ \sup A $ α.φ.\ του $A$.
+  \end{description}
+\end{proof}
+
+
+\myprop{\label{prop:leqsup}
+  Έστω $ A, B $ μη-κενά, άνω φραγμένα υποσύνολα του $ \mathbb{R} $. Αν $ A \subseteq 
+B$ τότε $ \sup A \leq \sup B $.}
+
+
+\begin{proof}
+\item {}
+  Αρκεί να δείξω ότι $ \sup B $ είναι α.φ.\ του $A$. Πράγματι:
+
+  Έστω $ x \in A \overset{A \subseteq B}{\Rightarrow } x \in B \Rightarrow 
+  x \leq \sup B, \forall x \in A$. Άρα το $ \sup B $ είναι α.φ.\ του $A$.
+\end{proof}
+
+\myprop{Έστω $ A \subseteq \mathbb{R}, A \neq \emptyset $ και έστω $ \lambda A = 
+  \{ x \in \mathbb{R} \; : \; x = \lambda a, \; a \in A \} = \{ \lambda a \; : \; 
+  a \in A\} $. Τότε
+  \begin{enumerate}[(i)]
+    \item $ A $ άνω φραγμένο και $ \lambda >0 \Rightarrow \exists $ το $ \sup A $
+      και $ \sup (\lambda A) = \lambda \sup A $
+    \item $ A $ κάτω φραγμένο και $ \lambda <0 \Rightarrow \exists $ το $ \sup A $
+      και $ \sup (\lambda A) = \lambda \inf A $
+\end{enumerate}}
+
+\begin{proof}
+\item {}
+  \begin{enumerate}[(i)]
+    \item $A$ άνω φραγμένο $ \Rightarrow \exists M \in \mathbb{R} $ τέτοιο ώστε
+      \begin{align*}
+        a \leq M, \; \forall a \in A
+                &\Rightarrow \lambda a \leq \lambda M, \; \forall a \in A \\
+                & \Rightarrow x \leq \lambda M, \; \forall x \in \lambda A 
+      \end{align*}
+      δηλαδή, το  $ \lambda M $ είναι α.φ.\ του $ \lambda A $.
+
+      Άρα το $ \lambda A $ είναι άνω φραγμένο και μη-κενό, γιατί $ A \neq 
+      \emptyset $, άρα υπάρχει το $ \sup (\lambda A) $.
+
+      Έστω $ s= \sup A $, το οποίο επίσης υπάρχει, γιατί $ A \neq \emptyset $ 
+      και $A$ άνω φραγμένο. 
+
+      \begin{myitemize}
+        \item Αποδεικνύουμε ότι $ \lambda s $ είναι α.φ.\ του $ \lambda A $. 
+          Πράγματι
+          \begin{align*}
+            a \leq s, \; \forall a \in A 
+                        & \Rightarrow \lambda a \leq \lambda s, \; \forall a \in A \\
+                        & \Rightarrow x \leq \lambda s, \; \forall x \in \lambda A
+          \end{align*}
+          άρα το $ \lambda s $ είναι α.φ.\ του $ \lambda A $.
+
+        \item Αποδεικνύουμε ότι $ \lambda s $ είναι το ελάχιστο άνω φράγμα 
+          του $ \lambda A$.  Πράγματι 
+
+          Έστω $M$ άνω φράγμα του $ \lambda A $ με $ M < \lambda s 
+          \overset{\lambda >0} {\Rightarrow} \frac{M}{\lambda} < s  $, 
+          άτοπο, γιατί $ \frac{ M}{\lambda} $ α.φ.\ του $A$ και $ s= \sup A $.
+
+          Πράγματι, αφού $ M $ α.φ.\ του $ \lambda A $, τότε
+          \begin{align*}
+            x \leq M, \; \forall x \in \lambda A 
+            &\Rightarrow \lambda a \leq M, \; \forall a \in A \\
+            &\Rightarrow a \leq \frac{M}{\lambda}, \; \forall a \in A
+          \end{align*} 
+          άρα $ \frac{M}{\lambda} $ είναι α.φ.\ του Α.
+      \end{myitemize}
+
+    \item Ομοίως
+  \end{enumerate}
+\end{proof}
+
+\myprop{Έστω $ A, B $, μη-κενά και άνω φραγμένα υποσύνολα του $ \mathbb{R} $. Τότε υπάρχει 
+το $ \sup (A \cup B) $ και $ \sup (A \cup B) = \max \{ \sup A, \sup B \} $.}
+
+\begin{proof}
+  Έστω $ x \in A \cup B \Rightarrow \begin{cases} x \in A \overset{A \; \text{α.φ.}}{
+    \Rightarrow} \exists M_{A} \in \mathbb{R} \; : \; x \leq M_{A} \\
+    x \in B \overset{B \; \text{α.φ.}}{ \Rightarrow} \exists M_{B} \in \mathbb{R} 
+    \; : \; x \leq M_{B}  \\
+  \end{cases} $  
+  Άρα $ A \cup B $ είναι άνω φραγμένο.
+
+  Επίσης $ A \cup B \neq \emptyset $, γιατί $ A, B \neq \emptyset $. 
+
+  Άρα υπάρχει το $ \sup (A \cup B) $.
+
+  $ A,B $ μη-κενά και άνω φραγμένα, άρα υπάρχουν τα $ \sup A, \sup B $ 
+  και έστω χ.β.γ\.  ότι $ \sup A \leq \sup B $. Τότε:
+  \begin{gather*}
+    a \leq \sup A \leq \sup B, \; \forall a \in A \\
+    b \leq \sup B, \; \forall b \in B 
+  \end{gather*}
+  άρα $ x \leq \sup B, \; \forall x \in A \cup B  $, δηλαδή το $ \sup B $ 
+  είναι α.φ.\ του $ A \cup B $, άρα $ \inlineequation[eq:1steq]{\sup (A \cup B) 
+  \leq \sup B} $.
+
+  Όμως $ B \subseteq A \cup B \Rightarrow \inlineequation[eq:2ndeq]{\sup B \leq 
+  \sup (A \cup B)} $, από την πρόταση~\ref{prop:leqsup}. 
+  Οπότε από τις σχέσεις~\eqref{eq:1steq} και \eqref{eq:2ndeq}, έχουμε ότι $
+  \sup (A \cup B) = \sup B = \max \{ \sup A, \sup B \} $.
+\end{proof}
+
+\myprop{Έστω $ A, B $, μη-κενά και κάτω φραγμένα υποσύνολα του $ \mathbb{R} $. 
+  Τότε υπάρχει το $ \inf (A \cup B) $ και $ \inf (A \cup B) = \min \{ \inf A, 
+\inf B \} $.}
+
+\begin{proof}
+  Ομοίως
+\end{proof}
+
+\begin{lem}\label{lem:ineqs}
+  Έστω $ x,y >0 $ και $ n \in \mathbb{N} $. Τότε
+  \begin{enumerate}[(i)]
+    \item $ x \leq y \Leftrightarrow x^{n} \leq y^{n} $
+    \item $ x < y \Leftrightarrow x^{n} < y^{n} $ \label{lem:ineqreal2}
+    \item $ x = y \Leftrightarrow x^{n} = y^{n} $ \label{lem:ineqreal3}
+  \end{enumerate}
+\end{lem}
+
+\mythm{Υπάρχει μοναδικός θετικός αριθμός $ x \in \mathbb{R} $ τέτοιος ώστε $ x^{2}=2 $.}
+
+\begin{proof}
+\item {}
+  Έστω $ A = \{ a \in \mathbb{R} \; : \; a > 0, a^{2} < 2 \}  $. Έχουμε $ 1 \in A 
+  \Rightarrow A \neq \emptyset $ 
+  και αν $ a \in A \Rightarrow a^{2} < 2 \Rightarrow a^{2} < 4
+  \overset{\ref{lem:ineqreal2}}{\Rightarrow} a <2,\; \forall a \in A $, 
+  άρα το 2 είναι άνω φράγμα του $A$. Άρα υπάρχει το supremum του Α, έστω 
+  $ x = \sup A $. 
+
+  Θα δείξουμε ότι $ x > 0 $ και $ x^{2} = 2 $
+
+  Πράγματι, $ 1 \in A \Rightarrow 1 \leq x $, γιατί $x$ α.φ.\ του $A$, οπότε $ x >0 $.
+
+  Θα δείξουμε ότι $ x^{2} = 2 $ αποκλείοντας τις περιπτώσεις $ x^{2} <2 $ και 
+  $ x^{2} > 2 $.
+  \begin{myitemize}
+    \item Έστω $ x^{2} > 2 $. Επιλέγω $ \varepsilon = \frac{1}{2} \min \{ x, 
+      \frac{x^{2}-2}{2x}\} $.
+
+      Καταρχάς $ \varepsilon > 0 $, γιατί $ x>0 $ και $ x^{2} -2 >0 $. 
+
+      Επίσης από ορισμό του $ \varepsilon $ έχουμε ότι  $\varepsilon < x $ και 
+      $ \varepsilon < \frac{x^{2}-2}{2x}$. 
+
+      Άρα $ \varepsilon < \frac{x^{2}-2}{2x} \Rightarrow 
+      2x \varepsilon < x^{2} - 2 \Leftrightarrow 2 < x^{2} -2x \varepsilon 
+      \overset{\varepsilon ^{2}>0}{\leq}
+      x^{2} -2x \varepsilon + \varepsilon ^{2} \Rightarrow 2 
+      < (x- \varepsilon )^{2}   $
+
+      Έστω $ a \in A \Rightarrow a^{2} <2 \Rightarrow a^{2}<2< 
+      (x- \varepsilon )^{2} \Rightarrow a^{2}< (x- \varepsilon )^{2} 
+      \Rightarrow a < x- \varepsilon, \; \forall a \in A$, 
+      άρα $ x - \varepsilon $ α.φ.\ του $A$, άτοπο, γιατί $ x= \sup A $.
+
+    \item Έστω $ x^{2}<2 $. Ομοίως.
+
+      Οπότε $ x^{2}=2 $. 
+
+      Τέλος, για να αποδείξουμε τη μοναδικότητα, έχουμε:
+
+      Έστω ότι υπάρχουν $ 2 $ αριθμοί, έστω $ x,y $ τέτοιοι ώστε $ x^{2} =2 $ 
+      και $ y^{2}=2 $. Τότε $ x^{2}=y^{2} \overset{\ref{lem:ineqreal3}}
+      {\Rightarrow} x =y $.
+  \end{myitemize}
+\end{proof}
+
+\mythm{Για κάθε $ x_{0} >0 $ και για κάθε $ n \in \mathbb{N} $ υπάρχει μοναδικός, θετικός 
+πραγματικός αριθμός $ p $, τέτοιος ώστε $ p^{n}= x_{0} $.}
+
+\begin{cor}\label{cor:ineqs}
+  Έστω $ x,y >0 $ και $ n \in \mathbb{N} $. Τότε
+  \begin{enumerate}[(i)]
+    \item $ x \leq y \Leftrightarrow x^{\frac{1}{n}} \leq y^{\frac{1}{n}} $
+    \item $ x <y \Leftrightarrow x^{\frac{1}{n}} < y^{\frac{1}{n}} $
+    \item $ x =y \Leftrightarrow x^{\frac{1}{n}} = y^{\frac{1}{n}} $
+  \end{enumerate}
+\end{cor}
+
+\begin{proof}
+\item {}
+  Αν $ x,y>0 $, τότε από το θεώρημα ύπαρξης $n$-οστής ρίζας υπάρχουν $ \tilde{x}  
+  = x^{\frac{1}{n}} $ και $ \tilde{y} =y^{\frac{1}{n}} $, οπότε από το 
+  λήμμα~\ref{lem:ineqs} έχουμε $ \tilde{x} \leq \tilde{y}  \Leftrightarrow 
+  \tilde{x} ^{n} \leq \tilde{y} ^{n} $,
+  οπότε $ x^{\frac{1}{n}} \leq y^{\frac{1}{n}} \Leftrightarrow x \leq y $.
+\end{proof}
+
+\begin{lem}\label{lem:ineqq}
+  Έστω $ x,y \geq 0 $ με $ x<y $ και $ q \in \mathbb{Q}, \; q >0 $. 
+  Τότε: $ x^{q} <y^{q} $
+\end{lem}
+
+\begin{proof}
+\item {}
+  Έστω $ p \in \mathbb{Q} $. Τότε υπάρχουν $ n,m \in \mathbb{N} $, τέτοιοι ώστε 
+  $ q = \frac{n}{m} $. Τότε 
+
+  \[ x<y \overset{\text{Πορ.}~\ref{cor:ineqs}}{\Rightarrow} x^{\frac{1}{m}} 
+    < y^{\frac{1}{m}} \overset{\text{Λημ.}~\ref{lem:ineqs}}{\Rightarrow} 
+  x^{\frac{n}{m}} < y^{\frac{n}{m}} \Rightarrow x^{q} < y^{q}  \] 
+\end{proof}
+
+\begin{lem}
+  Έστω $ a > 0 $ και $ q_{1}, q_{2} \in \mathbb{Q} $ με $ q_{1} < q_{2} $. 
+  \begin{enumerate}[(i)]
+    \item $ a>1 \Rightarrow a^{q_{1}} < a^{q_{2}} $
+    \item $ a<1 \Rightarrow a^{q_{1}} > a^{q_{2}} $
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+\item {}
+  \begin{enumerate}[(i)]
+    \item \label{q1q2} $ a>1 \overset{\text{Λημ.~\ref{lem:ineqq}}}{\Rightarrow} 
+      a^{q_{2}- q_{1}} > 1^{q_{2} - q_{1}} \overset{a^{q_{1}}>0}{\Rightarrow} 
+      a^{q_{2}} > a^{q_{1} } $
+
+    \item $ a<1 \Rightarrow \frac{1}{a} >1 \overset{\ref{q1q2}}{\Rightarrow} 
+      (\frac{1}{a} )^{q_{1}} < (\frac{1}{a} )^{q_{2} } \Rightarrow a^{q_{1}} 
+      > a^{q_{2}} $
+  \end{enumerate}
+\end{proof}
+
+
+\section{Ακέραιο Μέρος}
+
+\myprop{Έστω $ x \in \mathbb{R} $. Τότε υπάρχει μοναδικός ακέραιος αριθμός 
+$ m \in \mathbb{Z} $ τέτοιος ώστε $\inlineequation[eq:akermer]{m \leq x < m +1}$.}
+
+% \begin{proof}
+%     Έστω $ x \in \mathbb{R} $. Επειδή $ \mathbb{N} $ όχι άνω φραγμένο, τότε από την 
+%     Αρχιμήδεια Ιδιότητα, $ \exists n \in \mathbb{N} $ με $ n > x $. Έστω $ S = \{ 
+%     n \in \mathbb{N} \; : \; n > x\} \Rightarrow S \neq \emptyset $ (υπάρχει το $n$). 
+%     Άρα το $S$ έχει ελάχιστο στοιχείο, έστω $ n_{0} $. Άρα $ n_{0}-1 \leq x \leq 
+%     n_{0} \Rightarrow m \leq n \leq m+1$, δηλαδή $ m= n_{0}-1 = [x] $.
+
+% Αποδεικνύουμε την μοναδικότητα:
+
+% Έστω $ m' $ με $ m' \leq x \leq m'+1 $ και έστω $ m' \leq m $. Τότε 
+% $ m' +1 \leq m \leq x $, άτοπο.
+% \end{proof}
+
+\mydfn{Έστω $ x \in \mathbb{R} $. Ο μοναδικός ακέραιος που ικανοποιεί την 
+σχέση~\eqref{eq:akermer} ονομάζεται ακέραιο μέρος του $x$ και συμβολίζεται $ [x] $.}
+
+Ουσιαστικά, το ακέραιο μέρος ενός πραγματικού αριθμού $ x $ είναι ο \textbf{μεγαλύτερος} ακέραιος που δεν υπερβαίνει τον $x$, ή που είναι ίσος με τον $x$,
+αν ο $x$ είναι ακέραιος.
+
+Το ακέραιο μέρος ενός πραγματικού αριθμού ικανοποιεί τις παρακάτω ιδιότητες.
+\begin{myitemize}
+  \item $ x = [x]+ \theta, \quad x \in \mathbb{R}, \; \theta \in \left[0,1\right) $
+  \item $ [x+a]= [x] + a, \quad x \in \mathbb{R}, \; a \in \mathbb{Z} $
+  \item $ [x]+[-x] = 
+    \begin{cases} 
+      0, & x \in \mathbb{Z} \\
+      -1, & x \not \in \mathbb{Z}
+    \end{cases}$
+\end{myitemize}
+
+\begin{example}
+\item {}
+  \begin{enumerate}[(i)]
+    \item $ [3]=3 $
+    \item $ [3,14] = 3  $
+    \item $ [-3,14] =-4 $
+  \end{enumerate}
+\end{example}
+
+\section{Ρητοί και Άρρητοι}
+
+\begin{lem}
+\item {}
+  \begin{enumerate}[(i)]
+    \item $n$ άρτιος $ \Leftrightarrow n^{2} $ άρτιος.
+    \item $ n $ περιττός $ \Leftrightarrow n^{2} $ περιττός.
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+\item {}
+  \begin{enumerate}[(i)]
+    \item 
+      \begin{description}
+        \item [($ \Rightarrow $ )] 
+          Έστω $ n $ άρτιος $ \Rightarrow n =2k, \; k \in \mathbb{Z} 
+          \Rightarrow n^{2} = (2k)^{2} = 4k^{2} = 2\cdot (2k)^{2} $ άρτιος. 
+        \item [($ \Leftarrow $)] Έστω $ n^{2} $ άρτιος και $n$ περιττός. Τότε 
+          $ n \cdot n = n^{2} $ περιττός. Άτοπο.
+      \end{description}
+
+    \item Ομοίως
+  \end{enumerate}
+\end{proof}
+
+\begin{rem}
+  Στις αποδείξεις τους παραπάνω λήμματος, χρησιμοποιήσαμε ότι 
+  \begin{enumerate}[(i)]
+    \item άρτιος $ \cdot $ άρτιος = άρτιος
+    \item περιττός $ \cdot $ περιττός = περιττός
+    \item άρτιος $ \cdot $ περιττός = άρτιος
+  \end{enumerate}
+\end{rem}
+
+\mythm{Ο $ \sqrt{2} $ είναι άρρητος.}
+
+\begin{proof}
+  Έστω $ \sqrt{2} $ όχι άρρητος. Άρα $ \sqrt{2} $ ρητός, δηλαδή $ \exists m,n 
+  \in \mathbb{Z} $, με $ (m,n)=1 $, δηλαδή $ m,n $ πρώτοι μεταξύ τους
+  τ.ω. $ \sqrt{2} = \frac{m}{n} \Rightarrow 2 = \frac{m^{2}}{n^{2}} \Rightarrow 
+  m^{2} = 2n^{2} \Rightarrow m^{2}$ είναι άρτιος $ \Rightarrow m $ άρτιος 
+  $ \Rightarrow m = 2k, \; k \in \mathbb{Z}$. 
+
+  Άρα $ (2k)^{2} = 2n^{2} \Rightarrow 4k^{2}=2n^{2} \Rightarrow n^{2} = 2k^{2} 
+  \Rightarrow n^{2} $ άρτιος $ \Rightarrow n $ άρτιος. Άτοπο, γιατί $ (m,n)=1 $.
+\end{proof}
+
+\begin{example}
+  Υπάρχει αριθμός $ a \in \mathbb{R} $ τέτοιος ώστε $ a^{2} $ άρρητος και $ a^{4} $ 
+  ρητός; 
+\end{example}
+
+\begin{proof}
+  Ναι, ο $ a= \sqrt[4]{2} $. Πράγματι, $ a^{2} = \sqrt{2} $ άρρητος, και $ 
+  a^{4} = 2$ ρητός.
+\end{proof}
+
+\begin{example}
+  Υπάρχουν αριθμοί, $ a,b $ άρρητοι, ώστε $ a+b, a\cdot b $ να είναι ρητοί;
+\end{example}
+
+\begin{proof}
+  Ναι οι $ a= \sqrt{2} $ και $ b= - \sqrt{2} $, οι οποίοι είναι και οι δύο άρρητοι 
+  και $ a+b= \sqrt{2} - \sqrt{2} = 0 $ ρητός, και $ a\cdot b = \sqrt{2} \cdot (- 
+  \sqrt{2}) = -2 $, επίσης ρητός.
+\end{proof}
+
+\begin{example}
+  Ο $ \sqrt{3} $ είναι άρρητος.
+\end{example}
+
+\begin{proof}
+  Έστω $ \sqrt{3} $ όχι άρρητος. Άρα $ \sqrt{3} $ ρητός, δηλαδή $ \exists m,n 
+  \in \mathbb{Z} $, με $ (m,n)=1 $, δηλαδή $ m,n $ πρώτοι μεταξύ τους
+  τ.ω. $ \sqrt{3} = \frac{m}{n} \Rightarrow 3 = \frac{m^{2}}{n^{2}} \Rightarrow 
+  m^{2} = 3n^{2} \Rightarrow 3 \mid m^{2} \Rightarrow 3 \mid m  \Rightarrow m 
+  \Rightarrow m = 3k, \; k \in \mathbb{Z}$. 
+
+  Άρα $ (3k)^{2} = 3n^{2} \Rightarrow 9k^{2}=3n^{2} \Rightarrow n^{2} = 3k^{2} 
+  \Rightarrow 3 \mid n^{2} \Rightarrow  3 \mid n$,  άτοπο, γιατί $ (m,n)=1 $.
+\end{proof}
+
+\begin{lem}
+  $ 3 \mid m^{2} \Rightarrow 3 \mid m $
+\end{lem}
+
+\begin{proof}
+  Έστω ότι $ 3 \nmid m \Rightarrow m = 3n +1 $ ή $ m = 3n+2 $. 
+  Αν $ m=3n+1 \Rightarrow m^{2} = (3n+1)^{2} = \ldots 3(3n^{2}+2n)+1 \Rightarrow 
+  3 \nmid m^{2}$, άτοπο και αν $ m =3n+2 \Rightarrow m^{2}=(3n+2)^{2} = \ldots = 
+  3(3n^{2}+4n+1)+1 \Rightarrow 3 \nmid m^{2}$ άτοπο.
+\end{proof}
+
+\begin{rem}
+  Ομοίως αποδεικνύονται και ότι οι $ \sqrt{5}$ και  $ \sqrt{6} $ είναι άρρητοι, 
+  και γενικότερα ισχύει η επόμενη πρόταση.
+\end{rem}
+
+\myprop{$ \sqrt{n} $ άρρητος $ \Leftrightarrow n $ όχι τετράγωνο κάποιου φυσικού αριθμού.}
+
+\begin{example}
+  Να δείξετε ότι ο αριθμός $ \sqrt[3]{2} $ είναι άρρητος.
+\end{example}
+
+\begin{proof}
+  Έστω $ \sqrt[3]{2} $ όχι άρρητος. Άρα $ \sqrt[3]{2} $ ρητός, δηλαδή $ \exists m,n 
+  \in \mathbb{Z} $, με $ (m,n)=1 $, δηλαδή $ m,n $ πρώτοι μεταξύ τους
+  τ.ω. $ \sqrt[3]{2} = \frac{m}{n} \Rightarrow 2 = \frac{m^{3}}{n^{3}} \Rightarrow 
+  m^{3} = 2n^{3} \Rightarrow m^{3} $ άρτιος $ \Rightarrow m $ άρτιος. 
+
+  Άρα $ (2k)^{3} = 2n^{3} \Rightarrow 2k^{3}=2n^{3} \Rightarrow n^{3} = 4k^{3} 
+  \Rightarrow n $ άρτιος,  άτοπο, γιατί $ (m,n)=1 $.
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sqrt{2} + \sqrt{3} $ είναι άρρητος.
+\end{example}
+
+\begin{proof}
+  Έστω ότι $ \sqrt{2} + \sqrt{3} $ είναι ρητός. Τότε και ο $ (\sqrt{2} + \sqrt{3} )
+  ^{2} = 2 + 2 \sqrt{6} + 3 = 2 \sqrt{6} + 5 $ είναι ρητός, δηλαδή ο $ \sqrt{6} $ 
+  είναι ρητός, άτοπο.
+\end{proof}
+
+\myprop{
+  $
+  \left.
+    \begin{tabular}{l}
+      $q$ ρητός \\
+      $r$ άρρητος
+    \end{tabular}
+\right\}  \Rightarrow (q+r) $ άρρητος}
+
+\begin{proof}
+\item {}
+  Έστω $(q+r)$ ρητός. Τότε ο $ r = (q+r)-q $ είναι ρητός ως άθροισμα δύο 
+  ρητών. Άτοπο.
+\end{proof}
+
+\myprop{
+  $
+  \left.
+    \begin{tabular}{l}
+      $r$ άρρητος \\
+      $s$ άρρητος
+    \end{tabular}
+\right\}  \Rightarrow (r+s) $ ρητός ή άρρητος.}
+
+\begin{proof}
+  Για παράδειγμα, ο αριθμός $ \sqrt{2} + \sqrt{3} $ είναι άρρητος, ενώ ο 
+  $ \sqrt{2} - \sqrt{2} = 0 $ ρητός, και γενικά ισχύει ότι ο αριθμός
+  $ \underbrace{r}_{\text{άρρητος}}+ \underbrace{(q-r)}_{\text{άρρητος}} =q $ 
+  είναι ρητός, αν ο $q$ είναι ρητός.
+\end{proof}
+
+\myprop{
+  $
+  \left.
+    \begin{tabular}{l}
+      $q$ ρητός \\
+      $r$ άρρητος
+    \end{tabular}
+  \right\}  \Rightarrow  $ \begin{tabular}{l}
+    $ (q \cdot r) $ ρητός $ \Leftrightarrow q =0 $ \\
+    $(q \cdot r)$   άρρητος $ \Leftrightarrow q \neq 0 $
+\end{tabular}}
+
+\begin{proof}
+  Πράγματι, αν $ q=0 $ (ρητός) και $ r $ άρρητος, τότε $ q \cdot r =0 $ είναι ρητός, 
+  αλλά αν $ q \neq 0 $ τότε $ (q \cdot r) $ είναι άρρητος, γιατί αλλιώς ο 
+  $ r = \underbrace{(q \cdot r)}_{\text{ρητός}} \cdot \underbrace{q^{-1}}_{\text{
+  ρητός}} $ είναι ρητός ως γινόμενο ρητών. Άτοπο.
+\end{proof}
+
+
+\section{Πυκνότητα Ρητών και Άρρητων}
+
+\myprop{Σε κάθε ανοιχτό διάστημα πραγματικών αριθμών, υπάρχει ρητός.}
+
+\begin{proof}
+\item {}
+  Θα δείξουμε ότι $ (a,b) $ διάστημα στο $ \mathbb{R} \Rightarrow \exists q 
+  \in \mathbb{Q} $, τ.ω. $ a < q < b $. Πράγματι:
+
+  Αν $ a<b \Rightarrow b-a >0 \overset{\text{Αρχ.Ιδιοτ.}}{\Rightarrow} \exists 
+  n_{0} \in \mathbb{N} \; : \; \frac{1}{n_{0}} < b-a \Rightarrow b n_{0} - a n_{0} 
+  >1 \Rightarrow n_{0}b > 1+ n_{0}a$.
+
+  Τότε 
+  \begin{gather*}
+    [n_{0}a] \leq n_{0}a < [n_{0}a]+1 \leq n_{0}a +1 < n_{0}b \Leftrightarrow \\
+    n_{0}a < [n_{0}a]+1 < n_{0}b \Leftrightarrow \\
+    a < \underbrace{\frac{[n_{0}a]+1}{n_{0}}}_{\text{ρητός}}< b
+  \end{gather*}
+\end{proof}
+
+\myprop{Σε κάθε ανοιχτό διάστημα πραγματικών αριθμών, υπάρχει άρρητος.}
+
+\begin{proof}
+  Θα δείξουμε ότι $ (a,b) $ διάστημα στο $ \mathbb{R} \Rightarrow \exists r \in 
+  \mathbb{R} \setminus \mathbb{Q} $ τ.ω. $a < r < b$. Πράγματι:
+
+  Έστω $ \sqrt{2} $ (τυχαίος) άρρητος. Τότε
+
+  $ a < b \Leftrightarrow a - \sqrt{2} < b- \sqrt{2} \overset{\text{Πυκν. Ρητών}}{\Rightarrow} \exists q \in \mathbb{Q} \; : \;  a - \sqrt{2} < q < b - 
+  \sqrt{2} \Leftrightarrow  a < \underbrace{q + \sqrt{2}}_{\text{άρρητος}} < b $ 
+\end{proof}
+
+
+\end{document}

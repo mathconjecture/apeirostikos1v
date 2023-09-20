@@ -1,0 +1,1027 @@
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
+
+\pagestyle{askhseis}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\begin{center}
+  \minibox[c]{\large \bfseries \textcolor{Col1}{Ακολουθίες} \\ \large
+  \textcolor{Col1}{Ασκήσεις}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+
+\setcounter{chapter}{1}
+\section{Φραγμένες Ακολουθίες}
+
+\begin{enumerate}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n}{3^{n}} $ είναι 
+        φραγμένη. 
+
+        \begin{proof}
+        \item {}
+            $ \inlineequation[eq:ask1a]{3^{n}=(1+2)^{n} \geq 1+2n > 2n}, \; 
+            \forall n \in \mathbb{N} $. Άρα 
+            \[
+                \abs{a_{n}} = \abs{\frac{n}{3^{n}}} =  \frac{n}{3^{n}} 
+                \overset{\eqref{eq:ask1a}}{<} \frac{n}{2n} 
+                = \frac{1}{2}, \; \forall n \in \mathbb{N}
+            \] 
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n!}{n^{n}} $ είναι 
+        φραγμένη. 
+
+        \begin{proof}
+            \[
+                \abs{a_{n}} = \abs{\frac{n!}{n^{n}}} = \frac{n!}{n^{n}} = 
+                \frac{1 \cdot 2 \cdots n}{n^{n}} \leq 
+                \frac{\overbrace{n \cdot n \cdots n}^ 
+                {n-\text {φορές}}}{n^{n}} = \frac{n^{n}}{n^{n}} 
+                = 1, \; \forall n \in \mathbb{N}
+            \]
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{\cos{n} + n 
+        \sin{n}}{n^{2}} $ είναι φραγμένη. 
+
+        \begin{proof}
+            \begin{align*}
+                \abs{\frac{\cos{n} + n \sin{n}}{n^{2}}} = 
+                \frac{\abs{\cos{n} + n \sin{n}}}{n^{2}} \leq 
+                \frac{\abs{\cos{n}} + \abs{n \sin{n}}}{n^{2}} 
+               &= \frac{\abs{\cos{n}} + n \abs{\sin{n}}}{n^{2}} \leq 
+               \frac{1 + n\cdot 1}{n^{2}} = \\
+               &= \frac{1}{n^{2}} + \frac{1}{n} \leq 
+               1 + 1 = 2, \; \forall n \in \mathbb{N}
+            \end{align*} 
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{5 \cos^{3}{n}}{n+2} $ 
+        είναι φραγμένη.
+
+        \begin{proof}
+            \[
+                \abs{a_{n}} = \abs{\frac{5 \cos^{3}{n}}{n+2}} = 
+                \frac{5 \cdot \abs{\cos^{3}{n}}}{n+2} = \frac{5\cdot 
+                \abs{\cos{n}}^ {3}}{n+2} \leq  \frac{5 \cdot 1^{3}}{n+2} < 
+                \frac{5}{2}, \; \forall n \in \mathbb{N}
+            \]
+        \end{proof}
+
+        % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{3 \sin{3n}}{n^{2}} $ 
+        %     είναι φραγμένη.
+
+        %     \begin{proof}
+        %         \[
+        %             \abs{a_{n}} = \abs{\frac{3 \sin{3n}}{n^{2}}} = 
+        %             \frac{3 \cdot \abs{\sin{3n}}}{n^{2}} \leq 
+        %             \frac{3 \cdot 1}{n^{2}} \leq 3, \; \forall n \in 
+
+        %         \] 
+        %     \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{(-1)^{n}}{n} $ είναι 
+        φραγμένη.
+
+        \begin{proof}
+            \[
+                \abs{\frac{(-1)^{n}}{n}} = \frac{\abs{(-1)^{n}}}{n} = 
+                \frac{\abs{-1}^{n}}{n} = \frac{1}{n} \leq 1, \; \forall n \in 
+                \mathbb{N} 
+            \] 
+        \end{proof}
+
+        % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n}{2^{n}}  $ είναι 
+        %     φραγμένη.
+
+        %     \begin{proof}
+        %     \item {}
+        %         $ 2^{n} = (1+1)^{n} \geq 1+1\cdot n > n, \; \forall n \in 
+        %         \mathbb{N} $ 
+        %         \[
+        %             0 < a_{n} = \frac{n}{2^{n}} < \frac{n}{n} = 1, \; 
+        % \forall n \in              \mathbb{N} 
+        %         \]
+        %     \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{1} = 3, \; a_{n+1} =
+        \frac{a_{n}+4}{2}, \; \forall n \in \mathbb{N} $ είναι άνω φραγμένη.
+
+        \begin{proof}
+        \item {}
+            Προφανώς, $ a_{n} > 0, \; \forall n \in \mathbb{N} $ 
+
+            Παρατηρούμε ότι, $ a_{2}=3.5, \; a_{3}=3.75, \; a_{4}=3.875, \; 
+            \ldots $
+
+            Θ.δ.ο. $ a_{n} < 4, \; \forall n \in \mathbb{N} $ 
+            \begin{itemize}
+                \item Για $ n=1 $, έχουμε: $ a_{1}=3 < 4 $, ισχύει.
+                \item Έστω ότι ισχύει για $n$, δηλαδή $ a_{n} < 4 $
+                \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι
+                    \[
+                        a_{n}<4 \Leftrightarrow a_{n}+4 < 8 \Leftrightarrow 
+                        \frac{a_{n}+4}{2} < 4 \Leftrightarrow a_{n+1} <4, \; 
+                        \forall n \in \mathbb{N} 
+                    \] 
+            \end{itemize}
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{1} = \sqrt{2}, \; a_{n+1} =
+        \sqrt{2+ a_{n}}, \; \forall n \in \mathbb{N} $ είναι άνω φραγμένη.
+
+        \begin{proof}
+        \item {}
+            Προφανώς, $ a_{n} > 0, \; \forall n \in \mathbb{N} $ 
+
+            Παρατηρούμε ότι, $ a_{2}= \sqrt{2 + \sqrt{2}} < \sqrt{2+2} =2, \; 
+            a_{3}= \sqrt{2+ \sqrt{2 + \sqrt{2}}} < \sqrt{2+ \sqrt{2+2}} = 2, 
+            \ldots $ 
+
+            Θ.δ.ο. $ a_{n} < 2, \; \forall n \in \mathbb{N} $ 
+            \begin{itemize}
+                \item Για $ n=1 $, έχουμε: $ a_{1}= \sqrt{2} < 2 $, ισχύει.
+                \item Έστω ότι ισχύει για $n$, δηλαδή $ a_{n} < 2 $
+                \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι
+                    \[
+                        a_{n}<2 \Leftrightarrow 2+a_{n} < 4 \Leftrightarrow 
+                        \sqrt{2+ a_{n}} < 2\Leftrightarrow a_{n+1} <2, \; 
+                        \forall n \in \mathbb{N} 
+                    \] 
+            \end{itemize}
+        \end{proof}
+
+
+        % \item Να δείξετε ότι η ακολουθία $ a_{n} = 1 + \frac{1}{1!} +
+        %     \frac{1}{2!} + \frac{1}{n!} $ είναι άνω φραγμένη.
+
+        %     \begin{proof}
+        %     \item {} 
+        %         Ισχύει ότι $ n! > 2^{n-1}, \; \forall n \in \mathbb{N} $, άρα 
+        %         \begin{align*}
+        %             a_{n} &= 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + 
+        %             \frac{1}{4!} + \cdots \frac{1}{n!} < 1 + 
+        %             \underbrace{\frac{1}{2^{0}} 
+        %                 + \frac{1}{2^{1}} + \frac{1}{2^{2}} + \frac{1}{2^{3}} 
+        %             + \cdots \frac{1}{2^{n-1}}}_ {\text{γεωμ. πρόοδος}} = 
+        %             1 + \frac{\left(\frac{1}{2}\right)^{n}-1}{\frac{1}{2} -1}
+        % =\\ 
+        %                   &= 1 + 2\left(1- \frac{1}{2^{n}}\right) = 1+2- 
+        %                   \frac{1}{2^{n-1}} < 3 
+        %         \end{align*} 
+        %     \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = 2^{n} $ δεν είναι άνω 
+        φραγμένη.
+
+        \begin{proof}
+        \item {} 
+            Έστω ότι η $ a_{n}=2^{n} $ είναι άνω φραγμένη. Τότε 
+
+            \begin{minipage}{0.35\textwidth}
+                \begin{itemize}
+                    \item $ \exists M \in \mathbb{R} \; : \; 2^{n} \leq M, \; 
+                        \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+                    \item $ 2^{n}=(1+1)^{n} \geq 1+n, \; \forall n \in 
+                        \mathbb{N} $ \hfill \tikzmark{b}
+                \end{itemize}    
+            \end{minipage}
+
+            \mybrace{a}{b}[$ M \geq 1+n \Leftrightarrow n \leq M-1, \; 
+            \forall n \in \mathbb{N} $] 
+            άτοπο, γιατί $ \mathbb{N} $ δεν είναι άνω φραγμένο.
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{3} + \sin{5n}}{n} $ 
+        δεν είναι φραγμένη.
+
+        \begin{proof}
+        \item {}
+            Έστω ότι η $ a_{n}= \frac{n^{3}+ \sin{5n}}{n} $ είναι φραγμένη. 
+            Τότε 
+
+            \begin{minipage}{0.6\textwidth}
+                \begin{itemize}
+                    \item $ \exists M>0 \; : \; \abs{\frac{n^{3}+ 
+                            \sin{5n}}{n}} \leq M \Leftrightarrow \abs{n^{3}+ 
+                        \sin{5n}} \leq nM  \; $ 
+                        \hfill \tikzmark{a}
+                    \item $ n^{2}-1 < n^{3}-1 \leq \abs{n^{3}}- \abs{\sin{5n}} 
+                        \leq \abs{n^{3}+ \sin{5n}}$ 
+                        \hfill \tikzmark{b}
+                \end{itemize}
+            \end{minipage}
+
+            \mybrace{a}{b}[$n^{2}-nM-1<0 $] 
+            Το οποίο ισχύει ανν $ r_{1}<n< r_{2} $,
+            όπου $ r_{1}, r_{2} $ οι ρίζες του τριωνύμου, το οποίο έχει $ 
+            \Delta= M^{2} + 4 > 0$. Όμως αυτό είναι άτοπο, γιατί $ \mathbb{N} $ 
+            δεν είναι άνω φραγμένο.
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{2}}{3n+ 
+        \sin^{2}{n}} $ δεν είναι άνω φραγμένη.
+
+        \begin{proof}
+        \item {}
+            Έστω ότι η $ a_{n}= \frac{n^{2}}{3n+ \sin^{2}{n}} $ είναι φραγμένη.
+            Τότε 
+            \[
+                \exists M>0 \; : \; \abs{\frac{n^{2}}{3n+ \sin^{2}{n}}} 
+                \leq M \Leftrightarrow n^{2} \leq M(3n+ \sin^{2}{n}) \leq 
+                M(3n+1) \Leftrightarrow n^{2}-3Mn-M \leq 0
+            \]
+            Το οποίο ισχύει ανν $ r_{1}<n< r_{2} $,
+            όπου $ r_{1}, r_{2} $ οι ρίζες του τριωνύμου, το οποίο έχει $ 
+            \Delta= 9M^{2}+4M >0 $. Όμως αυτό είναι άτοπο, γιατί $ \mathbb{N} $ 
+            δεν είναι άνω φραγμένο.
+        \end{proof}
+\end{enumerate}
+
+
+
+\section{Μονότονες Ακολουθίες}
+
+
+
+
+\begin{enumerate}
+
+    \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{n}{5n -1} $ είναι 
+        γνησίως φθίνουσα.
+
+        \begin{proof}
+            \begin{align*} 
+                a_{n+1}- a_{n} = \frac{n+1}{5(n+1)-1} - \frac{n}{5n -1} = 
+                \frac{n+1}{5n+4} - \frac{n}{5n-1} 
+                    &= \frac{5n^{2}+5n-n-1-5n^{2}-4n}{(5n+4)(5n-1)} \\ 
+                    &= - \frac{1}{(5n+4)(5n-1)} < 0 
+            \end{align*} 
+        \end{proof}
+
+    \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{n}{3^{n}} $ είναι 
+        γνησίως φθίνουσα.
+
+        \begin{proof}
+            \[
+                a_{n+1}- a_{n} = \frac{n+1}{3^{n+1}} - \frac{n}{3^{n}} = 
+                \frac{n+1-3n}{3^{n+1}} = \frac{1-2n}{3^{n+1}} < 0, \; 
+                \forall n \in \mathbb{N}
+            \] 
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{2^{n}}{n!} $ είναι γνησίως 
+        φθίνουσα.
+
+        \begin{proof}
+        \item {}
+            Είναι $ a_{n}>0, \; \forall n \in \mathbb{N} $, επομένως η 
+            ακολουθία διατηρεί πρόσημο, όποτε
+            \[
+                \frac{a_{n+1}}{a_{n}} = \frac{\frac{2^{n+1}}{(n+1)!}}
+                {\frac{2^{n}} {n!}} = \frac{2^{n+1}}{2^{n}} \cdot 
+                \frac{n!}{(n+1)!} = \frac{2}{n+1} \leq 1, \; \forall n \in 
+                \mathbb{N}
+            \] 
+        \end{proof}
+
+    \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{2n^{2}-1}{n} $ είναι γνησίως 
+        αύξουσα.
+
+        \begin{proof}
+            \[
+                a_{n+1}- a_{n} = \frac{2(n+1)^{2}-1}{n+1} - \frac{2n^{2}-1}{n} 
+                = \cdots = \frac{2n^{2}+2n+1}{n(n+1)} >0, \; \forall n 
+                \in \mathbb{N}
+            \] 
+        \end{proof}
+
+    \item Να δείξετε ότι η ακολουθία $ a_{1}=0, a_{n+1}= 
+        \frac{2 a_{n}+4}{3}, \; \forall n \in \mathbb{N} $ είναι γνησίως 
+        αύξουσα.
+
+        \begin{proof}
+        \item {}
+            \begin{description}
+                \item 
+                    Θα δέιξουμε ότι $ a_{n+1}> a_{n}, \; \forall n \in 
+                    \mathbb{N} $. Πράγματι,
+                    \begin{itemize}
+                        \item Για $ n=1 $, έχουμε $ a_{2}= \frac{4}{3} > 0 
+                            = a_{1}$, ισχύει.
+                        \item Έστω ότι ισχύει για $n$, δηλ. $ a_{n+1} > a_{n} $.
+                        \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι,
+                            \[
+                                a_{n}< a_{n+1} \Leftrightarrow 2 a_{n} 
+                                < 2 a_{n+1} 
+                                \Leftrightarrow 2 a_{n}+4 < 2 a_{n+1}+4 
+                                \Leftrightarrow \underbrace{\frac{2 a_{n}+4}{3}}
+                                _{a_{n+1}} < 
+                                \underbrace{\frac{2 a_{n+1}+4}{3}}_{a_{n+2}}, 
+                                \; \forall n \in \mathbb{N}
+                            \]
+                    \end{itemize}
+
+                \item [Β᾽ Τρόπος:]
+                    \[
+                        a_{n+1}- a_{n} > 0 \Leftrightarrow \frac{2 a_{n}+4}{3} 
+                        - a_{n}>0 
+                        \Leftrightarrow \frac{4 - a_{n}}{3} > 0 
+                        \Leftrightarrow a_{n}< 4, \; \forall n \in \mathbb{N}
+                    \] 
+                    Θα δείξουμε ότι $ a_{n}<4, \; \forall n \in \mathbb{N} $.
+                    Πράγματι,
+                    \begin{itemize}
+                        \item Για $ n=1 $, έχουμε $ a_{1}=0 < 4 $, ισχύει.
+                        \item Έστω ότι ισχύει για $n$, δηλ. $ a_{n}<4 $
+                        \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι,
+                            \[
+                                a_{n+1}= \frac{2 a_{n}+4}{3} < \frac{2\cdot 4 
+                                + 4}{3} = \frac{12}{3} = 4
+                            \] 
+                    \end{itemize}
+            \end{description}
+        \end{proof}
+
+    \item Να δείξετε ότι ακολουθία $ a_{1}=1, a_{n} = \sqrt{a_{n}+1}, \; 
+        \forall n \in \mathbb{N}$ είναι γνησίως αύξουσα.
+
+        \begin{proof}
+            \begin{itemize}
+                \item Για $ n=1 $, έχω $ a_{1}=1 < \sqrt{2} = a_{2} $, ισχύει.
+                \item Έστω ότι ισχύει για $n$, δηλ. $ a_{n}< a_{n+1} $
+                \item Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι,
+                    \[
+                        a_{n} < a_{n+1} \Leftrightarrow a_{n}+1 < a_{n+1}+1 
+                        \Leftrightarrow \sqrt{a_{n}+1} < \sqrt{a_{n+1}+1} 
+                        \Leftrightarrow a_{n+1}< a_{n+2}
+                    \] 
+            \end{itemize}
+        \end{proof}
+
+    \item Να δείξετε ότι ακολουθία $ a_{n} = (-1)^{n} \frac{1}{n^{2}+2} $ 
+        δεν είναι μονότονη.
+
+        \begin{proof}
+        \item {}
+            Θα δείξουμε ότι η ακολουθία δεν διατηρεί πρόσημο. Πράγματι, 
+            $ \forall n \in \mathbb{N} $
+            \begin{align*}
+                a_{n+1}- a_{n} = \frac{(-1)^{n+1}}{(n+1)^{2}+2} - 
+                \frac{(-1)^{n}} {n^{2}+2} 
+                        &= \frac{(-1)^{n+1}}{(n+1)^{2}+2} + 
+                        \frac{(-1)^{n+1}}{n^{2}+2}= \\
+                        &= (-1)^{n+1}\Biggl[\underbrace{\frac{1}{(n+1)^{2}+2} + 
+                                \frac{1}{n^{2}+2}}_{b_{n} > 0, \; \forall n \in 
+                        \mathbb{N}}\Biggr] 
+                        = \begin{cases}
+                            -b_{n}, & n \; \text{περιττός} \\
+                            b_{n}, & n \; \text{άρτιος} 
+                        \end{cases}
+            \end{align*} 
+        \end{proof}
+\end{enumerate}
+
+
+
+
+\section{Ορισμός του Ορίου}
+
+
+
+
+\begin{enumerate}
+
+    \item Να δείξετε ότι οι παρακάτω ακολουθίες δεν συγκλίνουν.
+        \begin{enumerate}[i)]
+            \item $ a_{n} = (-1)^{n} \frac{n}{n+1} $ 
+            \item $ a_{n} = (-1)^{n} \frac{n+3}{2n} $ 
+            \item $ a_{n} = \lambda n, \; \lambda > 0 $ 
+        \end{enumerate}
+
+        \begin{proof}
+        \item {}
+            \begin{enumerate}[i)]
+                \item Θεωρούμε τις υπακολουθίες $(a_{2n})_{n \in \mathbb{N}} $ 
+                    και $(a_{2n-1})_{n \in \mathbb{N}} $. Έχουμε,
+
+                    \begin{align*} 
+                        \lim_{n \to \infty} a_{2n} = \lim_{n \to \infty}  (-1)^{2n} 
+                        \frac{2n}{2n+1} = \lim_{n \to \infty}  \frac{2n}{2n+1} = 
+                        \lim_{n \to \infty} \frac{2n}{n(2 + \frac{1}{n})} = 
+                        \lim_{n \to \infty} \frac{2}{2 + \frac{1}{n}} = 
+                        \frac{2}{2+0} = 1 
+                    \end{align*}
+
+                    \begin{align*} 
+                        \lim_{n \to \infty} a_{2n-1} = \lim_{n \to \infty} 
+                        (-1)^{2n-1} \frac{2n-1}{2n-1 + 1} = \lim_{n \to \infty} - 
+                        \frac{2n-1}{2n} = -\lim_{n \to \infty} 
+                        \frac{n (2 - \frac{1}{n})}{2n} = - \lim_{n \to \infty} 
+                        \frac{2 - \frac{1}{n} }{2} = -1 
+                    \end{align*}
+
+                    Επειδή $ \lim_{n \to \infty} a_{2n} \neq \lim_{n \to \infty} a_{2n-1} $
+                    η ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ δε συγκλίνει.
+
+                \item Θεωρούμε τις υπακολουθίες $(a_{2n})_{n \in \mathbb{N}} $ 
+                    και $(a_{2n-1})_{n \in \mathbb{N}} $. Έχουμε,
+
+                    \begin{align*}
+                        \lim_{n \to \infty} a_{2n} = (-1)^{2n} \lim_{n \to \infty} 
+                        \frac{2n+3}{2\cdot 2n} = \lim_{n \to \infty} \frac{2n+3}{4n} = 
+                        \lim_{n \to \infty} \frac{n(2+ \frac{3}{n})}{4n} = 
+                        \lim_{n \to \infty} \frac{2 + \frac{3}{n}}{4} = \frac{1}{2} 
+                    \end{align*}
+
+                    \begin{align*}
+                        \lim_{n \to \infty} a_{2n-1} = \lim_{n \to \infty} (-1)^{2n-1} 
+                        \frac{2n-1 +3}{2 \cdot (2n-1)} = \lim_{n \to \infty} - 
+                        \frac{2n+2}{4n-2} = - \lim_{n \to \infty} 
+                        \frac{n(2+ \frac{2}{n})}{n(4- \frac{2}{n})} = - \lim_{n \to \infty}
+                        \frac{2 + \frac{2}{n}}{4 - \frac{2}{n}} = - \frac{1}{2}
+                    \end{align*}
+
+                    Επειδή $ \lim_{n \to \infty} a_{2n} \neq \lim_{n \to \infty} a_{2n-1} $
+                    η ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ δε συγκλίνει.
+
+                \item Η ακολουθία $(\lambda n)_{n \in \mathbb{N}} $ δε συγκλίνει, διότι 
+                    δεν είναι φραγμένη. Πράγματι, γιατί αν $ (a_{n})_{n \in \mathbb{N}} $
+                    είναι φραγμένη, τότε
+                    \[
+                        \abs{a_{n}} = \abs{\lambda n} \overset{\lambda >0}{=} 
+                        \lambda n \leq a, \; \forall n \in \mathbb{N} \Leftrightarrow 
+                        n \leq \frac{a}{\lambda}, \; \forall n \in \mathbb{N} \; 
+                        \text{άτοπο, γιατι $ \mathbb{N} $ όχι άνω φραγμένο}
+                    \] 
+            \end{enumerate}    
+        \end{proof}
+\end{enumerate}
+
+
+
+
+\section{Άλγεβρα και Θεωρήματα Ορίων}
+
+
+
+
+\begin{enumerate}
+    \item Να υπολογιστούν τα παρακάτω όρια.
+
+        \begin{enumerate}[i)]
+            \item $ \lim_{n \to \infty} \frac{n^{2}+3n}{n^{2}+2n+1} = 
+                \lim_{n \to \infty} \frac{n^{2}(1+ \frac{3}{n})}{n^{2}(1+ \frac{2}{n} 
+                + \frac{1}{n^{2}})} = \lim_{n \to \infty} 
+                \frac{1+ \frac{3}{n}}{1+ \frac{2}{n} + \frac{1}{n^{2}}} = 
+                \frac{1+0}{1+0+0} = 1 $ 
+
+            \item $ \lim_{n \to \infty} \sqrt[3]{\frac{n^{3}+n}{n^{3}+2n}} = 
+                \sqrt[3]{\lim_{n \to \infty} \frac{n^{3}(1+ 
+                \frac{1}{n^{2}})}{n^{3}(1+ \frac{2}{n^{2}})}} = 
+                \sqrt[3]{\lim_{n \to \infty} \frac{1+ \frac{1}{n^{2}}}{1+
+                \frac{2}{n^{2}}}} = \sqrt[3]{\frac{1+0}{1+0}} = \sqrt[3]{1} = 1  $
+        \end{enumerate}
+
+    \item Να υπολογιστούν τα παρακάτω όρια με τη βοήθεια του Κριτηρίου Παρεμβολής.
+
+        \begin{enumerate}[i)]
+            \item $ \lim_{n \to \infty} \frac{(-1)^{n}}{n^{2}+2n} $
+                \begin{proof}
+                \item {}
+                    $ \abs{a_{n}} = \abs{\frac{(-1)^{n}}{n^{2}+2n}} =
+                    \frac{\abs{(-1)^{n}}}{\abs{n^{2}+2n}} = \frac{1}{n^{2}+2n} \leq 
+                    \frac{1}{n^{2}} $
+
+                    Όμως $ \lim_{n \to \infty} \frac{1}{n^{2}} = 0 $, άρα και $ 
+                    \lim_{n \to \infty} a_{n} = \lim_{n \to \infty} 
+                    \frac{(-1)^{n}}{n^{2}+2n} = 0$
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} (\sqrt{n+2} - \sqrt{n}) $
+                \begin{proof}
+                \item {}
+                    \begin{align*} 
+                        \abs{a_{n}} &= \abs{\sqrt{n+2} - \sqrt{n}} = \sqrt{n+2} - 
+                        \sqrt{n} =  \frac{(\sqrt{n+2} - \sqrt{n})(\sqrt{n+2} + 
+                        \sqrt{n})}{\sqrt{n+2} + \sqrt{n}} = 
+                        \frac{n+2-n}{\sqrt{n+2} + \sqrt{n}} \\
+                                    &= \frac{2}{\sqrt{n+2} + 
+                                    \sqrt{n} } \leq \frac{2}{\sqrt{n}}  
+                    \end{align*}
+
+                    Όμως $ \lim_{n \to \infty} \frac{2}{\sqrt{n}} = 0 $, άρα και 
+                    $ \lim_{n \to \infty} \sqrt{n+2} - \sqrt{n} = 0 $
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \left(\sqrt{n^{3}+4} - \sqrt{n^{3}+1}\right) $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        \abs{a_{n}} &= \abs{\sqrt{n^{3}+4} - \sqrt{n^{3}+1}} = 
+                        \sqrt{n^{3}+4} - \sqrt{n^{3}+1} = \frac{(\sqrt{n^{3}+4}-
+                            \sqrt{n^{3}+1})(\sqrt{n^{3}+4}+ 
+                        \sqrt{n^{3}+1})}{\sqrt{n^{3}+4} + \sqrt{n^{3}+1}} \\
+                                    &= \frac{n^{3}+4 - n^{3}-1}{\sqrt{n^{3}+4} + 
+                                        \sqrt{n^{3}+1}} = \frac{3}{\sqrt{n^{3}+4} + 
+                                    \sqrt{n^{3}+1}} <
+                                    \frac{3}{\sqrt{n^{3}+1}+ \sqrt{n^{3}+1}} = 
+                                    \frac{3}{2 \sqrt{n^{3}+1}} < 
+                                    \frac{3}{\sqrt{n^{3}}} \\
+                                    &= \frac{3}{n \sqrt{n}} 
+                    \end{align*}
+
+                    Όμως $ \lim_{n \to \infty} \frac{3}{n \sqrt{n}} = 
+                    \lim_{n \to \infty} \left(\frac{3}{n} \cdot 
+                    \frac{1}{\sqrt{n}}\right) = 
+                    0 \cdot 0 = 0 $, άρα και $ \lim_{n \to \infty} 
+                    \left(\sqrt{n^{3}+4} - \sqrt{n^{3}+1}\right) = 0 $ 
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \frac{4 \sin^{3}{n} + 3 \cos^{2}{n}}{n^{2}} $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        \abs{\frac{4 \sin^{3}{n} + 3 \cos^{2}{n}}{n^{2}}} 
+                        &= \frac{\abs{4 \sin^{3}{n} + 3 \cos^{2}{n}}}{n^{2}} \leq 
+                        \frac{\abs{4 \sin^{3}{n}} + \abs{3 \cos^{2}{n}}}{n^{2}} = 
+                        \frac{4 \abs{\sin^{3}{n}} + 3 \abs{\cos^{2}{n}}}{n^{2}} \\ 
+                        &= \frac{4 \abs{\sin{n}}^{3} + 3 \abs{\cos{n}}^{3}}{n^{2}} \leq 
+                        \frac{4 \cdot 1^{3}+ 3 \cdot 1 ^{3}}{n^{2}} = \frac{7}{n^{2}} 
+                        < \frac{7}{n} 
+                    \end{align*}
+
+                    Όμως $ \lim_{n \to \infty} \frac{7}{n} = 0 $, άρα και $ 
+                    \lim_{n \to \infty} \frac{4 \sin^{3}{n} + 3 \cos^{2}{n}}{n^{2}} = 0$
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \frac{\cos{n} + 3 \sin{4n}}{2 \sqrt{n}-1} $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        \abs{a_{n}} &= \abs{\frac{\cos{n} + 3 \sin{4n}}{2 \sqrt{n} -1}} 
+                        = \frac{\abs{\cos{n} + 3 \sin{4n}}}{2 \sqrt{n} -1} \leq 
+                        \frac{\abs{\cos{n}} + \abs{3 \sin{4n}}}{2 \sqrt{n} -1} = 
+                        \frac{\abs{\cos{n}} + 3 \abs{\sin{4n}}}{2 \sqrt{n} -1} \leq 
+                        \frac{1 + 3 \cdot 1}{2 \sqrt{n} -1} \\ 
+                                    &= \frac{4}{2 \sqrt{n} -1} 
+                    \end{align*}
+
+                    Όμως $ \lim_{n \to \infty} \frac{4}{\sqrt{n} (2 - 
+                    \frac{1}{\sqrt{n}})} = \lim_{n \to \infty}  
+                    \left(\frac{1}{\sqrt{n}} \cdot \frac{4}{(2- 
+                    \frac{1}{\sqrt{n}})}\right) = 0 \cdot \frac{4}{2-0} = 0 $
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \sqrt[n]{3^{n}+4^{n}+n} $
+                \begin{proof}
+                \item {}
+                    Ισχύει
+                    \begin{align*}
+                        4^{n} &\leq 3^{n}+4^{n}+n \leq 4^{n}+4^{n}+4^{n}, \; 
+                        \forall n \in \mathbb{N} \\
+                        4^{n} &\leq 3^{n}+4^{n}+n \leq 3\cdot 4^{n}, \; \forall n 
+                        \in \mathbb{N} \\
+                        \sqrt[n]{4^{n}} & \leq \sqrt[n]{3^{n}+4^{n}+n} \leq 
+                        \sqrt[n]{3\cdot 4^{n}}, \; 
+                        \forall n \in \mathbb{N} \\
+                        4 & \leq \sqrt[n]{3^{n}+4^{n}+n} \leq 4 \cdot \sqrt[n]{3}, \; 
+                        \forall n \in \mathbb{N}
+                    \end{align*}
+
+                Όμως $ \lim_{n \to \infty} 4 = 4 $ και $ \lim_{n \to \infty} 4 
+                \sqrt[n]{3} = 4 \cdot
+                1 = 4$, άρα από Κριτήριο παρεμβολής και $ \lim_{n \to \infty}
+                \sqrt[n]{3^{n}+4^{n}+n} = 4 $
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \sqrt[n]{\frac{n^{2}}{3n^{2}+2}} $
+                \begin{proof}
+                \item {}
+                    Ισχύει
+                    \begin{align*}
+                        \frac{1}{5} = \frac{n^{2}}{5n^{2}} \leq 
+                        \frac{n^{2}}{3n^{2}+2n^{2}} \leq \frac{n^{2}}{3n^{2}+2} 
+                        \leq \frac{n^{2}}{3n^{2}} = \frac{1}{3}, 
+                        \; \forall n \in \mathbb{N}
+                    \end{align*}
+                    Επομένως 
+                    \[
+                        \sqrt[n]{\frac{1}{5}} \leq \sqrt[n]{\frac{n^{2}}{3n^{2}+2}} 
+                        \leq \sqrt[n]{\frac{1}{3}}, \; \forall n \in \mathbb{N}
+                    \] 
+                    Όμως $ \lim_{n \to \infty} \sqrt[n]{\frac{1}{5}} = 
+                    \lim_{n \to \infty}
+                    \sqrt{\frac{1}{3}} = 1 $, άρα από Κριτήριο Παρεμβολής 
+                    και $ \lim_{n \to \infty} \sqrt[n]{\frac{n^{2}}{3n^{2}+2}} = 1 $
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \sqrt[n]{n^{2}+n} $
+                \begin{proof}
+                \item {}
+                    Ισχύει
+                    \[
+                        1 < \sqrt[n]{n^{2}+n} \leq \sqrt[n]{n^{2}+n^{2}} = \sqrt[n]{2n^{2}}, \; 
+                        \forall n \in \mathbb{N} 
+                    \]
+
+                    Όμως $ \lim_{n \to \infty} 1 = 1$ και $ \lim_{n \to \infty} \sqrt[n]{2n^{2}} = 
+                    \lim_{n \to \infty} (\sqrt[n]{2} \cdot \sqrt[n]{n^{2}}) =  \lim_{n \to \infty} 
+                    (\sqrt[n]{2} \cdot \sqrt[n]{n} \cdot \sqrt[n]{n}) = 1 \cdot 1 \cdot 1 = 1$, άρα και 
+                    $ \lim_{n \to \infty} \sqrt[n]{n^{2}+n} = 1 $
+                \end{proof}
+        \end{enumerate}
+
+    \item Να υπολογιστούν τα παρακάτω όρια με τη βοήθεια του ορίου
+        $ \lim_{n \to \infty} \left(1+ \frac{1}{n} \right)^{n} = e $ 
+
+        \begin{enumerate}[i)]
+            \item $ \lim_{n \to \infty} \left(1+ \frac{1}{n-2} \right)^{n}, \; n 
+                \geq 3 $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        a_{n} = \left(1+ \frac{1}{n-2} \right)^{n} = \left(1+ 
+                        \frac{1}{n-2} \right)^{n-2+2} = 
+                        \underbrace{\left(1+ \frac{1}{n-2} 
+                            \right)^{n-2}}_{\tilde{a} _{n-2}} \cdot \left(1 + 
+                            \frac{1}{n-2} 
+                        \right)^{2} \xrightarrow{n \to \infty} e \cdot (1+0)^{2} = e
+                    \end{align*}
+                    γιατί
+                    \[
+                        \lim_{n \to \infty} \tilde{a} _{n} = \lim_{n \to \infty} 
+                        \left(1+ \frac{1}{n}\right)^{n} = e 
+                        \overset{\text{Πρότ.}}{\Rightarrow} 
+                        \lim_{n \to \infty} \tilde{a} _{n-2} = \lim_{n \to \infty} 
+                        \left(1+ \frac{1}{n-2} \right)^{n-2} = e
+                    \] 
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \left(1 + \frac{1}{3n} \right)^{n} $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        a_{n}= \left(1+ \frac{1}{3n} \right)^{n} = \left(1+ 
+                        \frac{1}{3n} \right)
+                        ^{3n\cdot \frac{1}{3}} = \Biggl(\underbrace{\left(1+ 
+                            \frac{1}{3n} \right)^{3n}}_{\tilde{a} _{3n}}
+                        \Biggr)^{\frac{1}{3}} \xrightarrow{n \to \infty} \sqrt[3]{e} 
+                    \end{align*}
+                    γιατί
+                    \[
+                        \lim_{n \to \infty} \tilde{a} _{n} = \lim_{n \to \infty} 
+                        \left(1+ \frac{1}{n}\right)^{n} = e 
+                        \overset{\text{Πρότ.}}{\Rightarrow} 
+                        \lim_{n \to \infty} \tilde{a} _{3n} = \lim_{n \to \infty} 
+                        \left(1+ \frac{1}{3n} \right)^{3n} = e
+                    \]
+                \end{proof}
+
+
+            \item $ \lim_{n \to \infty} \left(1+ \frac{2}{n} \right)^{n} $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        a_{n}
+                        &= \left(1+ \frac{2}{n} \right)^{n} = \left(\frac{n+2}{n} 
+                            \right)^{n} = \left( \frac{n+2}{n+1} \cdot 
+                        \frac{n+1}{n}\right)^{n} = \left(\frac{n+2}{n+1} \right)^{n} 
+                        \cdot \left(\frac{n+1}{n} \right)^{n} \\
+                        &= \left(1 + \frac{1}{n+1} \right)^{n} \cdot \left(1+ 
+                        \frac{1}{n} \right)^{n} \xrightarrow{n \to \infty}  
+                        e \cdot e = e^{2}
+                    \end{align*}  
+                \end{proof}
+
+
+            \item $ \lim_{n \to \infty} \left(\frac{2n+3}{2n} \right)^{3n+2} $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                      a_{n}= \left(\frac{2n+3}{2n} \right)^{3n+2} &= \left(1+ 
+                        \frac{3}{2n} \right)^{3n+2} = 
+                        \left(1+ \frac{3}{2n} \right)^{3n} \cdot \left(1+ 
+                          \frac{3}{2n} \right)^{2} = \left[\underbrace{\left(1+
+                        \frac{3}{2n}\right)^{2n}}_{a_{2n}}\right]^{\frac{3}{2}} 
+                          \cdot \left(1+ \frac{3}{2n} \right)^{2} \\ 
+                    &\xrightarrow{n \to \infty}
+                        (e^{3})^{\frac{3}{2}} \cdot 1  = e^{4}\cdot \sqrt{e} 
+                    \end{align*} 
+                    γιατί 
+                    \[
+                        \lim_{n \to \infty} \tilde{a} _{n} = \lim_{n \to \infty} 
+                        \left(1+ \frac{3}{n} \right)^{n} = e^{3} 
+                        \overset{\text{Προτ.}}{\Rightarrow } \lim_{n \to \infty} 
+                        \tilde{a} _{2n} = \lim_{n \to \infty} \left(1+ \frac{3}{2n} 
+                        \right)^{2n} = e^{3}
+                    \]
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \left(1- \frac{1}{n^{2}}\right)^{n} $
+                \begin{proof}
+                    \begin{align*}
+                        a_{n}=\left(1- \frac{1}{n^{2}} \right)^{n} = 
+                        \left[\left(1- \frac{1}{n} \right) \cdot
+                            \left(1+ \frac{1}{n} \right)\right]^{n} = \left(\frac{n-1}{n} 
+                        \right)^{n} \cdot 
+                        \left(1+ \frac{1}{n} \right)^{n} \xrightarrow{n \to \infty}  
+                        \frac{1}{e} \cdot e = 1
+                    \end{align*} 
+                    γιατί 
+                    \begin{align*}
+                        \lim_{n \to \infty} \left(\frac{n-1}{n} \right)^{n} = 
+                        \lim_{n \to \infty} \left(\frac{1}{\frac{n-1}{n}}\right)^{n} = 
+                        \lim_{n \to \infty} \frac{1}{\left(\frac{n-1+1}{n-1}\right)^{n}} = 
+                        \lim_{n \to \infty} \frac{1}{\left(1+ \frac{1}{n-1} \right)^{n}} =
+                        \frac{1}{e} 
+                    \end{align*}
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \left(\frac{n^{2}-1}{n^{2}+1} \right)^{n^{2}} $
+                \begin{proof}
+                    \begin{align*}
+                        a_{n} = \left(\frac{n^{2}-1}{n^{2}+1}\right)^{n^{2}} = 
+                        \left(\frac{n^{2}\left(1- 
+                                    \frac{1}{n^{2}}\right)}{n^{2}\left(1+ 
+                        \frac{1}{n^{2}}\right)}\right)^{n^{2}} = 
+                        \frac{\left(1 - \frac{1}{n^{2}}\right)^{n^{2}}}
+                        {\left(1 + \frac{1}{n^{2}} \right)^{n^{2}}} 
+                        \xrightarrow{n \to \infty}  
+                        \frac{\frac{1}{e}}{e} = \frac{1}{e^{2}} 
+                    \end{align*} 
+                \end{proof}
+        \end{enumerate}
+
+    \item Να υπολογιστούν τα παρακάτω όρια.
+
+        \begin{enumerate}[i)]
+            \item $ \lim_{n \to \infty} \sqrt[n]{3^{n} + 5^{n}+7^{n}} $ 
+                \begin{proof}
+                    \begin{gather*}
+                        7^{n} < 3^{n}+5^{n}+7^{n} < 7^{n}+7^{n}+7^{n} = 3\cdot 7^{n} 
+                        \Leftrightarrow \\
+                        \sqrt[n]{7^{n}} < \sqrt[n]{3^{n}+5^{n}+7^{n}} < 
+                        \sqrt[n]{3 \cdot 7^{n}} \Leftrightarrow \\
+                        7 < \sqrt[n]{3^{n}+5^{n}+7^{n}} < 7\cdot \sqrt[n]{3} 
+                        \Leftrightarrow \\
+                    \end{gather*}
+                    Όμως $ \lim_{n \to \infty} 7 = 7 $ και $ \lim_{n \to \infty} 7 
+                    \cdot \sqrt[n]{3} = 7 \cdot 1 = 7$, άρα και $ 
+                    \lim_{n \to \infty} \sqrt[n]{3^{n}+5^{n}+7^{n}} = 7$
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \sqrt[n]{\left(\frac{3}{5}\right)^{n}+
+                \left(\frac{5}{6}\right)^{n}} $
+                \begin{proof}
+                    Ισχύει ότι $ \frac{3}{5} < \frac{5}{6} $, οπότε
+                    \begin{gather*}
+                        \left(\frac{5}{6}\right)^{n} < \left(\frac{3}{5}\right)^{n}+ 
+                        \left(\frac{5}{6}\right)^{n} < \left(\frac{5}{6}\right)^{n} + 
+                        \left(\frac{5}{6}\right)^{n} = 2 \cdot 
+                        \left(\frac{5}{6}\right)^{n} 
+                        \Leftrightarrow \\
+                        \sqrt[n]{\left(\frac{5}{6}\right)^{n}} < 
+                        \sqrt[n]{\left(\frac{3}{5}\right)^{n}+ 
+                        \left(\frac{5}{6}\right)^{n}} < 
+                        \sqrt[n]{2\cdot \left(\frac{5}{6}\right)^{n}} 
+                        \Leftrightarrow \\
+                        \frac{5}{6} < \sqrt[n]{\left(\frac{3}{5}\right)^{n}+ 
+                        \left(\frac{5}{6}\right)^{n}} < \frac{5}{6} \cdot 
+                        \sqrt[n]{2} 
+                    \end{gather*}
+                    Όμως $ \lim_{n \to \infty} \frac{5}{6} = \frac{5}{6} $ και 
+                    $ \lim_{n \to \infty} \left(\frac{5}{6} \cdot \sqrt[n]{2}\right) = 
+                    \frac{5}{6} \cdot 1 = \frac{5}{6} $, άρα και $ 
+                    \lim_{n \to \infty} \sqrt[n]{\left(\frac{3}{5} \right)^{n} + 
+                    \left(\frac{5}{6}\right)^{n}} = \frac{5}{6} $
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \frac{n!}{n^{n}} $
+                \begin{proof}
+                \item {}
+                    \begin{align*}
+                        \frac{a_{n+1}}{a_{n}} 
+                       &= \frac{\frac{(n+1)!}{(n+1)^{n+1}}}
+                       {\frac{n!}{n^{n}}} = \frac{n^{n}}{(n+1)^{n+1}} \cdot 
+                       \frac{(n+1)!}{n!} = \frac{n^{n}}{(n+1)^{n}(n+1)} \cdot 
+                       \frac{1\cdot 2 \cdot n \cdots (n+1)}{1 \cdot 2 \cdots n} \\
+                       &= \left(\frac{n}{n+1} \right)^{n} \cdot \frac{1}{n+1} 
+                       \cdot (n+1) = (\frac{n}{n+1} )^{n} = \frac{1}{e} < 1
+                    \end{align*} 
+                    άρα από Κριτήριο Λόγου η σειρά $ \sum_{n=1}^{\infty} 
+                    \frac{n!}{n^{n}}  $ συγκλίνει, επομένως από γνωστό θεώρημα το $ 
+                    \lim_{n \to \infty} a_{n} = \lim_{n \to \infty} \frac{n!}{n^{n}} 
+                    = 0$ 
+                \end{proof}
+
+
+            \item $ \lim_{n \to \infty} \frac{6\cdot 3^{n}-7 \cdot 4^{n}+8}
+                {5^{n}+3\cdot 2^{n}+1} $ 
+                \begin{proof}
+                    \begin{align*}
+                        a_{n} 
+                        &= \frac{6\cdot 3^{n}-7 \cdot 4^{n}+8} {5^{n}+3
+                        \cdot 2^{n}+1} = 
+                        \frac{5^{n}\left(6\cdot \frac{3^{n}}{5^{n}}  - 7 \cdot 
+                                \frac{4^{n}}{5^{n}} + 
+                                \frac{8}{5^{n}}\right)}{5^{n}\left(1 + 3 
+                        \cdot \frac{2^{n}}{5^{n}} + \frac{1}{5^{n}}\right)} = 
+                        \frac{6\cdot (\frac{3}{5} )^{n}-7\cdot (\frac{4}{5} )^{n} +8
+                            \cdot ( \frac{1}{5} )^{n}}{1 + 3\cdot (\frac{2}{5} )^{n}+ 
+                        (\frac{1}{5} )^{n}} \\
+                        & \quad \xrightarrow{n \to \infty}  
+                        \frac{6 \cdot 0 -7 \cdot 0 + 8 \cdot 0}{1 + 3 \cdot 0 + 0} = 0  
+                    \end{align*} 
+                \end{proof}
+
+
+            \item $ \lim_{n \to \infty} \frac{4^{n+3}}{\sqrt{4^{4n-2}}} $ 
+                \begin{proof}
+                    \[
+                        \abs{a_{n}} = \abs{\frac{4^{n+3}}{\sqrt{4^{4n-2}}}} = 
+                        \frac{4^{n}\cdot 4^{3}}{\sqrt{4^{2(2n-1)}}} = 
+                        \frac{4^{n} \cdot 4^{3}}{4^{2n-1}} = 
+                        \frac{4^{n}\cdot 4^{3}}{4^{2n}\cdot 4^{-1}} = 
+                        \frac{4^{3}}{4^{n}\cdot 
+                        \frac{1}{4}} = \frac{4^{4}}{4^{n}} = 4^{4}\cdot 
+                        \left(\frac{1}{4} \right) ^{n}
+                    \] 
+                    Όμως $ \lim_{n \to \infty} \left(\frac{1}{4}\right)^{n} = 0  $, 
+                    δηλαδή $ \lim_{n \to \infty} \abs{a_{n}} = \lim_{n \to \infty}
+                    \abs{\frac{4^{n+3}}{\sqrt{4^{4n-2}}}} = 0 $. 
+
+                    Άρα από γνωστή πρόταση και
+                    $ \lim_{n \to \infty} a_{n} =  \lim_{n \to \infty} 
+                    \frac{4^{n+3}}{\sqrt{4^{4n-2}}} = 0 $ 
+                \end{proof}
+
+            \item $ \lim_{n \to \infty} \frac{3n}{3^{n}(n^{2}+2)} $ 
+                \begin{proof}
+                    \begin{align*}
+                        \abs{a_{n}} 
+               &= \abs{\frac{3n}{(-3)^{n}(n^{2}+2)}} =
+               \frac{\abs{3n}}{\abs{(-3)^{n}(n^{2}+2)}} = \frac{3n}{\abs{(-3)^{n}} \cdot
+               \abs{n^{2}+2} } = \frac{3n}{3^{n}\cdot (n^{2}+2)} \leq 
+               \frac{3n}{3\cdot (n^{2}+2)} \\ 
+               &= \frac{n}{n^{2}+2} \leq \frac{n}{n^{2}} = \frac{1}{n} 
+                    \end{align*} 
+                Όμως $ \lim_{n \to \infty} \frac{1}{n} = 0 $, άρα και 
+                $ \lim_{n \to \infty} \frac{3n}{3^{n}(n^{2}+2)} = 0 $
+                \end{proof}
+
+            \item ({\bfseries Θέμα:2018}) $ \lim_{n \to \infty} 
+                \sqrt[n]{\frac{1}{2^{n}}+ \frac{1}{3^{n}}} $ 
+                \begin{proof}
+                    Ισχύει ότι 
+                    \[
+                        \frac{1}{2} = \sqrt[n]{\frac{1}{2^{n}}} < 
+                        \sqrt[n]{\frac{1}{2^{n}} + \frac{1}{3^{n}} } < 
+                        \sqrt[n]{\frac{1}{2^{n}} + \frac{1}{2^{n}}} = 
+                        \sqrt[n]{\frac{2}{2^{n}}} = \frac{1}{2} \cdot \sqrt[n]{2} 
+                    \] 
+                Όμως $ \lim_{n \to \infty} \frac{1}{2} = \frac{1}{2} $ και 
+                $ \lim_{n \to \infty} \left(\frac{1}{2} \cdot \sqrt[n]{2}\right) = 
+                \frac{1}{2} \cdot 1 = \frac{1}{2} $, άρα και 
+                $ \lim_{n \to \infty} \sqrt[n]{\frac{1}{2^{n}} + \frac{1}{3^{n}}} = 
+                \frac{1}{2}  $
+                \end{proof}
+
+            \item ({\bfseries Θέμα:2018}) $ \lim_{n \to \infty} \frac{n^{3}}{3^{n}} $ 
+                \begin{proof}
+                \begin{description}
+                    \item [Α᾽ Τρόπος:(Κριτήριο Λόγου)]
+                        \begin{align*}
+                            \frac{a_{n+1}}{a_{n}} = 
+                            \frac{\frac{(n+1)^{3}}{3^{n+1}}}{\frac{n^{3}}{3^{n}}} = 
+                            \frac{(n+1)^{3}}{n^{3}} \cdot \frac{3^{n}}{3^{n+1}} = 
+                            \left(\frac{n+1}{n} \right)^{3} \cdot \frac{3^{n}}{3\cdot 3^{n}} = 
+                            \frac{1}{3} \cdot \left(1 + \frac{1}{n}\right)^{3} 
+                            \xrightarrow{n \to \infty} \frac{1}{3} < 1
+                        \end{align*}
+                        άρα από κριτήριο Λόγου, έχουμε ότι η σειρά 
+                        $ \sum_{n=1}^{\infty} \frac{n^{3}}{3^{n}} $ συγκλίνει, επομένως 
+                        από γνωστό θεωϱημα έχουμε ότι $ \lim_{n \to \infty} 
+                        \frac{n^{3}}{3^{n}} = 0 $.
+
+                    \item [Β᾽ Τρόπος:(Κριτήριο Ρίζας)]
+                        \begin{align*}
+                            \sqrt[n]{a_{n}} = \sqrt[n]{\frac{n^{3}}{3^{n}}} = 
+                            \frac{\sqrt[n]{n^{3}}}{3} \frac{\sqrt[n]{n} 
+                                \cdot \sqrt[n]{n} \cdot \sqrt[n]{n}
+                            }{3} \xrightarrow{n \to \infty} \frac{1 \cdot 1 \cdot 1}{3} = 
+                            \frac{1}{3} < 1
+                        \end{align*}
+                        άρα από κριτήριο Ρίζας, έχουμε ότι η σειρά 
+                        $ \sum_{n=1}^{\infty} \frac{n^{3}}{3^{n}} $ συγκλίνει, επομένως 
+                        από γνωστό θεωϱημα έχουμε ότι $ \lim_{n \to \infty} 
+                        \frac{n^{3}}{3^{n}} = 0 $.
+
+                    \item [Γ᾽ Τρόπος: (Βλάχου)]
+                        \[
+                            \lim_{n \to \infty} \sqrt[n]{a_{n}} = \lim_{n \to \infty} 
+                            \sqrt[n]{\frac{n^{3}}{3^{n}}} = \lim_{n \to \infty} 
+                            \frac{\sqrt[n]{n^{3}}}{3} = \lim_{n \to \infty} 
+                            \frac{(\sqrt[n]{n})^{3}}{3} \xrightarrow{n \to \infty} 
+                            \frac{1}{3}  
+                        \] 
+                        Άρα για $ \varepsilon = \frac{1}{2} >0 $ έχουμε ότι $ \exists n_{0} 
+                        \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad 
+                        \abs{\sqrt[n]{\frac{n^{3}}{3^{n}}} - \frac{1}{3}} < 
+                        \frac{1}{2} $.
+
+                        Άρα $ - \frac{1}{2} < 
+                        \sqrt[n]{\frac{n^{3}}{3^{n}}} - \frac{1}{3} < \frac{1}{2}, \; 
+                        \forall n \geq n_{0} \Rightarrow \sqrt[n]{\frac{n^{3}}{3^{n}}} - 
+                        \frac{1}{3} < \frac{1}{2}, \forall n \geq n_{0} \Rightarrow 
+                        \sqrt[n]{\frac{n^{3}}{3^{n}}} < \frac{5}{6}, \forall n \geq n_{0} $ 
+
+                        Επομένως $ \frac{n^{3}}{3^{n}} < \left(\frac{5}{6}\right)^{n}, 
+                        \forall n \geq n_{0} \Leftrightarrow 0 <  \frac{n^{3}}{3^{n}} < 
+                        \left( \frac{5}{6}\right)^{n}, \forall n \geq n_{0}  $
+
+                        Όμως $ \lim_{n \to \infty} (\frac{5}{6} )^{n} = 0 $, οπότε 
+                        από Κριτήριο Παρεμβολής, έπεται ότι 
+                        $ \lim_{n \to \infty} \frac{n^{3}}{3^{n}} = 0 $
+                \end{description}
+                \end{proof}
+
+            \item ({\bfseries Θέμα:2019}) $ \lim_{n \to \infty} \sqrt[n]{\frac{1}{3^{n}} + 
+                \frac{1}{4^{n}} + \frac{1}{5^{n}}} $ 
+                \begin{proof}
+                \item {}
+                    Όπως και το θέμα του $ 2018 $.
+                \end{proof}
+
+            \item ({\bfseries Θέμα:2019}) $ \lim_{n \to \infty} \frac{n^{4}+5n-6}{2^{n}} $ 
+                \begin{proof}
+                \item {}
+                    \begin{description}
+                        \item [Α᾽ Τρόπος:(Βλάχου)]
+                            Θα υπολογίσουμε το όριο $ \lim_{n \to \infty} 
+                            \sqrt[n]{\frac{n^{4}+5n-6}{2^{n}}} = \lim_{n \to \infty} 
+                            \frac{\sqrt[n]{n^{4}+5n-6}}{2}  $
+
+                            Για το όριο του αριθμητή έχουμε:
+                            \begin{gather*}
+                                1<n^{4}+5n-6<n^{4}+5n^{4}=6\cdot n^{4}, \; 
+                                \forall n \in \mathbb{N} \\
+                                1 < \sqrt[n]{n^{4}+5n-6} < \sqrt[n]{6\cdot n^{4}}, \; 
+                                \forall n \in \mathbb{N} \\
+                                1 < \sqrt[n]{n^{4}+5n-6} < \sqrt[n]{6} \cdot \sqrt[n]{n^{4}}, 
+                                \; \forall n \in \mathbb{N} \\
+                                1 < \sqrt[n]{n^{4}+5n-6} < \sqrt[n]{6} \cdot (\sqrt[n]{n})^{4},
+                                \; \forall n \in \mathbb{N}
+                            \end{gather*} 
+                            Όμως $ \lim_{n \to \infty} 1 = 1 $ και $ \lim_{n \to \infty} 
+                            \sqrt[n]{6} \cdot (\sqrt[n]{n} )^{4} = 1 \cdot 1^{4} =1 $, άρα 
+                            και $ \lim_{n \to \infty} \sqrt[n]{n^{4}+5n-6} = 1 $
+
+                            Επομένως $ \lim_{n \to \infty} \frac{\sqrt[n]{n^{4}+5n-6}}{2} = 
+                            \frac{1}{2} $
+
+                            Για $ \varepsilon = \frac{1}{3} >0 $, έχουμε ότι 
+                            $ \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} 
+                            \quad \abs{\sqrt[n]{\frac{n^{4}+5n-6}{2^{n}}} - \frac{1}{2}} < 
+                            \frac{1}{3} $
+
+                            Άρα 
+                            \begin{gather*}
+                                \sqrt[n]{\frac{n^{4}+5n-6}{2^{n}}} - \frac{1}{2} < 
+                                \frac{1}{3}, \; \forall n \geq n_{0} \Leftrightarrow  
+                                \sqrt[n]{\frac{n^{4}+5n-6}{2^{n}}} < \frac{5}{6}, \;
+                                \forall n \geq n_{0} 
+                            \end{gather*}
+                            οπότε 
+                            \[
+                                0 \leq \frac{n^{4}+5n-6}{2^{n}} < 
+                                \left(\frac{5}{6} \right)^{n}, \; \forall n \geq n_{0} 
+                            \] 
+                            όμως $ \lim_{n \to \infty} \left(\frac{5}{6} \right)^{n} = 0 $,
+                            άρα από Κριτήριο Παρεμβολής, έχουμε ότι 
+                            $ \lim_{n \to \infty} \frac{n^{4}+5n-6}{2^{n}} = 0 $
+                            
+                        \item [Β᾽ Τρόπος:]
+                            \[
+                                0 < \frac{n^{4}+5n-6}{2^{n}} \leq 
+                                \frac{n^{4}+5n^{4}}{2^{n}} = \frac{6n^{4}}{2^{n}} = 
+                                6 \cdot \frac{n^{4}}{2^{n}}, \; \forall n \geq 2 
+                             \] 
+                             όμως $ \lim_{n \to \infty} \frac{n^{4}}{2^{n}} = 0 $ (
+                             υπολογίζεται όπως και το $ \lim_{n \to \infty} 
+                             \frac{n^{3}}{3^{n}} $)
+                             επομένως από Κριτήριο παρεμβολής, έπεται το ζητούμενο.
+                    \end{description}
+                \end{proof}
+        \end{enumerate}
+    \end{enumerate}
+
+
+
+\end{document}

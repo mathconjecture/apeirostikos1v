@@ -1,0 +1,212 @@
+\input{preamble.tex}
+\input{definitions_ask.tex}
+
+\pagestyle{askhseis}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\begin{center}
+  \minibox[c]{\large \bfseries \textcolor{Col1}{Πραγματικοί Αριθμοί} \\ \large
+  \textcolor{Col1}{Ασκήσεις}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+\begin{enumerate}
+  \item Να υπολογιστούν τα $ \sup $, $ \inf $, $ \max $ και $ \min $ των 
+    παρακάτω συνόλων.
+    \begin{enumerate}[i)]
+      \renewcommand{\arraystretch}{1.3}
+    \item $ A = \left\{ \frac{1}{n} \; : \; n \in \mathbb{N} \right\} $ 
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \max A = 1 $ \\
+      $ \inf A = 0 $   \end{tabular}\right.$
+    \item $ A = \left\{ \frac{1}{n} \; : \; n \in \mathbb{Z}, \; n \neq 0
+      \right\} $ 
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \max A = 1 $ \\
+      $ \inf A = \min A = -1 $ \end{tabular}\right.$
+    \item $ A = \left\{ x \; : \; x=0 \; \text{ή} \;
+      x = \frac{1}{n}, \; n \in \mathbb{N} \right\} $
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \max A = 1 $ \\
+      $ \inf A = \min A = 0 $ \end{tabular}\right.$
+    \item $ A = \left\{ x \in \mathbb{R} \; : \; 0 \leq x \leq \sqrt{2}, \; 
+      x \in \mathbb{Q}  \right\}  $ 
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \sqrt{2} $ \\
+      $ \inf A = \min A = 0 $  \end{tabular}\right.$
+    \item $ A = \left\{ x \in \mathbb{R} \; : \; x^{2} + x + 1 \geq 0 
+      \right\} $
+      \hfill Απ: δεν υπάρχουν 
+    \item $ A = \{ x \in \mathbb{R} \; : \; x^{2} + x - 1 < 0 \} $
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = 
+          \frac{-1 + \sqrt{5}}{2} $ \\ 
+      $ \inf A = \frac{-1 - \sqrt{5}}{2} $ \end{tabular}\right.$
+    \item $ A = \{ x \in \mathbb{R} \; : \; x<0, \; x^{2} + x - 1 < 0 \} $
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = 0 $ \\
+      $ \inf A = \frac{-1 - \sqrt{5}}{2} $ \end{tabular}\right.$
+    \item $A = \left\{ 1 - \frac{(-1)^{n}}{n} \; : \; n \in \mathbb{N}
+      \right\}  $
+      \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \max A = 2 $ \\
+      $ \inf A = \min A = \frac{1}{2}  $\end{tabular}\right.$
+  \end{enumerate}
+
+\item Για τα παρακάτω υποσύνολα να υπολογιστούν και να αποδειχθούν τα supremum και 
+  infimum.
+  \begin{enumerate}[i)]
+    \renewcommand{\arraystretch}{1.3}
+  \item $ A = (0,2) $ \hfill Απ: $ \left\{ \begin{tabular}{l}
+        $\sup A = 2$ \\
+        $\inf A = 0$
+    \end{tabular}\right. $
+  \item $ A = \{ x \in \mathbb{R} \; : \; x<0 \} $ 
+    \hfill Απ: $ \left\{ \begin{tabular}{l}
+        $ \sup A = 0 $ \\
+        $ \inf A = - \infty  $
+    \end{tabular} \right.$ 
+  \item $ A = \left\{ \frac{1}{n} \; : \; n \in \mathbb{N} \right\} $ 
+    \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \max A = 1 $ \\
+    $ \inf A = 0 $   \end{tabular}\right.$
+  \item $ A = \left\{ \frac{n}{n+1} \; : \; n \in \mathbb{N} \right\} $
+    \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = 1 $ \\
+    $ \inf A = \min A = \frac{1}{2} $\end{tabular}\right.$
+  \item $ A = \left\{ \frac{1}{n} + (-1)^{n} \; : \; n \in \mathbb{N} 
+    \right\} $
+    \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = \max 
+        A = \frac{3}{2}  $ \\
+    $ \inf A = -1 $ \end{tabular}\right.$
+  \item $ A = \left\{ \frac{1}{n} - \frac{1}{m} \; : \; n,m \in \mathbb{N} 
+    \right\} $
+    \hfill Απ: $\left\{\begin{tabular}{l} $ \sup A = 1 $ \\ $ \inf A = -1 $ 
+    \end{tabular}\right.$
+\end{enumerate}
+
+    \item \label{ask:monosynolo} Έστω $A$ φραγμένο υποσύνολο του $ \mathbb{R} $ 
+      τέτοιο ώστε $ \sup A = \inf A $. Να δείξετε ότι το $ A $ είναι μονοσύνολο.
+
+    \item Αν $ A,B $ μη-κενά, φραγμένα  υποσύνολα του $ \mathbb{R} $ με 
+      $ A \subseteq B $ να δείξετε ότι $ \inf B \leq \inf A \leq 
+      \sup A \leq \sup B$
+
+    \item Έστω $ A, B $ μη-κενά υποσύνολα του $ \mathbb{R} $ τέτοια ώστε 
+      $ a \leq b, \; \forall a \in A $ και $ \forall b \in B $.
+      Να δείξετε ότι:
+      \begin{enumerate}[i)]
+        \item $ \sup A \leq b, \;  \forall b \in B $
+        \item $ \sup A \leq \inf B $
+      \end{enumerate}
+
+    \item Έστω $ A \subseteq \mathbb{R} $ μη-κενό, και κάτω φραγμένο και έστω 
+      $ B $ το σύνολο των κάτω φραγμάτων του $A$. Να δείξετε ότι:
+      \begin{enumerate}[i)]
+        \item $ B \neq \emptyset $
+        \item $B$ άνω φραγμένο.
+        \item $ \sup B = \inf A $
+      \end{enumerate}
+
+    \item \label{ask:3z} Να αποδείξετε ότι το σύνολο 
+      $ A = \{ 3k \; : \; k \in \mathbb{Z} \} $ δεν είναι άνω φραγμένο.
+
+    \item Έστω $ A,B $ μη-κενά, φραγμένα υποσύνολα του $ \mathbb{R} $. Να 
+      δείξετε ότι:
+      \begin{enumerate}[i)]
+        \item $ A \cup B  $ είναι φραγμένο
+        \item $ \sup {(A\cup B)} = \max \{ \sup A, \sup B \} $
+        \item $ \inf {(A\cup B)} = \min \{ \inf A, \inf B \} $
+        \item Ισχύει κάτι ανάλογο για το $ \sup {(A\cap B)} $ και 
+          $ \inf {(A\cap B)} $;
+      \end{enumerate}
+
+    \item Έστω $ A, B $ μη-κενά, άνω φραγμένα υποσύνολα του $ \mathbb{R} $.
+
+      Αν $ A+B = \{ a+b \; : \; a \in A, \; b\in B \} $ και $A \cdot B = 
+      \{ a\cdot b \; : \; a \in A, \; b \in B\}$ . Να δείξετε ότι 
+      \begin{enumerate}[i)]
+        \item $ \sup {(A+B)} = \sup A + \sup B $.
+        \item $ \sup {(A\cdot B)} = \sup A \cdot \sup B $
+      \end{enumerate}
+
+    \item Να αποδείξετε με χρήση της Μαθηματικής Επαγωγής τους παρακάτω τύπους.
+      \begin{enumerate}[i)]
+        \item $ \sum_{n=1}^{N} n = \frac{N(N+1)}{2},\; \forall n \in
+          \mathbb{N} $
+        \item $ \sum_{n=1}^{N} n^{2} = \frac{N(N+1)(2N+1)}{6},\; \forall 
+          n \in \mathbb{N} $
+        \item $ \sum_{n=1}^{N} n^{3} = (1+2+\cdots + N)^{2}, \; 
+          \forall n \in \mathbb{N} $
+        \item $ \sum_{n=0}^{N} a^{n} = \frac{a^{N+1} - 1}{a-1},\; 
+          \forall n \in \mathbb{N}$
+      \end{enumerate}
+
+    \item \label{ask:sums} Βρείτε ένα κλειστό τύπο για τα παρακάτω 
+      αθροίσματα: 
+      \begin{enumerate}[i)]
+        \item $ \sum_{k=1}^{n} (2k-1) = 1 + 3 + 5 + \cdots + (2n-1)  
+          $ \hfill Απ: $ n^{2} $ 
+
+        \item $ \sum_{k=1}^{n} (2k-1)^{2} = 1^{2} + 3^{2} + 5^{2} + \cdots 
+          + (2n-1)^{2}  $ \hfill Απ: $ \frac{n(2n+1)(2n-1)}{3} $ 
+      \end{enumerate}
+
+    \item \label{ask:thema18sum} ({\bfseries Θέμα: 2018}) Να αποδείξετε ότι 
+      $ \sum_{n=2}^{N-2} \frac{1}{(n+1)(n+2)} = \frac{1}{3} - \frac{1}{N} $
+
+    \item Να αποδείξετε ότι $ n^{5} - n $ είναι πολλαπλάσιο του 5,
+      $ \forall n \in \mathbb{N} $.
+
+    \item Να αποδείξετε ότι $ n! > 2^{n}, \forall n \geq 4 $
+
+      \pagebreak
+
+    \item Έστω $ a \in \mathbb{R} $ και $ n \in \mathbb{N} $. Να δείξετε
+      με τη βοήθεια της μαθηματικής επαγωγής της παρακάτω ανισότητες.
+      \begin{enumerate}[i)]
+        \item Αν $ 0<a< \frac{1}{n} $ τότε $ (1+a)^{n} < \frac{1}{1-na} $
+        \item Αν $ 0 \leq a \leq 1$  τότε $ 1-na \leq (1-a)^{n} \leq
+          \frac{1}{1+na} $
+      \end{enumerate}
+
+    \item Αν $a > 0$ τότε να αποδείξετε ότι $ (1+a)^{n} \geq 1 + na + 
+      \frac{n(n-1)a^{2}}{2},\; \forall n \in \mathbb{N}   $ 
+
+    \item Να δείξετε ότι οι παρακάτω αριθμοί είναι άρρητοι.
+      \begin{enumerate}[i)]
+        \item $ \sqrt{3} $ και  $ \sqrt{5} $
+        \item $ \sqrt[3]{2} $ και $ \sqrt[3]{3} $
+        \item $ \sqrt{2} + \sqrt{3} $ και $ \sqrt{2} + \sqrt{6} $ 
+      \end{enumerate}
+  \end{enumerate}
+
+  \vspace{\baselineskip}
+
+  \section*{Υποδείξεις} 
+
+  \subsection*{Άθροισμα $n$ πρώτων όρων αριθμητικής προόδου}
+  Έστω αριθμητική πρόοδος $a_{n} = a_{1} + (n-1)\omega, \quad \forall n \in \mathbb{N}$.
+  Τότε το άθροισμα των $n$ πρώτων όρων της ακολουθίας είναι
+  \[
+    S_{n} = a_{1} + a_{2} + \cdots + a_{n} = \frac{(a_{1} + a_{n})n}{2} =
+    \frac{2a_{1}+(n-1)\omega}{2}
+  \]
+  \subsection*{Άθροισμα $n$ πρώτων όρων γεωμετρικής προόδου}
+  Έστω γεωμετρική πρόοδος $ a_{n} = a r^{n-1}, \quad \forall n \in \mathbb{N} $.
+  Τότε το άθροισμα των $n$ πρώτων όρων της ακολουθίας είναι
+  \[
+    S_{n} = \sum_{k=1}^{n} ar^{k-1} = a + ar + ar^{2} + \cdots + ar^{n-1} = 
+    a_{1}\frac{1 - r^{n}}{1-r}, \quad r \neq 1 
+  \] 
+
+  \begin{description}
+    \item [Άσκηση \ref{ask:monosynolo}.] Υποθέστε ότι $ \sup A = \inf A = c
+      $. Ποιές ανισότητες ισχύουν για το $c$ και τα στοιχεία του $A$; 
+      Τι συμπέρασμα βγάζουμε;
+
+    \item [Άσκηση \ref{ask:sums}.] Προσθαφαιρέστε τους κατάλληλους κάθε φορά  
+      άρτιους όρους που λείπουν από το άθροισμα και ομαδοποιήστε έτσι ώστε να 
+      μπορέσετε να χρησιμοποιήσετε τους τύπους αθροίσματος αριθμητικής προόδου 
+      καθώς και τα αθροίσματα της άσκησης 11.
+
+    \item [Άσκηση \ref{ask:thema18sum}.] Κάντε ανάλυση σε απλά κλάσματα 
+      του όρου που βρίσκεται μέσα στο άθροισμα κ στη συνέχεια, γράψτε
+      αναλυτικά τους όρους του αθροίσματος του 1ου μέλους. Τι παρατηρείτε?
+  \end{description}
+  \end{document}

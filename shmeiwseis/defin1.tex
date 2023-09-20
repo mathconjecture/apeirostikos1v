@@ -1,0 +1,136 @@
+\input{preamble.tex}
+\input{definitions.tex}
+
+
+
+\begin{document}
+
+\pagestyle{vangelis}
+
+\begin{center}
+  \minibox[c]{\large \bfseries \textcolor{Col1}{Πραγματικοί Αριθμοί}}
+\end{center}
+
+\vspace{\baselineskip}
+
+\begin{dfn}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{άνω 
+    φραγμένο} $ \Leftrightarrow \exists M \in \mathbb{R} \; 
+    \text{(\textcolor{Col1}{άνω φράγμα})} \; : a \leq M, \; 
+    \forall a \in A$ 
+\end{dfn}
+
+\begin{dfn}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{κάτω 
+    φραγμένο} $ \Leftrightarrow \exists m \in \mathbb{R} \; 
+    \text{(\textcolor{Col1}{κάτω φράγμα})}  \; : a \geq m, \; 
+    \forall a \in A$
+\end{dfn}
+
+\begin{dfn}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{ 
+    φραγμένο}  \begin{tabular}[t]{l} $ \Leftrightarrow A $ είναι άνω και 
+        κάτω φραγμένο \\
+        $ \Leftrightarrow \exists m,M \in \mathbb{R} \; : \; m \leq a \leq M,
+        \; \forall a \in A $
+    \end{tabular}
+\end{dfn}
+
+\begin{dfn}
+        $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{ 
+        απολύτως φραγμένο} \begin{tabular}[t]{l}
+        $\Leftrightarrow \exists M>0 \; : \; \abs{a} \leq M, \; \forall a 
+        \in A $ \\
+        $ \Leftrightarrow \exists M>0  \; : \; 
+        -M \leq a \leq M, \; \forall a \in A $
+        \end{tabular}
+\end{dfn}
+
+\begin{rem}
+\item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item Αν $ M $ άνω φράγμα του $A$ και $ \textcolor{Col2}{M \in A} $ τότε $M$ λέγεται 
+    \textcolor{Col1}{μέγιστο} του $A$ και συμβολίζεται $ M = \max A $.
+\item Αν $ m $ κάτω φράγμα του $A$ και $ \textcolor{Col2}{m \in A} $ τότε $m$ λέγεται \textcolor{Col1}{ελάχιστο} του $A$ και συμβολίζεται $ m = \min A $.  \end{itemize}
+\end{rem}
+
+\begin{prop}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ είναι φραγμένο 
+    $ \Leftrightarrow $ $ A $ είναι απολύτως φραγμένο.
+\end{prop}
+
+
+\begin{dfn}
+    Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $.
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item $ M \in \mathbb{R} $ \textcolor{Col1}{supremum} του $A$ (
+            $ \textcolor{Col2}{M = \sup A} $ ) $
+            \Leftrightarrow \begin{tabular}[t]{l}
+                M άνω φράγμα του A $\Leftrightarrow a \leq M, \; \forall a 
+                \in A $ \\
+                M ελάχιστο άνω φράγμα του A $ \Leftrightarrow M' 
+                \text{α.φ. του} A \Rightarrow M \leq M' $
+            \end{tabular} $
+
+        \item $ m \in \mathbb{R} $ \textcolor{Col1}{infimum} του $A$ 
+            ($ \textcolor{Col2}{m= \inf A} $) $
+            \Leftrightarrow \begin{tabular}[t]{l}
+                m κάτω φράγμα του A $ \Leftrightarrow a \geq m, \; \forall a 
+                \in A $ \\
+                M μέγιστο κάτω φράγμα του A $ \Leftrightarrow m' 
+                \text{κ.φ. του} A \Rightarrow m \geq m' $
+            \end{tabular} $
+    \end{itemize}
+\end{dfn}
+
+\begin{rem}
+\item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item 
+    Η χαρακτηριστική ιδιότητα που έχει το supremum ενός συνόλου $ A $, είναι
+    ότι είναι το ελάχιστο από τα άνω φράγματα του $A$. Δηλαδή, με άλλα λόγια,
+    κάθε πραγματικός αριθμός μικρότερος του $M$ δεν είναι άνω φράγμα του 
+    $A$, επομένως, $ \forall k < M, \; \exists a \in A \; : \; k < a < M $, 
+    ή καλύτερα, $ \forall \varepsilon > 0, \; \exists a \in A \; : \; 
+    M- \varepsilon < a$
+
+\item 
+    Η χαρακτηριστική ιδιότητα που έχει το infimum ενός συνόλου $ A $, είναι
+    ότι είναι το μέγιστο από τα κάτω φράγματα του $A$. Δηλαδή, με άλλα λόγια,
+    κάθε πραγματικός αριθμός μεγαλύτερος του $m$ δεν είναι κάτω φράγμα του 
+    $A$, επομένως, $ \forall k > m, \; \exists a \in A \; : \; m < a < k $, 
+    ή καλύτερα, $ \forall \varepsilon > 0, \; \exists a \in A \; : \; 
+    a < m + \varepsilon $
+    \end{itemize}
+\end{rem}
+\begin{thm}[\textcolor{Col2}{Χαρακτηριστική ιδιότητα του sup και inf}]
+\item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $, $ A $ άνω φραγμένο με $M \in \mathbb{R}$ α.φ. του A, τότε 
+    \[
+         M = \sup A \Leftrightarrow \forall \varepsilon > 0, \; \exists 
+         a \in A \; : \; M- \varepsilon  < a
+     \] 
+
+ \item Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $, $ A $ κάτω
+    φραγμένο με $m \in \mathbb{R}$ κ.φ. του A, τότε 
+    \[
+         m = \inf A \Leftrightarrow \forall \varepsilon > 0, \; \exists 
+         a \in A \; : \; a < m+ \varepsilon 
+     \] 
+    \end{itemize}
+    \end{thm}
+
+\begin{prop}
+        \item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ και $A$ όχι 
+            άνω φραγμένο $ \Rightarrow \sup A = + \infty $.
+        \item $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ και $A$ όχι 
+            κάτω φραγμένο $ \Rightarrow \inf A = - \infty $.
+    \end{itemize}
+
+    
+
+\end{prop}
+\end{document}
